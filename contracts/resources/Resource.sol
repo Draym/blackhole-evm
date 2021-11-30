@@ -6,14 +6,14 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 // SPDX-License-Identifier: MIT
 abstract contract Resource is ERC20, AccessControl {
     bytes32 public constant MODERATOR_ROLE = keccak256("MODERATOR_ROLE");
+    bytes32 public constant INDUSTRY_ROLE = keccak256("INDUSTRY_ROLE");
     bytes32 public constant FACTORY_ROLE = keccak256("FACTORY_ROLE");
-    bytes32 public constant MANUFACTURER_ROLE = keccak256("MANUFACTURER_ROLE");
 
     constructor(string memory _name, string memory _symbol) ERC20(_name, _symbol) {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
-    function deliver(uint256 _amount, address _user) external virtual onlyRole(MANUFACTURER_ROLE) {
+    function collect(uint256 _amount, address _user) external virtual onlyRole(INDUSTRY_ROLE) {
         _mint(_user, _amount);
     }
 
