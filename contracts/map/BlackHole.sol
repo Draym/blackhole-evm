@@ -90,9 +90,9 @@ contract BlackHole is AccessControl {
             blackhole[_position] = Slot({
             x : x,
             y : y,
-            darkMatter : uint16(RandomUtils.rand(_position, 10)),
-            plasmaEnergy : uint16(RandomUtils.rand(_position, 10)),
-            voidEssence : uint16(RandomUtils.rand(_position, 10)),
+            darkMatter : RandomUtils.rand16(_position, 10),
+            plasmaEnergy : RandomUtils.rand16(_position + 1, 10),
+            voidEssence : RandomUtils.rand16(_position + 2, 10),
             nokai : 0,
             factory : 0,
             industry : 0,
