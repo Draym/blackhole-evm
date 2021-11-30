@@ -6,16 +6,16 @@ contract NokaiTechnique {
     constructor(){}
 
     enum Technique {
-        DoubleHit,
-        TO_DEFINE1,
-        TO_DEFINE2,
-        TO_DEFINE3,
-        TO_DEFINE4,
-        TO_DEFINE5,
-        TO_DEFINE6,
-        TO_DEFINE7,
-        TO_DEFINE8,
-        TO_DEFINE9
+        DOUBLE_HIT, // hit twice at 75%
+        GUARDIAN, // block 50% dmg after defense
+        GLUTTON, // heal for 30% dmg dealt
+        TOXIC, // poison for 10% dmg dealt, stack infinite
+        DESTROYER, // break 50% defense
+        FOOL, // cancel opponent passives
+        WEAK_POINT, // critical hit - deal +30% dmg
+        SPEEDY, // always attack first
+        REVENGER, // hit twice at 100% on death
+        MIMIC // copy opponent technique
     }
 
     function get(uint256 _newNokaiId) external view returns (Technique) {
