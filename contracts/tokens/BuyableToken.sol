@@ -8,22 +8,22 @@ abstract contract BuyableToken is ERC20, AccessControl {
     bytes32 public constant MODERATOR_ROLE = keccak256("MODERATOR_ROLE");
     bytes32 public constant WITHDRAW_ROLE = keccak256("WITHDRAW_ROLE");
 
-    uint256 public cost;
+    uint256 public costPerUnit;
     bool public isPurchaseAllowed;
 
-    function adjustCost(uint256 _cost) external onlyRole(MODERATOR_ROLE) {
-        cost = _cost;
+    function adjustCost(uint256 cost) external onlyRole(MODERATOR_ROLE) {
+        costPerUnit = cost;
     }
 
-    function allowPurchase(bool _value) external onlyRole(MODERATOR_ROLE) {
-        isPurchaseAllowed = _value;
+    function allowPurchase(bool value) external onlyRole(MODERATOR_ROLE) {
+        isPurchaseAllowed = value;
     }
 
-    function purchase(uint256 _number) external payable {
+    function purchase(uint256 number) external payable {
         require(isPurchaseAllowed == true, "purchase is closed at the moment");
-        uint256 _cost = cost * _number;
-        require(msg.value == _cost, "fund insufficient to validate the purchase");
-        _mint(msg.sender, _number);
+        uint256 cost = costPerUnit * number;
+        require(msg.value == cost, "fund insufficient to validate the purchase");
+        _mint(msg.sender, number);
     }
 
     /**

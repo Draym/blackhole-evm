@@ -39,13 +39,8 @@ contract GameManager is Ownable {
     function teleport(uint256 nokaiId, uint16 x, uint16 y) external {
 
     }
-
     /**
-     * Inventory Actions
-     */
-
-    /**
-     * Resources Actions
+     * Slot' Resource Actions
      */
     function upgradeExtractor(uint16 x, uint16 y) external {
 

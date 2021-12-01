@@ -98,9 +98,16 @@ contract BlackHole is AccessControl {
 
     function discoverSlot(uint16 x, uint16 y, address by) private {
         uint256 _position = (y * maxX) + x;
-        uint256 darkMatter = RandomUtils.rand(_position, 10);
-        uint256 plasmaEnergy = RandomUtils.rand(_position + 1, 10);
-        uint256 voidEssence = RandomUtils.rand(_position + 2, 10);
+        uint256 wealth = 100;
+        if (wealth > maxSlot / 4 && wealth < (maxSlot / 4) * 3){
+            wealth = 200;
+        }
+        if (wealth > ((maxSlot / 5) * 2) && wealth < (maxSlot / 5) * 3) {
+            wealth = 400;
+        }
+        uint256 darkMatter = RandomUtils.rand(_position, 1000) + wealth;
+        uint256 plasmaEnergy = RandomUtils.rand(_position + 1, 1000) + wealth;
+        uint256 voidEssence = RandomUtils.rand(_position + 2, 1000) + wealth;
         if (darkMatter < plasmaEnergy || darkMatter < voidEssence) {
             darkMatter = 0;
         }

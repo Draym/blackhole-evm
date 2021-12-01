@@ -7,8 +7,8 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 abstract contract BurnableToken is ERC20, AccessControl {
     bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
 
-    function consume(uint256 _number) external onlyRole(BURNER_ROLE) {
-        require(balanceOf(msg.sender) >= _number, "user do not own enough cores");
-         _burn(msg.sender, _number);
+    function consume(address user, uint256 number) external onlyRole(BURNER_ROLE) {
+        require(balanceOf(user) >= number, "user do not own enough tokens");
+         _burn(user, number);
     }
 }

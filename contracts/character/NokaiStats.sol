@@ -9,7 +9,7 @@ import "./NokaiTechnique.sol";
 contract NokaiStats is AccessControl {
     bytes32 public constant NOKAI_MANAGER_ROLE = keccak256("NOKAI_MANAGER_ROLE");
     bytes32 public constant GAME_MANAGER_ROLE = keccak256("GAME_MANAGER_ROLE");
-    bytes32 public constant INVENTORY_ROLE = keccak256("INVENTORY_ROLE");
+    bytes32 public constant INVENTORY_MANAGER_ROLE = keccak256("INVENTORY_MANAGER_ROLE");
 
     enum Rarity {
         Spirit,
@@ -176,7 +176,7 @@ contract NokaiStats is AccessControl {
         }
     }
 
-    function reborn(uint256 nokaiId) external onlyRole(INVENTORY_ROLE) {
+    function reborn(uint256 nokaiId) external onlyRole(INVENTORY_MANAGER_ROLE) {
         require(profiles[nokaiId].dead == true, "given Nokai is not dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
         profiles[nokaiId].lastHpSet = block.timestamp;
@@ -185,7 +185,7 @@ contract NokaiStats is AccessControl {
         emit NokaiReborn(nokaiId);
     }
 
-    function heal(uint256 nokaiId, uint256 amount) external onlyRole(INVENTORY_ROLE) {
+    function heal(uint256 nokaiId, uint256 amount) external onlyRole(INVENTORY_MANAGER_ROLE) {
         require(profiles[nokaiId].dead == false, "given Nokai is already dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
         uint256 currentHp = calculateHp(nokaiId);
@@ -198,7 +198,7 @@ contract NokaiStats is AccessControl {
         emit NokaiHealed(nokaiId, amount);
     }
 
-    function energize(uint256 nokaiId, uint256 pa) external onlyRole(INVENTORY_ROLE) {
+    function energize(uint256 nokaiId, uint256 pa) external onlyRole(INVENTORY_MANAGER_ROLE) {
         require(profiles[nokaiId].dead == false, "given Nokai is already dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
         uint256 currentPa = calculatePa(nokaiId);
