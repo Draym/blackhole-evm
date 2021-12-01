@@ -15,23 +15,34 @@ contract Nokai is ERC721Enumerable, AccessControl {
 
     NokaiStats private nokaiStats;
 
-    constructor(address _nokaiStats) ERC721("Nokai", "KAI") {
+    bool isSetup;
+    bool mintLocked;
+    bool transferLocked;
+    string uri;
+
+    constructor(address _nokaiStats, string memory baseUri) ERC721("Nokai", "KAI") {
         nokaiStats = NokaiStats(_nokaiStats);
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        uri = baseUri;
     }
 
     function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721Enumerable, AccessControl) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
 
-    function generateNokai() external onlyRole(MINTER_ROLE) returns (uint256) {
+    function generateNokai(bool isRare) external onlyRole(MINTER_ROLE) returns (uint256) {
+        require(isSetup == true, "mint is not available yet.");
+        require(mintLocked == false, "mint has been locked.");
         _tokenIds.increment();
 
         uint256 _newNokaiId = _tokenIds.current();
         _safeMint(msg.sender, _newNokaiId);
 
-        nokaiStats.setupNokaiProfile(_newNokaiId);
-
+        if (isRare == true) {
+            nokaiStats.generateHighNokai(_newNokaiId);
+        } else {
+            nokaiStats.generateNokai(_newNokaiId);
+        }
         emit NokaiBorn(_newNokaiId, msg.sender);
         return _newNokaiId;
     }
@@ -45,6 +56,51 @@ contract Nokai is ERC721Enumerable, AccessControl {
         nokaiStats.upgradeFromNokaiBurn(nokaiId, targetId, upgradeChoice);
 
         emit NokaiUpgraded(nokaiId, msg.sender);
+    }
+
+    function setup(uint256 nbLegendary) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        require(isSetup == false, "setup already completed.");
+
+        for (uint256 i = 0; i < nbLegendary; i++) {
+            _tokenIds.increment();
+            uint256 _newNokaiId = _tokenIds.current();
+            _safeMint(msg.sender, _newNokaiId);
+            nokaiStats.generateLegendNokai(_newNokaiId);
+        }
+        isSetup = true;
+    }
+
+    function lockMint() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        mintLocked = true;
+    }
+
+    function unlockMint() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        mintLocked = true;
+    }
+
+    function lockTransfer() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        transferLocked = true;
+    }
+
+    function unlockTransfer() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        transferLocked = false;
+    }
+
+    function setUri(string calldata baseUri) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        uri = baseUri;
+    }
+
+    function _baseURI() internal view override returns (string memory) {
+        return uri;
+    }
+
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 tokenId
+    ) internal virtual override {
+        require(transferLocked == false, "transfer has been locked.");
+        super._beforeTokenTransfer(from, to, tokenId);
     }
 
     event NokaiBorn(uint256 indexed nokaiId, address indexed owner);

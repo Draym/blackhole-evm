@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
 
-import "../resources/HolyCore.sol";
+import "../tokens/ticket/HolyCore.sol";
 
 // SPDX-License-Identifier: MIT
 contract CraftFactory {

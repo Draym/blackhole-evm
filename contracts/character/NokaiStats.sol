@@ -30,23 +30,24 @@ contract NokaiStats is AccessControl {
 
     struct Profile {
         Stats stats;
-        uint32 currentHp;
-        uint32 currentPa;
-        uint32 gradeValue;
-        Rarity grade;
-        NokaiTechnique.Technique technique1;
-        NokaiTechnique.Technique technique2;
+        uint256 currentHp;
+        uint256 currentPa;
         bool dead;
         bool burned;
-        uint256 lastAction;
+        uint256 lastHpSet;
+        uint256 lastPaSet;
     }
 
     struct Stats {
-        uint32 hp;
-        uint32 attack;
-        uint32 defense;
-        uint32 regen;
-        uint32 pa;
+        uint256 hp;
+        uint256 attack;
+        uint256 defense;
+        uint256 regen;
+        uint256 pa;
+        uint256 gradeValue;
+        Rarity grade;
+        NokaiTechnique.Technique technique1;
+        NokaiTechnique.Technique technique2;
     }
 
     NokaiTechnique private techniquePicker;
@@ -57,31 +58,66 @@ contract NokaiStats is AccessControl {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
-    function setupNokaiProfile(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
+    function generateNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
         saveNokaiProfile(
             newNokaiId,
-            RandomUtils.rand32(newNokaiId, 1000),
-            RandomUtils.rand32(newNokaiId + 1, 100) * 2,
-            RandomUtils.rand32(newNokaiId + 2, 100),
-            RandomUtils.rand32(newNokaiId + 3, 100),
-            RandomUtils.rand32(newNokaiId + 4, 10)
+            RandomUtils.rand(newNokaiId, 1000),
+            RandomUtils.rand(newNokaiId + 1, 100) * 2,
+            RandomUtils.rand(newNokaiId + 2, 100),
+            RandomUtils.rand(newNokaiId + 3, 100),
+            RandomUtils.rand(newNokaiId + 4, 10)
         );
     }
 
-    function saveNokaiProfile(uint256 newNokaiId, uint32 hp, uint32 attack, uint32 defense, uint32 regen, uint32 pa) private {
+    function generateHighNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
+        saveNokaiProfile(
+            newNokaiId,
+            RandomUtils.rand(newNokaiId, 1000) / 2 + 500,
+            RandomUtils.rand(newNokaiId + 1, 100) + 100,
+            RandomUtils.rand(newNokaiId + 2, 100) / 2 + 50,
+            RandomUtils.rand(newNokaiId + 3, 100) / 2 + 50,
+            5
+        );
+    }
+
+    function generateLegendNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
+        saveNokaiProfile(
+            newNokaiId,
+            RandomUtils.rand(newNokaiId, 100) + 900,
+            RandomUtils.rand(newNokaiId + 1, 10) * 2 + 180,
+            RandomUtils.rand(newNokaiId + 2, 10) + 90,
+            RandomUtils.rand(newNokaiId + 3, 10) + 90,
+            10
+        );
+    }
+
+    function saveNokaiProfile(uint256 newNokaiId, uint256 hp, uint256 attack, uint256 defense, uint256 regen, uint256 _pa) private {
+        uint256 pa = _pa;
+        if (pa < 2) {
+            pa = 2;
+        } else if (pa > 8) {
+            pa = 8;
+        }
         Rarity grade = getBirthGrade(hp, attack, defense, regen, pa);
 
         profiles[newNokaiId] = Profile({
-        stats : Stats({hp : hp, attack : attack, defense : defense, regen : regen, pa : pa}),
-        currentHp : hp,
-        currentPa : pa,
+        stats : Stats({
+        hp : hp,
+        attack : attack,
+        defense : defense,
+        regen : regen,
+        pa : pa,
         technique1 : techniquePicker.get(newNokaiId + 5),
         technique2 : techniquePicker.get(newNokaiId + 6),
         grade : grade,
-        gradeValue : uint32(grade) + 1,
+        gradeValue : uint256(grade) + 1
+        }),
+        currentHp : hp,
+        currentPa : pa,
         dead : false,
         burned : false,
-        lastAction : block.timestamp
+        lastHpSet : block.timestamp,
+        lastPaSet : block.timestamp
         });
     }
 
@@ -90,24 +126,24 @@ contract NokaiStats is AccessControl {
         require(profiles[targetId].dead == false, "given target is already dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
         require(profiles[targetId].burned == false, "given target is already burned.");
-        require(profiles[nokaiId].gradeValue >= profiles[targetId].gradeValue, "target should be of a lower grade.");
+        require(profiles[nokaiId].stats.gradeValue >= profiles[targetId].stats.gradeValue, "target should be of a lower grade.");
 
         profiles[targetId].burned = true;
 
         if (upgradeChoice == StatType.HP) {
-            profiles[nokaiId].stats.hp += profiles[targetId].stats.hp * profiles[targetId].gradeValue / 100;
+            profiles[nokaiId].stats.hp += profiles[targetId].stats.hp * profiles[targetId].stats.gradeValue / 100;
         } else if (upgradeChoice == StatType.ATTACK) {
-            profiles[nokaiId].stats.attack += profiles[targetId].stats.attack * profiles[targetId].gradeValue / 100;
+            profiles[nokaiId].stats.attack += profiles[targetId].stats.attack * profiles[targetId].stats.gradeValue / 100;
         } else if (upgradeChoice == StatType.DEFENSE) {
-            profiles[nokaiId].stats.defense += profiles[targetId].stats.defense * profiles[targetId].gradeValue / 100;
+            profiles[nokaiId].stats.defense += profiles[targetId].stats.defense * profiles[targetId].stats.gradeValue / 100;
         } else if (upgradeChoice == StatType.REGEN) {
-            profiles[nokaiId].stats.regen += profiles[targetId].stats.regen * profiles[targetId].gradeValue / 100;
+            profiles[nokaiId].stats.regen += profiles[targetId].stats.regen * profiles[targetId].stats.gradeValue / 100;
         } else if (upgradeChoice == StatType.PA) {
-            profiles[nokaiId].stats.pa += profiles[targetId].gradeValue / 2;
+            profiles[nokaiId].stats.pa += profiles[targetId].stats.gradeValue / 2;
         }
     }
 
-    function getBirthGrade(uint32 hp, uint32 attack, uint32 defense, uint32 regen, uint32 pa) private pure returns (Rarity) {
+    function getBirthGrade(uint256 hp, uint256 attack, uint256 defense, uint256 regen, uint256 pa) private pure returns (Rarity) {
         uint256 total = hp + (attack * 5) + (defense * 10) + (pa * 100) + (regen * 10);
         // max should be 5000
         if (total > 4900) {
@@ -127,63 +163,87 @@ contract NokaiStats is AccessControl {
         techniquePicker = NokaiTechnique(_techniquePicker);
     }
 
-    function damage(uint256 nokaiId, uint32 amount) external onlyRole(BATTLE_MANAGER_ROLE) {
+    function damage(uint256 nokaiId, uint256 newHp) external onlyRole(BATTLE_MANAGER_ROLE) {
         require(profiles[nokaiId].dead == false, "given Nokai is already dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
-        if (profiles[nokaiId].currentHp - amount <= 0) {
+        profiles[nokaiId].lastHpSet = block.timestamp;
+        if (newHp == 0) {
             profiles[nokaiId].currentHp = 0;
             profiles[nokaiId].dead = true;
             emit NokaiKilled(nokaiId);
         } else {
-            profiles[nokaiId].currentHp -= amount;
-            emit NokaiDamaged(nokaiId, amount);
+            profiles[nokaiId].currentHp = newHp;
+            emit NokaiDamaged(nokaiId, newHp);
         }
     }
 
     function reborn(uint256 nokaiId) external onlyRole(INVENTORY_ROLE) {
         require(profiles[nokaiId].dead == true, "given Nokai is not dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
+        profiles[nokaiId].lastHpSet = block.timestamp;
         profiles[nokaiId].currentHp = profiles[nokaiId].stats.hp;
         profiles[nokaiId].dead = false;
         emit NokaiReborn(nokaiId);
     }
 
-    function heal(uint256 nokaiId, uint32 amount) external onlyRole(INVENTORY_ROLE) {
+    function heal(uint256 nokaiId, uint256 amount) external onlyRole(INVENTORY_ROLE) {
         require(profiles[nokaiId].dead == false, "given Nokai is already dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
-        if (profiles[nokaiId].currentHp + amount > profiles[nokaiId].stats.hp) {
+        uint256 currentHp = calculateHp(nokaiId);
+        profiles[nokaiId].lastHpSet = block.timestamp;
+        if (currentHp + amount > profiles[nokaiId].stats.hp) {
             profiles[nokaiId].currentHp = profiles[nokaiId].stats.hp;
         } else {
-            profiles[nokaiId].currentHp += amount;
+            profiles[nokaiId].currentHp = currentHp + amount;
         }
         emit NokaiHealed(nokaiId, amount);
     }
 
-    function energize(uint256 nokaiId, uint32 pa) external onlyRole(INVENTORY_ROLE) {
+    function energize(uint256 nokaiId, uint256 pa) external onlyRole(INVENTORY_ROLE) {
         require(profiles[nokaiId].dead == false, "given Nokai is already dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
-        if (profiles[nokaiId].currentPa + pa > profiles[nokaiId].stats.pa) {
+        uint256 currentPa = calculatePa(nokaiId);
+        profiles[nokaiId].lastPaSet = block.timestamp;
+        if (currentPa + pa > profiles[nokaiId].stats.pa) {
             profiles[nokaiId].currentPa = profiles[nokaiId].stats.pa;
         } else {
-            profiles[nokaiId].currentPa += pa;
+            profiles[nokaiId].currentPa = currentPa + pa;
         }
         emit NokaiEnergized(nokaiId);
     }
 
     function didAction(uint256 nokaiId) external onlyRole(GAME_MANAGER_ROLE) {
-        if (profiles[nokaiId].currentPa - 1 <= 0) {
+        uint256 currentPa = calculatePa(nokaiId);
+        profiles[nokaiId].lastPaSet = block.timestamp;
+        if (currentPa - 1 <= 0) {
             profiles[nokaiId].currentPa = 0;
             emit NokaiEmptyEnergy(nokaiId);
         } else {
-            profiles[nokaiId].currentPa -= 1;
+            profiles[nokaiId].currentPa = currentPa - 1;
         }
     }
 
-    function getProfile(uint256 nokaiId) external view returns (Profile memory) {
-        return profiles[nokaiId];
+    function calculateHp(uint256 nokaiId) internal view returns (uint256) {
+        return profiles[nokaiId].currentHp + (profiles[nokaiId].stats.regen * ((block.timestamp - profiles[nokaiId].lastHpSet) / 3600));
     }
 
-    event NokaiDamaged(uint256 indexed nokaiId, uint256 amount);
+    function calculatePa(uint256 nokaiId) internal view returns (uint256) {
+        return profiles[nokaiId].currentPa + ((block.timestamp - profiles[nokaiId].lastHpSet) / 7200);
+    }
+
+    function profile(uint256 nokaiId) external view returns (Profile memory) {
+        return Profile({
+        stats : profiles[nokaiId].stats,
+        currentHp : calculateHp(nokaiId),
+        currentPa : calculatePa(nokaiId),
+        dead : profiles[nokaiId].dead,
+        burned : profiles[nokaiId].burned,
+        lastHpSet : profiles[nokaiId].lastHpSet,
+        lastPaSet : profiles[nokaiId].lastPaSet
+        });
+    }
+
+    event NokaiDamaged(uint256 indexed nokaiId, uint256 newHp);
     event NokaiKilled(uint256 indexed nokaiId);
     event NokaiReborn(uint256 indexed nokaiId);
     event NokaiHealed(uint256 indexed nokaiId, uint256 amount);
