@@ -6,7 +6,6 @@ import "../tokens/ticket/HolyArtefact.sol";
 
 // SPDX-License-Identifier: MIT
 contract NokaiGacha {
-
     Nokai private nokai;
     HolyCore private holyCore;
     HolyArtefact private holyArtefact;

@@ -9,7 +9,6 @@ import "./NokaiTechnique.sol";
 contract NokaiStats is AccessControl {
     bytes32 public constant NOKAI_MANAGER_ROLE = keccak256("NOKAI_MANAGER_ROLE");
     bytes32 public constant GAME_MANAGER_ROLE = keccak256("GAME_MANAGER_ROLE");
-    bytes32 public constant BATTLE_MANAGER_ROLE = keccak256("BATTLE_MANAGER_ROLE");
     bytes32 public constant INVENTORY_ROLE = keccak256("INVENTORY_ROLE");
 
     enum Rarity {
@@ -163,7 +162,7 @@ contract NokaiStats is AccessControl {
         techniquePicker = NokaiTechnique(_techniquePicker);
     }
 
-    function damage(uint256 nokaiId, uint256 newHp) external onlyRole(BATTLE_MANAGER_ROLE) {
+    function damage(uint256 nokaiId, uint256 newHp) external onlyRole(GAME_MANAGER_ROLE) {
         require(profiles[nokaiId].dead == false, "given Nokai is already dead.");
         require(profiles[nokaiId].burned == false, "given Nokai is already burned.");
         profiles[nokaiId].lastHpSet = block.timestamp;
