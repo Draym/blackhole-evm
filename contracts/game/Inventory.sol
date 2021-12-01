@@ -22,7 +22,7 @@ contract Inventory {
 
     function healNokai(uint256 nokaiId, uint256 amount) external {
         potionEssence.consume(msg.sender, amount);
-        nokaiStats.healNokai(nokaiId, amount * healPerPotion);
+        nokaiStats.heal(nokaiId, amount * healPerPotion);
     }
 
     function reviveNokai(uint256 nokaiId) external {
@@ -32,6 +32,6 @@ contract Inventory {
 
     function energizeNokai(uint256 nokaiId, uint256 amount) external {
         energyShock.consume(msg.sender, amount);
-        nokaiStats.energizeNokai(nokaiId, amount * paPerShock);
+        nokaiStats.energize(nokaiId, amount * paPerShock);
     }
 }

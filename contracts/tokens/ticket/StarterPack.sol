@@ -4,6 +4,7 @@ import "../BuyableToken.sol";
 import "../BurnableToken.sol";
 import "../GiftableToken.sol";
 
+// SPDX-License-Identifier: MIT
 contract StarterPack is BuyableToken, BurnableToken, GiftableToken {
     constructor(uint256 cost) ERC20("StarterPack", "NEWBIE") {
         costPerUnit = cost;

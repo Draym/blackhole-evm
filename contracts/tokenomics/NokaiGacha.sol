@@ -19,7 +19,7 @@ contract NokaiGacha {
     function openCore(uint256 _number) external returns (uint256[] memory) {
         require(_number <= 10, "gacha opener limited to 10 at once");
         require(holyCore.balanceOf(msg.sender) >= _number, "Insufficient number of HolyCore in your possession");
-        holyCore.consume(_number);
+        holyCore.consume(msg.sender, _number);
         uint256[] memory ids = new uint256[](_number);
         for (uint256 i = 0; i < _number; i++) {
             ids[i] = nokai.generateNokai(false);
@@ -30,7 +30,7 @@ contract NokaiGacha {
     function openArtefact(uint256 _number) external returns (uint256[] memory) {
         require(_number <= 10, "gacha opener limited to 10 at once");
         require(holyArtefact.balanceOf(msg.sender) >= _number, "Insufficient number of HolyArtefact in your possession");
-        holyArtefact.consume(_number);
+        holyArtefact.consume(msg.sender, _number);
         uint256[] memory ids = new uint256[](_number);
         for (uint256 i = 0; i < _number; i++) {
             ids[i] = nokai.generateNokai(true);
