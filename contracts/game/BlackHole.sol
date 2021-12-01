@@ -6,7 +6,6 @@ import "../utils/RandomUtils.sol";
 // SPDX-License-Identifier: MIT
 contract BlackHole is AccessControl {
     bytes32 public constant MODERATOR_ROLE = keccak256("MODERATOR_ROLE");
-    bytes32 public constant BATTLE_MANAGER_ROLE = keccak256("BATTLE_MANAGER_ROLE");
     bytes32 public constant GAME_MANAGER_ROLE = keccak256("GAME_MANAGER_ROLE");
 
     uint16 maxX;
@@ -16,12 +15,12 @@ contract BlackHole is AccessControl {
     struct Slot {
         uint16 x;
         uint16 y;
-        uint16 darkMatter;
-        uint16 plasmaEnergy;
-        uint16 voidEssence;
+        uint256 darkEnergy;
+        uint256 darkMatter;
+        uint256 plasmaEnergy;
+        uint256 voidEssence;
         uint256 nokai;
-        uint256 factory; // craft items
-        uint256 industry; // extract resources
+        uint256 extractor; // extract resources
         address owner;
         bool discovered;
     }
@@ -33,9 +32,22 @@ contract BlackHole is AccessControl {
         maxY = _height;
         maxSlot = maxX * maxY;
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+
+        blackhole[((maxY / 2) * maxX) + maxX / 2] = Slot({
+        x : maxX / 2,
+        y : maxY / 2,
+        darkEnergy : 10,
+        darkMatter : 0,
+        plasmaEnergy : 0,
+        voidEssence : 0,
+        nokai : 0,
+        extractor : 1,
+        owner : address(0),
+        discovered : true
+        });
     }
 
-    function conquestAfterBattle(uint16 x, uint16 y, address newOwner) external onlyRole(BATTLE_MANAGER_ROLE) {
+    function conquestAfterBattle(uint16 x, uint16 y, address newOwner) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 pos = (y * maxX) + x;
         require(blackhole[pos].nokai == 0, "target slot is still defended by a Nokai.");
         address previousOwner = blackhole[pos].owner;
@@ -86,16 +98,28 @@ contract BlackHole is AccessControl {
 
     function discoverSlot(uint16 x, uint16 y, address by) private {
         uint256 _position = (y * maxX) + x;
+        uint256 darkMatter = RandomUtils.rand(_position, 10);
+        uint256 plasmaEnergy = RandomUtils.rand(_position + 1, 10);
+        uint256 voidEssence = RandomUtils.rand(_position + 2, 10);
+        if (darkMatter < plasmaEnergy || darkMatter < voidEssence) {
+            darkMatter = 0;
+        }
+        if (plasmaEnergy < darkMatter || plasmaEnergy < voidEssence) {
+            plasmaEnergy = 0;
+        }
+        if (voidEssence < darkMatter || voidEssence < plasmaEnergy) {
+            voidEssence = 0;
+        }
         if (blackhole[_position].discovered == false) {
             blackhole[_position] = Slot({
             x : x,
             y : y,
-            darkMatter : RandomUtils.rand16(_position, 10),
-            plasmaEnergy : RandomUtils.rand16(_position + 1, 10),
-            voidEssence : RandomUtils.rand16(_position + 2, 10),
+            darkEnergy : 0,
+            darkMatter : darkMatter,
+            plasmaEnergy : plasmaEnergy,
+            voidEssence : voidEssence / 10,
             nokai : 0,
-            factory : 0,
-            industry : 0,
+            extractor : 0,
             owner : by,
             discovered : true
             });
