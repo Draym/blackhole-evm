@@ -58,6 +58,10 @@ contract NokaiStats is AccessControl {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
+    function migrateNokaiTechnique(address _techniquePicker) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        techniquePicker = NokaiTechnique(_techniquePicker);
+    }
+
     function generateNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
         saveNokaiProfile(
             newNokaiId,
@@ -157,10 +161,6 @@ contract NokaiStats is AccessControl {
         } else {
             return Rarity.Spirit;
         }
-    }
-
-    function migrateNokaiTechnique(address _techniquePicker) external onlyRole(DEFAULT_ADMIN_ROLE) {
-        techniquePicker = NokaiTechnique(_techniquePicker);
     }
 
     function damage(uint256 nokaiId, uint256 newHp) external onlyRole(GAME_MANAGER_ROLE) {

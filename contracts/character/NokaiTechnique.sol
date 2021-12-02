@@ -3,8 +3,6 @@ pragma solidity ^0.8.0;
 // SPDX-License-Identifier: MIT
 contract NokaiTechnique {
 
-    constructor(){}
-
     enum Technique {
         DOUBLE_HIT, // hit twice at 75%
         GUARDIAN, // block 50% dmg after defense
