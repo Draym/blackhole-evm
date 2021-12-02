@@ -61,8 +61,8 @@ contract NokaiStats is AccessControl {
     function generateNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
         saveNokaiProfile(
             newNokaiId,
-            Math.min(RandomUtils.rand(newNokaiId, 1000) + 100, 1000),
-            Math.min(RandomUtils.rand(newNokaiId + 1, 100) * 2 + 10, 2200),
+            Math.min(RandomUtils.rand(newNokaiId, 1000) + 200, 1000),
+            Math.min(RandomUtils.rand(newNokaiId + 1, 100) * 2 + 20, 2200),
             Math.min(RandomUtils.rand(newNokaiId + 2, 100) + 10, 100),
             Math.min(RandomUtils.rand(newNokaiId + 3, 100) + 20, 100),
             RandomUtils.rand(newNokaiId + 4, 10)
