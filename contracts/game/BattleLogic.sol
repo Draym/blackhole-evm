@@ -12,7 +12,7 @@ contract BattleLogic {
         uint256 turns = 0;
 
         while (attackerHp > 0 || defenderHp > 0) {
-
+            // TODO compute attack / defense using stats and techniques
         }
 
         return (turns, attackerHp >= 0 ? attackerHp : 0, defenderHp >= 0 ? defenderHp : 0);
