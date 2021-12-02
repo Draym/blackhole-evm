@@ -19,6 +19,7 @@ contract BlackHole is AccessControl {
         uint256 darkMatter;
         uint256 plasmaEnergy;
         uint256 voidEssence;
+        uint256 lastExtract;
         uint256 nokai;
         uint256 extractor; // extract resources
         address owner;
@@ -40,6 +41,7 @@ contract BlackHole is AccessControl {
         darkMatter : 0,
         plasmaEnergy : 0,
         voidEssence : 0,
+        lastExtract: block.timestamp,
         nokai : 0,
         extractor : 1,
         owner : address(0),
@@ -47,10 +49,19 @@ contract BlackHole is AccessControl {
         });
     }
 
-    function upgradeExtractor(uint16 x, uint16 y, address by) external proxyOnlyRole(GAME_MANAGER_ROLE) {
-        uint256 pos = (toY * maxX) + toX;
+    function completeExtraction(uint16 x, uint16 y, address by) external onlyRole(GAME_MANAGER_ROLE) {
+        uint256 pos = (y * maxX) + x;
+        require(blackhole[pos].owner == by, "you are not the owner of the specified territory.");
+        blackhole[pos].lastExtract = block.timestamp;
+        emit TerritoryExtracted(x, y, by);
+    }
+
+    function upgradeExtractor(uint16 x, uint16 y, address by) external onlyRole(GAME_MANAGER_ROLE) {
+        uint256 pos = (y * maxX) + x;
         require(blackhole[pos].owner == by, "you are not the owner of the specified territory.");
         blackhole[pos].extractor += 1;
+        blackhole[pos].lastExtract = block.timestamp;
+        emit ExtractorUpgraded(x, y, by, blackhole[pos].extractor);
     }
 
     function conquestAfterBattle(uint16 x, uint16 y, address newOwner) external onlyRole(GAME_MANAGER_ROLE) {
@@ -104,16 +115,16 @@ contract BlackHole is AccessControl {
 
     function discoverSlot(uint16 x, uint16 y, address by) private {
         uint256 _position = (y * maxX) + x;
-        uint256 wealth = 100;
+        uint256 wealth = 10;
         if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3){
-            wealth = 200;
+            wealth = 20;
         }
         if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
-            wealth = 400;
+            wealth = 40;
         }
-        uint256 darkMatter = RandomUtils.rand(_position, 1000) + wealth;
-        uint256 plasmaEnergy = RandomUtils.rand(_position + 1, 1000) + wealth;
-        uint256 voidEssence = RandomUtils.rand(_position + 2, 1000) + wealth;
+        uint256 darkMatter = RandomUtils.rand(_position, 100) + wealth;
+        uint256 plasmaEnergy = RandomUtils.rand(_position + 1, 100) + wealth;
+        uint256 voidEssence = RandomUtils.rand(_position + 2, 100) + wealth;
         if (darkMatter < plasmaEnergy || darkMatter < voidEssence) {
             darkMatter = 0;
         }
@@ -131,6 +142,7 @@ contract BlackHole is AccessControl {
             darkMatter : darkMatter,
             plasmaEnergy : plasmaEnergy,
             voidEssence : voidEssence / 10,
+            lastExtract: block.timestamp,
             nokai : 0,
             extractor : 0,
             owner : by,
@@ -156,5 +168,6 @@ contract BlackHole is AccessControl {
     event SlotDiscovered(uint16 x, uint16 y, address by);
     event SlotConquered(uint16 x, uint16 y, address indexed previousOwner, address indexed newOwner);
     event NokaiMoved(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, uint256 indexed nokai, address indexed owner);
+    event TerritoryExtracted(uint16 x, uint16 y, address by);
     event ExtractorUpgraded(uint16 x, uint16 y, address by, uint256 level);
 }
