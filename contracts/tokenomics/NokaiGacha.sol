@@ -41,4 +41,8 @@ contract NokaiGacha {
     function available() external view returns (uint256) {
         return holyCore.balanceOf(msg.sender);
     }
+
+    function availableSpecial() external view returns (uint256) {
+        return holyArtefact.balanceOf(msg.sender);
+    }
 }

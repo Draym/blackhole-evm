@@ -2,6 +2,7 @@ pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/utils/math/Math.sol";
 import "../utils/RandomUtils.sol";
 import "./NokaiTechnique.sol";
 
@@ -60,10 +61,10 @@ contract NokaiStats is AccessControl {
     function generateNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
         saveNokaiProfile(
             newNokaiId,
-            RandomUtils.rand(newNokaiId, 1000),
-            RandomUtils.rand(newNokaiId + 1, 100) * 2,
-            RandomUtils.rand(newNokaiId + 2, 100),
-            RandomUtils.rand(newNokaiId + 3, 100),
+            Math.min(RandomUtils.rand(newNokaiId, 1000) + 100, 1000),
+            Math.min(RandomUtils.rand(newNokaiId + 1, 100) * 2 + 10, 2200),
+            Math.min(RandomUtils.rand(newNokaiId + 2, 100) + 10, 100),
+            Math.min(RandomUtils.rand(newNokaiId + 3, 100) + 20, 100),
             RandomUtils.rand(newNokaiId + 4, 10)
         );
     }
@@ -71,10 +72,10 @@ contract NokaiStats is AccessControl {
     function generateHighNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
         saveNokaiProfile(
             newNokaiId,
-            RandomUtils.rand(newNokaiId, 1000) / 2 + 500,
-            RandomUtils.rand(newNokaiId + 1, 100) + 100,
-            RandomUtils.rand(newNokaiId + 2, 100) / 2 + 50,
-            RandomUtils.rand(newNokaiId + 3, 100) / 2 + 50,
+            Math.min(RandomUtils.rand(newNokaiId, 1000) / 2 + 500, 1000),
+            Math.min(RandomUtils.rand(newNokaiId + 1, 100) + 100, 200),
+            Math.min(RandomUtils.rand(newNokaiId + 2, 100) / 2 + 50, 100),
+            Math.min(RandomUtils.rand(newNokaiId + 3, 100) / 2 + 50, 100),
             5
         );
     }
