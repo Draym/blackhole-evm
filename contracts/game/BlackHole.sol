@@ -31,6 +31,7 @@ contract BlackHole is AccessControl {
         bool discovered;
     }
 
+    mapping(address => uint256) private userTerritoryCount;
     mapping(uint256 => Territory) private blackhole;
 
     constructor(uint16 _width, uint16 _height)  {
@@ -75,15 +76,7 @@ contract BlackHole is AccessControl {
         emit ExtractorUpgraded(x, y, by, blackhole[pos].extractor.level);
     }
 
-    function conquestAfterBattle(uint16 x, uint16 y, address newOwner) external onlyRole(GAME_MANAGER_ROLE) {
-        uint256 pos = (y * maxX) + x;
-        require(blackhole[pos].nokai == 0, "target slot is still defended by a Nokai.");
-        address previousOwner = blackhole[pos].owner;
-
-        emit SlotConquered(x, y, previousOwner, newOwner);
-    }
-
-    function conquestAfterMove(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address newOwner) external onlyRole(GAME_MANAGER_ROLE) {
+    function conquest(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address newOwner) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 from = (toY * maxX) + toX;
         uint256 to = (toY * maxX) + toX;
         require(blackhole[from].owner != blackhole[to].owner, "current and target slot are from the same owner.");
@@ -91,6 +84,9 @@ contract BlackHole is AccessControl {
         require(blackhole[from].nokai != 0, "current slot does not have any Nokai to move.");
 
         address previousOwner = blackhole[to].owner;
+
+        userTerritoryCount[previousOwner] = userTerritoryCount[previousOwner] > 0 ? userTerritoryCount[previousOwner] - 1 : 0;
+        userTerritoryCount[newOwner] += 1;
 
         blackhole[to].nokai = blackhole[from].nokai;
         blackhole[to].owner = newOwner;
@@ -162,12 +158,16 @@ contract BlackHole is AccessControl {
         }
     }
 
-    function get(uint16 x, uint16 y) external view returns (Territory memory) {
-        return blackhole[(y * maxX) + x];
+    function territoryCount(address user) external view returns(uint256) {
+        return userTerritoryCount[user];
     }
 
     function extractorCostAt(uint16 x, uint16 y) external view returns (uint256) {
         return blackhole[(y * maxX) + x].extractor.cost;
+    }
+
+    function get(uint16 x, uint16 y) external view returns (Territory memory) {
+        return blackhole[(y * maxX) + x];
     }
 
     function getBlackHole() external view returns (Territory[] memory) {
