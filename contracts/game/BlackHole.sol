@@ -10,9 +10,9 @@ contract BlackHole is AccessControl {
 
     uint16 maxX;
     uint16 maxY;
-    uint256 maxSlot;
+    uint256 totalPos;
 
-    struct Slot {
+    struct Territory {
         uint16 x;
         uint16 y;
         uint256 darkEnergy;
@@ -25,15 +25,15 @@ contract BlackHole is AccessControl {
         bool discovered;
     }
 
-    mapping(uint256 => Slot) private blackhole;
+    mapping(uint256 => Territory) private blackhole;
 
     constructor(uint16 _width, uint16 _height)  {
         maxX = _width;
         maxY = _height;
-        maxSlot = maxX * maxY;
+        totalPos = maxX * maxY;
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
 
-        blackhole[((maxY / 2) * maxX) + maxX / 2] = Slot({
+        blackhole[((maxY / 2) * maxX) + maxX / 2] = Territory({
         x : maxX / 2,
         y : maxY / 2,
         darkEnergy : 10,
@@ -45,6 +45,12 @@ contract BlackHole is AccessControl {
         owner : address(0),
         discovered : true
         });
+    }
+
+    function upgradeExtractor(uint16 x, uint16 y, address by) external proxyOnlyRole(GAME_MANAGER_ROLE) {
+        uint256 pos = (toY * maxX) + toX;
+        require(blackhole[pos].owner == by, "you are not the owner of the specified territory.");
+        blackhole[pos].extractor += 1;
     }
 
     function conquestAfterBattle(uint16 x, uint16 y, address newOwner) external onlyRole(GAME_MANAGER_ROLE) {
@@ -99,10 +105,10 @@ contract BlackHole is AccessControl {
     function discoverSlot(uint16 x, uint16 y, address by) private {
         uint256 _position = (y * maxX) + x;
         uint256 wealth = 100;
-        if (wealth > maxSlot / 4 && wealth < (maxSlot / 4) * 3){
+        if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3){
             wealth = 200;
         }
-        if (wealth > ((maxSlot / 5) * 2) && wealth < (maxSlot / 5) * 3) {
+        if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
             wealth = 400;
         }
         uint256 darkMatter = RandomUtils.rand(_position, 1000) + wealth;
@@ -118,7 +124,7 @@ contract BlackHole is AccessControl {
             voidEssence = 0;
         }
         if (blackhole[_position].discovered == false) {
-            blackhole[_position] = Slot({
+            blackhole[_position] = Territory({
             x : x,
             y : y,
             darkEnergy : 0,
@@ -134,13 +140,13 @@ contract BlackHole is AccessControl {
         }
     }
 
-    function get(uint16 x, uint16 y) external view returns (Slot memory) {
+    function get(uint16 x, uint16 y) external view returns (Territory memory) {
         return blackhole[(y * maxX) + x];
     }
 
-    function getBlackHole() external view returns (Slot[] memory) {
+    function getBlackHole() external view returns (Territory[] memory) {
         uint256 max = maxY * maxX;
-        Slot[] memory _blackhole = new Slot[](max);
+        Territory[] memory _blackhole = new Territory[](max);
         for (uint256 i = 0; i < max; i++) {
             _blackhole[i] = blackhole[i];
         }
@@ -150,4 +156,5 @@ contract BlackHole is AccessControl {
     event SlotDiscovered(uint16 x, uint16 y, address by);
     event SlotConquered(uint16 x, uint16 y, address indexed previousOwner, address indexed newOwner);
     event NokaiMoved(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, uint256 indexed nokai, address indexed owner);
+    event ExtractorUpgraded(uint16 x, uint16 y, address by, uint256 level);
 }
