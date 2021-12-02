@@ -43,10 +43,18 @@ contract GameManager is Ownable {
      * Slot' Resource Actions
      */
     function upgradeExtractor(uint16 x, uint16 y) external {
-
+        collectResources(x, y);
+        uint256 cost = blackHole.extractorCostAt(x, y);
+        darkMatter.consume(msg.sender, cost);
+        plasmaEnergy.consume(msg.sender, cost / 2);
+        blackHole.upgradeExtractor(x, y, msg.sender);
     }
 
-    function collectResources(uint16 x, uint16 y) external {
-
+    function collectResources(uint16 x, uint16 y) public {
+        (uint256 _darkEnergy, uint256 _darkMatter, uint256 _plasmaEnergy, uint256 _voidEssence) = blackHole.completeExtraction(x, y, msg.sender);
+        darkEnergy.collect(msg.sender, _darkEnergy);
+        darkMatter.collect(msg.sender, _darkMatter);
+        plasmaEnergy.collect(msg.sender, _plasmaEnergy);
+        voidEssence.collect(msg.sender, _voidEssence);
     }
 }

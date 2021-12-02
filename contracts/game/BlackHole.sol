@@ -12,6 +12,12 @@ contract BlackHole is AccessControl {
     uint16 maxY;
     uint256 totalPos;
 
+    struct Extractor {
+        uint256 level;
+        uint256 cost;
+        uint256 lastExtract;
+    }
+
     struct Territory {
         uint16 x;
         uint16 y;
@@ -19,9 +25,8 @@ contract BlackHole is AccessControl {
         uint256 darkMatter;
         uint256 plasmaEnergy;
         uint256 voidEssence;
-        uint256 lastExtract;
+        Extractor extractor; // extract resources
         uint256 nokai;
-        uint256 extractor; // extract resources
         address owner;
         bool discovered;
     }
@@ -38,30 +43,36 @@ contract BlackHole is AccessControl {
         x : maxX / 2,
         y : maxY / 2,
         darkEnergy : 10,
-        darkMatter : 0,
-        plasmaEnergy : 0,
-        voidEssence : 0,
-        lastExtract: block.timestamp,
+        darkMatter : 100,
+        plasmaEnergy : 100,
+        voidEssence : 100,
+        extractor : Extractor({level : 1, cost : 1000, lastExtract : block.timestamp}),
         nokai : 0,
-        extractor : 1,
         owner : address(0),
         discovered : true
         });
     }
 
-    function completeExtraction(uint16 x, uint16 y, address by) external onlyRole(GAME_MANAGER_ROLE) {
+    function completeExtraction(uint16 x, uint16 y, address by) external onlyRole(GAME_MANAGER_ROLE) returns (uint256, uint256, uint256, uint256) {
         uint256 pos = (y * maxX) + x;
         require(blackhole[pos].owner == by, "you are not the owner of the specified territory.");
-        blackhole[pos].lastExtract = block.timestamp;
+        uint256 nbHours = (block.timestamp - blackhole[pos].extractor.lastExtract) / 3600;
+        blackhole[pos].extractor.lastExtract = block.timestamp;
+        uint256 _darkEnergy = blackhole[pos].darkEnergy != 0 ? blackhole[pos].darkEnergy * blackhole[pos].extractor.level * nbHours : 0;
+        uint256 _darkMatter = blackhole[pos].darkMatter != 0 ? blackhole[pos].darkMatter * blackhole[pos].extractor.level * nbHours : 0;
+        uint256 _plasmaEnergy = blackhole[pos].plasmaEnergy != 0 ? blackhole[pos].plasmaEnergy * blackhole[pos].extractor.level * nbHours : 0;
+        uint256 _voidEssence = blackhole[pos].voidEssence != 0 ? blackhole[pos].voidEssence * blackhole[pos].extractor.level * nbHours : 0;
         emit TerritoryExtracted(x, y, by);
+        return (_darkEnergy, _darkMatter, _plasmaEnergy, _voidEssence);
     }
 
     function upgradeExtractor(uint16 x, uint16 y, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 pos = (y * maxX) + x;
         require(blackhole[pos].owner == by, "you are not the owner of the specified territory.");
-        blackhole[pos].extractor += 1;
-        blackhole[pos].lastExtract = block.timestamp;
-        emit ExtractorUpgraded(x, y, by, blackhole[pos].extractor);
+        blackhole[pos].extractor.level += 1;
+        blackhole[pos].extractor.cost *= 2;
+        blackhole[pos].extractor.lastExtract = block.timestamp;
+        emit ExtractorUpgraded(x, y, by, blackhole[pos].extractor.level);
     }
 
     function conquestAfterBattle(uint16 x, uint16 y, address newOwner) external onlyRole(GAME_MANAGER_ROLE) {
@@ -116,7 +127,7 @@ contract BlackHole is AccessControl {
     function discoverSlot(uint16 x, uint16 y, address by) private {
         uint256 _position = (y * maxX) + x;
         uint256 wealth = 10;
-        if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3){
+        if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3) {
             wealth = 20;
         }
         if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
@@ -142,9 +153,8 @@ contract BlackHole is AccessControl {
             darkMatter : darkMatter,
             plasmaEnergy : plasmaEnergy,
             voidEssence : voidEssence / 10,
-            lastExtract: block.timestamp,
             nokai : 0,
-            extractor : 0,
+            extractor : Extractor({level : 0, cost : 500, lastExtract : block.timestamp}),
             owner : by,
             discovered : true
             });
@@ -154,6 +164,10 @@ contract BlackHole is AccessControl {
 
     function get(uint16 x, uint16 y) external view returns (Territory memory) {
         return blackhole[(y * maxX) + x];
+    }
+
+    function extractorCostAt(uint16 x, uint16 y) external view returns (uint256) {
+        return blackhole[(y * maxX) + x].extractor.cost;
     }
 
     function getBlackHole() external view returns (Territory[] memory) {
