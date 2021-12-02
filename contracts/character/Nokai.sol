@@ -8,7 +8,7 @@ import "./NokaiStats.sol";
 
 // SPDX-License-Identifier: MIT
 contract Nokai is ERC721Enumerable, AccessControl {
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    bytes32 public constant MINT_ROLE = keccak256("MINT_ROLE");
 
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
@@ -30,7 +30,7 @@ contract Nokai is ERC721Enumerable, AccessControl {
         return super.supportsInterface(interfaceId);
     }
 
-    function generateNokai(bool isRare) external onlyRole(MINTER_ROLE) returns (uint256) {
+    function generateNokai(bool isRare) external onlyRole(MINT_ROLE) returns (uint256) {
         require(isSetup == true, "mint is not available yet.");
         require(mintLocked == false, "mint has been locked.");
         _tokenIds.increment();

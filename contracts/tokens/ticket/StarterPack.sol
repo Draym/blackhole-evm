@@ -9,5 +9,6 @@ contract StarterPack is BuyableToken, BurnableToken, GiftableToken {
     constructor(uint256 cost) ERC20("StarterPack", "NEWBIE") {
         costPerUnit = cost;
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(WITHDRAW_ROLE, msg.sender);
     }
 }

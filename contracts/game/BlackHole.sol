@@ -5,7 +5,6 @@ import "../utils/RandomUtils.sol";
 
 // SPDX-License-Identifier: MIT
 contract BlackHole is AccessControl {
-    bytes32 public constant MODERATOR_ROLE = keccak256("MODERATOR_ROLE");
     bytes32 public constant GAME_MANAGER_ROLE = keccak256("GAME_MANAGER_ROLE");
 
     uint16 maxX;

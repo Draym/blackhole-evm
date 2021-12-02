@@ -10,5 +10,6 @@ contract HolyArtefact is BuyableToken, BurnableToken, CraftableToken, GiftableTo
     constructor(uint256 cost) ERC20("HolyArtefact", "GOD") {
         costPerUnit = cost;
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(WITHDRAW_ROLE, msg.sender);
     }
 }
