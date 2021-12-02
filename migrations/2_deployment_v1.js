@@ -129,5 +129,46 @@ module.exports = async function (deployer, network, accounts) {
     console.log("NokaiGacha: " + nokaiGacha.address)
     deployed.nokaiGacha = nokaiGacha.address
 
+
+    /** ROLES */
+    holyCore.grantRole(holyCore.MINT_ROLE, craftManager.address)
+    holyCore.grantRole(holyCore.BURN_ROLE, nokaiGacha.address)
+
+    holyArtefact.grantRole(holyArtefact.MINT_ROLE, craftManager.address)
+    holyArtefact.grantRole(holyArtefact.BURN_ROLE, nokaiGacha.address)
+
+    energyShock.grantRole(energyShock.MINT_ROLE, craftManager.address)
+    energyShock.grantRole(energyShock.BURN_ROLE, inventory.address)
+
+    lifeEssence.grantRole(lifeEssence.MINT_ROLE, craftManager.address)
+    lifeEssence.grantRole(lifeEssence.BURN_ROLE, inventory.address)
+
+    potionEssence.grantRole(potionEssence.MINT_ROLE, craftManager.address)
+    potionEssence.grantRole(potionEssence.BURN_ROLE, inventory.address)
+
+    darkEnergy.grantRole(potionEssence.BURN_ROLE, craftManager.address)
+    darkEnergy.grantRole(potionEssence.MINT_ROLE, gameManager.address)
+
+    darkMatter.grantRole(potionEssence.BURN_ROLE, craftManager.address)
+    darkMatter.grantRole(potionEssence.MINT_ROLE, gameManager.address)
+    darkMatter.grantRole(potionEssence.BURN_ROLE, gameManager.address)
+
+    plasmaEnergy.grantRole(potionEssence.BURN_ROLE, craftManager.address)
+    plasmaEnergy.grantRole(potionEssence.MINT_ROLE, gameManager.address)
+    plasmaEnergy.grantRole(potionEssence.BURN_ROLE, gameManager.address)
+
+    voidEssence.grantRole(potionEssence.BURN_ROLE, craftManager.address)
+    voidEssence.grantRole(potionEssence.MINT_ROLE, gameManager.address)
+
+    starterPack.grantRole(starterPack.BURN_ROLE, nokaiGacha.address)
+
+    nokai.grantRole(nokai.MINT_ROLE, nokaiGacha.address)
+
+    nokaiStats.grantRole(nokaiStats.NOKAI_MANAGER_ROLE, nokai.address)
+    nokaiStats.grantRole(nokaiStats.GAME_MANAGER_ROLE, gameManager.address)
+    nokaiStats.grantRole(nokaiStats.INVENTORY_MANAGER_ROLE, inventory.address)
+
+    blackHole.grantRole(blackHole.GAME_MANAGER_ROLE, gameManager.address)
+
     await fs.writeFile(`deployed/${currentVersion}/result.json`, JSON.stringify(deployed))
 };
