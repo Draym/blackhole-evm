@@ -3,19 +3,26 @@ pragma solidity ^0.8.0;
 import "../tokens/ticket/HolyCore.sol";
 import "../tokens/Item.sol";
 import "../tokens/Resource.sol";
+import "../tokens/ticket/HolyArtefact.sol";
 
 // SPDX-License-Identifier: MIT
 contract CraftManager {
     HolyCore private holyCore;
-    Item private essencePotion;
+    HolyArtefact private holyArtefact;
+    Item private potionEssence;
+    Item private lifeEssence;
+    Item private energyShock;
     Resource private darkEnergy;
     Resource private darkMatter;
     Resource private plasmaEnergy;
     Resource private voidEssence;
 
-    constructor(address _holyCore, address _essencePotion, address _darkEnergy, address _darkMatter, address _plasmaEnergy, address _voidEssence) {
+    constructor(address _holyCore, address _holyArtefact, address _potionEssence, address _lifeEssence, address _energyShock, address _darkEnergy, address _darkMatter, address _plasmaEnergy, address _voidEssence) {
         holyCore = HolyCore(_holyCore);
-        essencePotion = Item(_essencePotion);
+        holyArtefact = HolyArtefact(_holyArtefact);
+        potionEssence = Item(_potionEssence);
+        lifeEssence = Item(_lifeEssence);
+        energyShock = Item(_energyShock);
         darkEnergy = Resource(_darkEnergy);
         darkMatter = Resource(_darkMatter);
         plasmaEnergy = Resource(_plasmaEnergy);
