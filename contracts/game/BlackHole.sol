@@ -87,10 +87,10 @@ contract BlackHole is AccessControl {
         address previousOwner = blackhole[to].owner;
 
         userTerritoryCount[previousOwner] = userTerritoryCount[previousOwner] > 0 ? userTerritoryCount[previousOwner] - 1 : 0;
-        userTerritoryCount[newOwner] += 1;
+        userTerritoryCount[by] += 1;
 
         blackhole[to].nokai = blackhole[from].nokai;
-        blackhole[to].owner = newOwner;
+        blackhole[to].owner = by;
         blackhole[from].nokai = 0;
 
         discover(toX, toY, blackhole[from].owner);
@@ -158,6 +158,10 @@ contract BlackHole is AccessControl {
             });
             emit SlotDiscovered(x, y, by);
         }
+    }
+
+    function nokaiAt(uint16 x, uint16 y) external view returns(uint256) {
+        return blackhole[(y * maxX) + x].nokai;
     }
 
     function territoryCount(address user) external view returns(uint256) {
