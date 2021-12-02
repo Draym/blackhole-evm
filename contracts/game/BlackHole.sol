@@ -76,9 +76,10 @@ contract BlackHole is AccessControl {
         emit ExtractorUpgraded(x, y, by, blackhole[pos].extractor.level);
     }
 
-    function conquest(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address newOwner) external onlyRole(GAME_MANAGER_ROLE) {
+    function conquest(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 from = (toY * maxX) + toX;
         uint256 to = (toY * maxX) + toX;
+        require(blackhole[from].owner == by, "You are not the owner of the original territory.");
         require(blackhole[from].owner != blackhole[to].owner, "current and target slot are from the same owner.");
         require(blackhole[to].nokai == 0, "target slot is still defended by a Nokai.");
         require(blackhole[from].nokai != 0, "current slot does not have any Nokai to move.");
@@ -94,12 +95,13 @@ contract BlackHole is AccessControl {
 
         discover(toX, toY, blackhole[from].owner);
         emit NokaiMoved(fromX, fromY, toX, toY, blackhole[to].nokai, blackhole[from].owner);
-        emit SlotConquered(toX, toY, previousOwner, newOwner);
+        emit SlotConquered(toX, toY, previousOwner, by);
     }
 
-    function move(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY) external onlyRole(GAME_MANAGER_ROLE) {
+    function move(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 from = (toY * maxX) + toX;
         uint256 to = (toY * maxX) + toX;
+        require(blackhole[from].owner == by, "You are not the owner of the original territory.");
         require(blackhole[from].owner == blackhole[to].owner, "current and target slot are not from the same owner.");
         require(blackhole[from].nokai != 0, "current slot does not have any Nokai to move.");
         require(blackhole[to].nokai == 0, "target slot already host a Nokai.");
