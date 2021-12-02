@@ -7,6 +7,7 @@ import "./BlackHole.sol";
 /**
  * Spawn PNJ in the map randomly through community events. If beaten player gains resources.
  */
+// SPDX-License-Identifier: MIT
 contract MonsterManager is AccessControl {
     bytes32 public constant GENERATOR_ROLE = keccak256("GENERATOR_ROLE");
     bytes32 public constant GAME_MANAGER_ROLE = keccak256("GAME_MANAGER_ROLE");
@@ -45,14 +46,14 @@ contract MonsterManager is AccessControl {
         for (uint256 i = 0; i < totalMonsters; i++) {
             _monsters[i] = monsters[i];
         }
-        return _blackhole;
+        return _monsters;
     }
 
-    function atPosition(uint16 x, uint16 y) external returns (Monster memory) {
+    function atPosition(uint16 x, uint16 y) external view returns (Monster memory) {
         return monsters[pos_to_monster[(y * x) + x]];
     }
 
-    function byId(uint256 monsterId) external returns (Monster memory) {
+    function byId(uint256 monsterId) external view returns (Monster memory) {
         return monsters[monsterId];
     }
 }
