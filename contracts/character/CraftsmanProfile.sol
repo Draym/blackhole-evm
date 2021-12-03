@@ -15,6 +15,10 @@ contract CraftsmanProfile is AccessControl {
 
     mapping(address => Stats) private _stats;
 
+    constructor() {
+        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+    }
+
     function addExperience(uint256 amount, address user) external onlyRole(CRAFT_MANAGER_ROLE) {
         if (!_stats[user].setup) {
             _stats[user] = Stats({
