@@ -178,10 +178,10 @@ contract BlackHole is AccessControl {
         uint256 pos = (y * maxX) + x;
         uint256 wealth = 10;
         if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3) {
-            wealth = 20;
+            wealth = 40;
         }
         if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
-            wealth = 40;
+            wealth = 80;
         }
         uint256 darkMatter = RandomUtils._rand(pos, 100) + wealth;
         uint256 plasmaEnergy = RandomUtils._rand(pos + 1, 100) + wealth;

@@ -2,6 +2,7 @@
 const Nokai = artifacts.require('Nokai')
 const NokaiStats = artifacts.require('NokaiStats')
 const NokaiTechnique = artifacts.require('NokaiTechnique')
+const CraftsmanProfile = artifacts.require('CraftsmanProfile')
 /** Game management */
 const BattleLogic = artifacts.require('BattleLogic')
 const BlackHole = artifacts.require('BlackHole')
@@ -84,6 +85,11 @@ module.exports = async function (deployer, network, accounts) {
     deployed.starterPack = starterPack.address
 
     /** Characters */
+    await deployer.deploy(CraftsmanProfile)
+    let craftsmanProfile = await CraftsmanProfile.deployed()
+    console.log("CraftsmanProfile: " + craftsmanProfile.address)
+    deployed.craftsmanProfile = craftsmanProfile.address
+
     await deployer.deploy(NokaiTechnique)
     let nokaiTechnique = await NokaiTechnique.deployed()
     console.log("NokaiTechnique: " + nokaiTechnique.address)
@@ -110,7 +116,7 @@ module.exports = async function (deployer, network, accounts) {
     console.log("BlackHole: " + blackHole.address)
     deployed.blackHole = blackHole.address
 
-    await deployer.deploy(CraftManager, holyCore.address, holyArtefact.address, potionEssence.address, lifeEssence.address, energyShock.address, darkEnergy.address, darkMatter.address, plasmaEnergy.address, voidEssence.address)
+    await deployer.deploy(CraftManager, craftsmanProfile.address, holyCore.address, holyArtefact.address, potionEssence.address, lifeEssence.address, energyShock.address, darkEnergy.address, darkMatter.address, plasmaEnergy.address, voidEssence.address)
     let craftManager = await CraftManager.deployed()
     console.log("CraftManager: " + craftManager.address)
     deployed.craftManager = craftManager.address
@@ -170,10 +176,13 @@ module.exports = async function (deployer, network, accounts) {
     await nokaiStats.grantRole(await nokaiStats.GAME_MANAGER_ROLE(), gameManager.address)
     await nokaiStats.grantRole(await nokaiStats.INVENTORY_MANAGER_ROLE(), inventory.address)
 
+    await craftsmanProfile.grantRole(await craftsmanProfile.CRAFT_MANAGER_ROLE(), craftManager.address)
+
     await blackHole.grantRole(await blackHole.GAME_MANAGER_ROLE(), gameManager.address)
 
     let path = `deployed/${currentVersion}`;
-    await fs.mkdir(path, { recursive: true }, (err) => {});
+    await fs.mkdir(path, {recursive: true}, (err) => {
+    });
 
     await fs.writeFile(`${path}/result.json`, JSON.stringify(deployed))
     await fs.copyFile("build/contracts/EnergyShock.json", `${path}/EnergyShock.json`);
@@ -186,6 +195,7 @@ module.exports = async function (deployer, network, accounts) {
     await fs.copyFile("build/contracts/HolyArtefact.json", `${path}/HolyArtefact.json`);
     await fs.copyFile("build/contracts/HolyCore.json", `${path}/HolyCore.json`);
     await fs.copyFile("build/contracts/StarterPack.json", `${path}/StarterPack.json`);
+    await fs.copyFile("build/contracts/CraftsmanProfile.json", `${path}/CraftsmanProfile.json`);
     await fs.copyFile("build/contracts/NokaiTechnique.json", `${path}/NokaiTechnique.json`);
     await fs.copyFile("build/contracts/NokaiStats.json", `${path}/NokaiStats.json`);
     await fs.copyFile("build/contracts/Nokai.json", `${path}/Nokai.json`);
