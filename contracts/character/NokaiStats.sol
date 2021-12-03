@@ -212,14 +212,14 @@ contract NokaiStats is AccessControl {
         emit NokaiEnergized(nokaiId);
     }
 
-    function didAction(uint256 nokaiId) external onlyRole(GAME_MANAGER_ROLE) {
+    function didAction(uint256 nokaiId, uint256 _pa) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 currentPa = calculatePa(nokaiId);
         profiles[nokaiId].lastPaSet = block.timestamp;
-        if (currentPa - 1 <= 0) {
+        if (currentPa - _pa <= 0) {
             profiles[nokaiId].currentPa = 0;
             emit NokaiEmptyEnergy(nokaiId);
         } else {
-            profiles[nokaiId].currentPa = currentPa - 1;
+            profiles[nokaiId].currentPa = currentPa - _pa;
         }
     }
 

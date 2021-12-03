@@ -7,9 +7,9 @@ import "../utils/RandomUtils.sol";
 contract BlackHole is AccessControl {
     bytes32 public constant GAME_MANAGER_ROLE = keccak256("GAME_MANAGER_ROLE");
 
-    uint16 maxX;
-    uint16 maxY;
-    uint256 totalPos;
+    uint16 public maxX;
+    uint16 public maxY;
+    uint256 public totalPos;
 
     struct Extractor {
         uint256 level;

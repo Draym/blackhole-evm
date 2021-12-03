@@ -46,6 +46,8 @@ contract GameManager is Ownable {
         require(nokaiId != 0, "There is no Nokai on the selected territory.");
         require(nokai.ownerOf(nokaiId) == msg.sender, "Your are not the owner of the selected Nokai");
         (uint16 targetX, uint16 targetY) = getPos(fromX, fromY, target);
+        verifyPos(targetX, targetY, blackHole.maxX(), blackHole.maxY());
+        nokaiStats.didAction(nokaiId, 1);
         blackHole.conquest(fromX, fromY, targetX, targetY, msg.sender);
     }
 
@@ -55,6 +57,7 @@ contract GameManager is Ownable {
         require(nokai.ownerOf(attackerId) == msg.sender, "Your are not the owner of the selected Nokai");
 
         (uint16 targetX, uint16 targetY) = getPos(fromX, fromY, target);
+        verifyPos(targetX, targetY, blackHole.maxX(), blackHole.maxY());
 
         uint256 defenderId = blackHole.nokaiAt(targetX, targetY);
         require(attackerId != 0, "There is no Nokai on the target territory.");
@@ -65,15 +68,24 @@ contract GameManager is Ownable {
         nokaiStats.damage(attackerId, attackerHp);
         nokaiStats.damage(defenderId, defenderHp);
 
+        nokaiStats.didAction(attackerId, 1);
         blackHole.conquest(fromX, fromY, targetX, targetY, msg.sender);
     }
 
     function teleport(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY) external {
         uint256 nokaiId = blackHole.nokaiAt(fromX, fromY);
+        verifyPos(toX, toY, blackHole.maxX(), blackHole.maxY());
         require(nokaiId != 0, "There is no Nokai on the selected territory.");
         require(nokai.ownerOf(nokaiId) == msg.sender, "your are not the owner of the selected Nokai");
-        nokaiStats.didAction(nokaiId);
+        nokaiStats.didAction(nokaiId, 5);
         blackHole.move(fromX, fromY, toX, toY, msg.sender);
+    }
+
+    function verifyPos(uint16 x, uint16 y, uint16 maxX, uint16 maxY) internal pure {
+        require(x >= 0, "position out of board");
+        require(x < maxX, "position out of board");
+        require(y >= 0, "position out of board");
+        require(y < maxY, "position out of board");
     }
 
     function getPos(uint16 fromX, uint16 fromY, uint16 target) internal pure returns (uint16, uint16) {
