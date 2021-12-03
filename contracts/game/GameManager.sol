@@ -52,7 +52,7 @@ contract GameManager is Ownable {
         blackHole.conquest(fromX, fromY, targetX, targetY, msg.sender);
     }
 
-    function conquer(uint16 fromX, uint16 fromY, uint16 target) external {
+    function conquer(uint16 fromX, uint16 fromY, uint16 target) external returns (uint256, bool) {
         _verifyPos(fromX, fromY, blackHole.maxX(), blackHole.maxY());
         uint256 attackerId = blackHole.nokaiAt(fromX, fromY);
         require(attackerId != 0, "There is no Nokai on the selected territory.");
@@ -65,7 +65,7 @@ contract GameManager is Ownable {
         require(attackerId != 0, "There is no Nokai on the target territory.");
         require(nokai.ownerOf(attackerId) != msg.sender, "Your are the owner of the target Nokai");
 
-        (, uint256 attackerHp, uint256 defenderHp) = battleLogic.battle(nokaiStats.profile(attackerId), nokaiStats.profile(attackerId));
+        (uint256 turns, uint256 attackerHp, uint256 defenderHp) = battleLogic.battle(nokaiStats.profile(attackerId), nokaiStats.profile(attackerId));
 
         nokaiStats.damage(attackerId, attackerHp);
         nokaiStats.damage(defenderId, defenderHp);
@@ -77,6 +77,7 @@ contract GameManager is Ownable {
         } else if (attackerHp == 0) {
             blackHole.withdrawDeadNokai(fromX, fromY, attackerId);
         }
+        return (turns, defenderHp == 0);
     }
 
     function teleport(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY) external {
