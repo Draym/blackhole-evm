@@ -28,7 +28,9 @@ const currentVersion = "v1";
 
 module.exports = async function (deployer, network, accounts) {
 
-    let deployed = {}
+    let deployed = {
+        version: currentVersion
+    }
 
     /** TOKENS */
     await deployer.deploy(EnergyShock)
@@ -66,17 +68,17 @@ module.exports = async function (deployer, network, accounts) {
     console.log("VoidEssence: " + voidEssence.address)
     deployed.voidEssence = voidEssence.address
 
-    await deployer.deploy(HolyArtefact)
+    await deployer.deploy(HolyArtefact, "40000000000000000")
     let holyArtefact = await HolyArtefact.deployed()
     console.log("HolyArtefact: " + holyArtefact.address)
     deployed.holyArtefact = holyArtefact.address
 
-    await deployer.deploy(HolyCore)
+    await deployer.deploy(HolyCore, "10000000000000000")
     let holyCore = await HolyCore.deployed()
     console.log("HolyCore: " + holyCore.address)
     deployed.holyCore = holyCore.address
 
-    await deployer.deploy(StarterPack)
+    await deployer.deploy(StarterPack, "100000000000000000")
     let starterPack = await StarterPack.deployed()
     console.log("StarterPack: " + starterPack.address)
     deployed.starterPack = starterPack.address
@@ -131,44 +133,66 @@ module.exports = async function (deployer, network, accounts) {
 
 
     /** ROLES */
-    holyCore.grantRole(holyCore.MINT_ROLE, craftManager.address)
-    holyCore.grantRole(holyCore.BURN_ROLE, nokaiGacha.address)
+    await holyCore.grantRole(await holyCore.MINT_ROLE(), craftManager.address)
+    await holyCore.grantRole(await holyCore.BURN_ROLE(), nokaiGacha.address)
 
-    holyArtefact.grantRole(holyArtefact.MINT_ROLE, craftManager.address)
-    holyArtefact.grantRole(holyArtefact.BURN_ROLE, nokaiGacha.address)
+    await holyArtefact.grantRole(await holyArtefact.MINT_ROLE(), craftManager.address)
+    await holyArtefact.grantRole(await holyArtefact.BURN_ROLE(), nokaiGacha.address)
 
-    energyShock.grantRole(energyShock.MINT_ROLE, craftManager.address)
-    energyShock.grantRole(energyShock.BURN_ROLE, inventory.address)
+    await energyShock.grantRole(await energyShock.MINT_ROLE(), craftManager.address)
+    await energyShock.grantRole(await energyShock.BURN_ROLE(), inventory.address)
 
-    lifeEssence.grantRole(lifeEssence.MINT_ROLE, craftManager.address)
-    lifeEssence.grantRole(lifeEssence.BURN_ROLE, inventory.address)
+    await lifeEssence.grantRole(await lifeEssence.MINT_ROLE(), craftManager.address)
+    await lifeEssence.grantRole(await lifeEssence.BURN_ROLE(), inventory.address)
 
-    potionEssence.grantRole(potionEssence.MINT_ROLE, craftManager.address)
-    potionEssence.grantRole(potionEssence.BURN_ROLE, inventory.address)
+    await potionEssence.grantRole(await potionEssence.MINT_ROLE(), craftManager.address)
+    await potionEssence.grantRole(await potionEssence.BURN_ROLE(), inventory.address)
 
-    darkEnergy.grantRole(potionEssence.BURN_ROLE, craftManager.address)
-    darkEnergy.grantRole(potionEssence.MINT_ROLE, gameManager.address)
+    await darkEnergy.grantRole(await potionEssence.BURN_ROLE(), craftManager.address)
+    await darkEnergy.grantRole(await potionEssence.MINT_ROLE(), gameManager.address)
 
-    darkMatter.grantRole(potionEssence.BURN_ROLE, craftManager.address)
-    darkMatter.grantRole(potionEssence.MINT_ROLE, gameManager.address)
-    darkMatter.grantRole(potionEssence.BURN_ROLE, gameManager.address)
+    await darkMatter.grantRole(await potionEssence.BURN_ROLE(), craftManager.address)
+    await darkMatter.grantRole(await potionEssence.MINT_ROLE(), gameManager.address)
+    await darkMatter.grantRole(await potionEssence.BURN_ROLE(), gameManager.address)
 
-    plasmaEnergy.grantRole(potionEssence.BURN_ROLE, craftManager.address)
-    plasmaEnergy.grantRole(potionEssence.MINT_ROLE, gameManager.address)
-    plasmaEnergy.grantRole(potionEssence.BURN_ROLE, gameManager.address)
+    await plasmaEnergy.grantRole(await potionEssence.BURN_ROLE(), craftManager.address)
+    await plasmaEnergy.grantRole(await potionEssence.MINT_ROLE(), gameManager.address)
+    await plasmaEnergy.grantRole(await potionEssence.BURN_ROLE(), gameManager.address)
 
-    voidEssence.grantRole(potionEssence.BURN_ROLE, craftManager.address)
-    voidEssence.grantRole(potionEssence.MINT_ROLE, gameManager.address)
+    await voidEssence.grantRole(await potionEssence.BURN_ROLE(), craftManager.address)
+    await voidEssence.grantRole(await potionEssence.MINT_ROLE(), gameManager.address)
 
-    starterPack.grantRole(starterPack.BURN_ROLE, nokaiGacha.address)
+    await starterPack.grantRole(await starterPack.BURN_ROLE(), nokaiGacha.address)
 
-    nokai.grantRole(nokai.MINT_ROLE, nokaiGacha.address)
+    await nokai.grantRole(await nokai.MINT_ROLE(), nokaiGacha.address)
 
-    nokaiStats.grantRole(nokaiStats.NOKAI_MANAGER_ROLE, nokai.address)
-    nokaiStats.grantRole(nokaiStats.GAME_MANAGER_ROLE, gameManager.address)
-    nokaiStats.grantRole(nokaiStats.INVENTORY_MANAGER_ROLE, inventory.address)
+    await nokaiStats.grantRole(await nokaiStats.NOKAI_MANAGER_ROLE(), nokai.address)
+    await nokaiStats.grantRole(await nokaiStats.GAME_MANAGER_ROLE(), gameManager.address)
+    await nokaiStats.grantRole(await nokaiStats.INVENTORY_MANAGER_ROLE(), inventory.address)
 
-    blackHole.grantRole(blackHole.GAME_MANAGER_ROLE, gameManager.address)
+    await blackHole.grantRole(await blackHole.GAME_MANAGER_ROLE(), gameManager.address)
 
-    await fs.writeFile(`deployed/${currentVersion}/result.json`, JSON.stringify(deployed))
+    let path = `deployed/${currentVersion}`;
+    await fs.mkdir(path, { recursive: true }, (err) => {});
+
+    await fs.writeFile(`${path}/result.json`, JSON.stringify(deployed))
+    await fs.copyFile("build/contracts/EnergyShock.json", `${path}/EnergyShock.json`);
+    await fs.copyFile("build/contracts/LifeEssence.json", `${path}/LifeEssence.json`);
+    await fs.copyFile("build/contracts/PotionEssence.json", `${path}/PotionEssence.json`);
+    await fs.copyFile("build/contracts/DarkEnergy.json", `${path}/DarkEnergy.json`);
+    await fs.copyFile("build/contracts/DarkMatter.json", `${path}/DarkMatter.json`);
+    await fs.copyFile("build/contracts/PlasmaEnergy.json", `${path}/PlasmaEnergy.json`);
+    await fs.copyFile("build/contracts/VoidEssence.json", `${path}/VoidEssence.json`);
+    await fs.copyFile("build/contracts/HolyArtefact.json", `${path}/HolyArtefact.json`);
+    await fs.copyFile("build/contracts/HolyCore.json", `${path}/HolyCore.json`);
+    await fs.copyFile("build/contracts/StarterPack.json", `${path}/StarterPack.json`);
+    await fs.copyFile("build/contracts/NokaiTechnique.json", `${path}/NokaiTechnique.json`);
+    await fs.copyFile("build/contracts/NokaiStats.json", `${path}/NokaiStats.json`);
+    await fs.copyFile("build/contracts/Nokai.json", `${path}/Nokai.json`);
+    await fs.copyFile("build/contracts/BattleLogic.json", `${path}/BattleLogic.json`);
+    await fs.copyFile("build/contracts/BlackHole.json", `${path}/BlackHole.json`);
+    await fs.copyFile("build/contracts/CraftManager.json", `${path}/CraftManager.json`);
+    await fs.copyFile("build/contracts/GameManager.json", `${path}/GameManager.json`);
+    await fs.copyFile("build/contracts/Inventory.json", `${path}/Inventory.json`);
+    await fs.copyFile("build/contracts/NokaiGacha.json", `${path}/NokaiGacha.json`);
 };
