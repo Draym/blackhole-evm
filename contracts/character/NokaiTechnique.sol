@@ -19,36 +19,4 @@ contract NokaiTechnique {
     function get(uint256 _newNokaiId) external view returns (Technique) {
         return Technique(uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, _newNokaiId))) % 10);
     }
-
-    function specialist() external pure returns (uint256) {
-        return 75;
-    }
-
-    function guardian() external pure returns (uint256) {
-        return 40;
-    }
-
-    function glutton() external pure returns (uint256) {
-        return 30;
-    }
-
-    function buffoon() external pure returns (uint256) {
-        return 20;
-    }
-
-    function destroyer() external pure returns (uint256) {
-        return 50;
-    }
-
-    function deadly() external pure returns (uint256) {
-        return 40;
-    }
-
-    function authority() external pure returns (uint256) {
-        return 1;
-    }
-
-    function revenger() external pure returns (uint256) {
-        return 100;
-    }
 }
