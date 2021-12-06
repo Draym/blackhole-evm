@@ -58,16 +58,16 @@ contract Nokai is ERC721Enumerable, AccessControl {
         emit NokaiUpgraded(nokaiId, msg.sender);
     }
 
-    function setup(uint256 nbLegendary) external onlyRole(DEFAULT_ADMIN_ROLE) {
+    function setup(uint256 nbGods) external onlyRole(DEFAULT_ADMIN_ROLE) {
         require(isSetup == false, "setup already completed.");
 
-        for (uint256 i = 0; i < nbLegendary; i++) {
+        isSetup = true;
+        for (uint256 i = 0; i < nbGods; i++) {
             _tokenIds.increment();
             uint256 _newNokaiId = _tokenIds.current();
             _safeMint(msg.sender, _newNokaiId);
-            nokaiStats.generateLegendNokai(_newNokaiId);
+            nokaiStats.generateGodNokai(_newNokaiId);
         }
-        isSetup = true;
     }
 
     function lockMint() external onlyRole(DEFAULT_ADMIN_ROLE) {

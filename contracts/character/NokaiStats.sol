@@ -17,7 +17,8 @@ contract NokaiStats is AccessControl {
         Champion,
         Overlord,
         Astral,
-        Legend
+        Legend,
+        God
     }
 
     enum StatType {
@@ -84,7 +85,7 @@ contract NokaiStats is AccessControl {
         );
     }
 
-    function generateLegendNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
+    function generateGodNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
         _saveNokaiProfile(
             newNokaiId,
             RandomUtils._rand(newNokaiId, 100) + 900,
