@@ -30,7 +30,8 @@ const currentVersion = "v1";
 module.exports = async function (deployer, network, accounts) {
 
     let deployed = {
-        version: currentVersion
+        version: currentVersion,
+        network: network
     }
 
     /** TOKENS */
@@ -180,9 +181,9 @@ module.exports = async function (deployer, network, accounts) {
 
     await blackHole.grantRole(await blackHole.GAME_MANAGER_ROLE(), gameManager.address)
 
-    let path = `deployed/${currentVersion}`;
+    let path = `deployed/${currentVersion}/${network}`;
     await fs.mkdir(path, {recursive: true}, (err) => {
     });
 
     await fs.writeFile(`${path}/result.json`, JSON.stringify(deployed))
-};
+}

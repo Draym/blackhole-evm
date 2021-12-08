@@ -1,7 +1,8 @@
 const fs = require('fs').promises;
 const currentVersion = "v1";
+let network = "development";
 
-let path = `deployed/${currentVersion}`;
+let path = `deployed/${currentVersion}/${network}`;
 
 const migrate = async function () {
     await fs.mkdir(path, {recursive: true}, (err) => {
