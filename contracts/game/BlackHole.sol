@@ -232,10 +232,10 @@ contract BlackHole is AccessControl {
         return blackhole[(y * maxX) + x];
     }
 
-    function getBlackHole() external view returns (Territory[] memory) {
-        uint256 max = maxY * maxX;
-        Territory[] memory _blackhole = new Territory[](max);
-        for (uint256 i = 0; i < max; i++) {
+    function getBlackHole(uint256 from, uint256 to) external view returns (Territory[] memory) {
+        require(from >= 0 && to < totalPos, "invalid range request");
+        Territory[] memory _blackhole = new Territory[](to - from);
+        for (uint256 i = from; i < to; i++) {
             _blackhole[i] = blackhole[i];
         }
         return _blackhole;
