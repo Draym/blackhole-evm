@@ -232,11 +232,34 @@ contract BlackHole is AccessControl {
         return blackhole[(y * maxX) + x];
     }
 
-    function getBlackHole(uint256 from, uint256 to) external view returns (Territory[] memory) {
+    function getForRange(uint256 from, uint256 to) external view returns (Territory[] memory) {
         require(from >= 0 && to < totalPos, "invalid range request");
         Territory[] memory _blackhole = new Territory[](to - from);
         for (uint256 i = from; i < to; i++) {
             _blackhole[i] = blackhole[i];
+        }
+        return _blackhole;
+    }
+
+    function getFor(uint256[] calldata choices) external view returns (Territory[] memory) {
+        Territory[] memory _blackhole = new Territory[](choices.length);
+        for (uint256 i = 0; i < choices.length; i++) {
+            uint256 pos = choices[i];
+            if (pos >= 0 && pos < totalPos) {
+                _blackhole[i] = blackhole[pos];
+            }
+        }
+        return _blackhole;
+    }
+
+    function getForBox(uint256 startPos, uint256 endPos, uint256 startLine, uint256 endLine) external view returns (Territory[] memory) {
+        require(startPos < endPos && startPos >= 0 && endPos < maxX && startLine < endLine && startLine >= 0 && endLine < maxY, "invalid box request");
+        Territory[] memory _blackhole = new Territory[]((endPos - startPos) * (endLine - startLine));
+        uint256 i = 0;
+        for (uint256 line = startLine; line < endLine; line++) {
+            for (uint256 pos = startPos; pos < endPos; pos++) {
+                _blackhole[i++] = blackhole[(line * maxX) + pos];
+            }
         }
         return _blackhole;
     }

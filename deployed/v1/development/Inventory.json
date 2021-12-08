@@ -2810,10 +2810,10 @@
         2100
       ],
       "Inventory": [
-        8118
+        8287
       ],
       "Item": [
-        8766
+        8935
       ],
       "Math": [
         3216
@@ -2828,18 +2828,18 @@
         4941
       ],
       "RandomUtils": [
-        9100
+        9269
       ],
       "Strings": [
         3092
       ]
     },
-    "id": 8119,
+    "id": 8288,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7991,
+        "id": 8160,
         "literals": [
           "solidity",
           "^",
@@ -2852,10 +2852,10 @@
       {
         "absolutePath": "project:/contracts/tokens/Item.sol",
         "file": "../tokens/Item.sol",
-        "id": 7992,
+        "id": 8161,
         "nodeType": "ImportDirective",
-        "scope": 8119,
-        "sourceUnit": 8767,
+        "scope": 8288,
+        "sourceUnit": 8936,
         "src": "27:28:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2863,9 +2863,9 @@
       {
         "absolutePath": "project:/contracts/character/Nokai.sol",
         "file": "../character/Nokai.sol",
-        "id": 7993,
+        "id": 8162,
         "nodeType": "ImportDirective",
-        "scope": 8119,
+        "scope": 8288,
         "sourceUnit": 3752,
         "src": "57:32:29",
         "symbolAliases": [],
@@ -2877,20 +2877,20 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 8118,
+        "id": 8287,
         "linearizedBaseContracts": [
-          8118
+          8287
         ],
         "name": "Inventory",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 7996,
+            "id": 8165,
             "mutability": "mutable",
             "name": "nokaiStats",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "152:29:29",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2899,10 +2899,10 @@
               "typeString": "contract NokaiStats"
             },
             "typeName": {
-              "id": 7995,
+              "id": 8164,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 7994,
+                "id": 8163,
                 "name": "NokaiStats",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 4900,
@@ -2919,32 +2919,32 @@
           },
           {
             "constant": false,
-            "id": 7999,
+            "id": 8168,
             "mutability": "mutable",
             "name": "potionEssence",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "188:26:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$8766",
+              "typeIdentifier": "t_contract$_Item_$8935",
               "typeString": "contract Item"
             },
             "typeName": {
-              "id": 7998,
+              "id": 8167,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 7997,
+                "id": 8166,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 8766,
+                "referencedDeclaration": 8935,
                 "src": "188:4:29"
               },
-              "referencedDeclaration": 8766,
+              "referencedDeclaration": 8935,
               "src": "188:4:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$8766",
+                "typeIdentifier": "t_contract$_Item_$8935",
                 "typeString": "contract Item"
               }
             },
@@ -2952,32 +2952,32 @@
           },
           {
             "constant": false,
-            "id": 8002,
+            "id": 8171,
             "mutability": "mutable",
             "name": "lifeEssence",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "221:24:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$8766",
+              "typeIdentifier": "t_contract$_Item_$8935",
               "typeString": "contract Item"
             },
             "typeName": {
-              "id": 8001,
+              "id": 8170,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 8000,
+                "id": 8169,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 8766,
+                "referencedDeclaration": 8935,
                 "src": "221:4:29"
               },
-              "referencedDeclaration": 8766,
+              "referencedDeclaration": 8935,
               "src": "221:4:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$8766",
+                "typeIdentifier": "t_contract$_Item_$8935",
                 "typeString": "contract Item"
               }
             },
@@ -2985,32 +2985,32 @@
           },
           {
             "constant": false,
-            "id": 8005,
+            "id": 8174,
             "mutability": "mutable",
             "name": "energyShock",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "252:24:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$8766",
+              "typeIdentifier": "t_contract$_Item_$8935",
               "typeString": "contract Item"
             },
             "typeName": {
-              "id": 8004,
+              "id": 8173,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 8003,
+                "id": 8172,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 8766,
+                "referencedDeclaration": 8935,
                 "src": "252:4:29"
               },
-              "referencedDeclaration": 8766,
+              "referencedDeclaration": 8935,
               "src": "252:4:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$8766",
+                "typeIdentifier": "t_contract$_Item_$8935",
                 "typeString": "contract Item"
               }
             },
@@ -3018,11 +3018,11 @@
           },
           {
             "constant": false,
-            "id": 8008,
+            "id": 8177,
             "mutability": "mutable",
             "name": "healPerPotion",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "285:27:29",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3031,7 +3031,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 8006,
+              "id": 8175,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "285:7:29",
@@ -3042,7 +3042,7 @@
             },
             "value": {
               "hexValue": "313030",
-              "id": 8007,
+              "id": 8176,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -3060,11 +3060,11 @@
           },
           {
             "constant": false,
-            "id": 8011,
+            "id": 8180,
             "mutability": "mutable",
             "name": "paPerShock",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "319:22:29",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3073,7 +3073,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 8009,
+              "id": 8178,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "319:7:29",
@@ -3084,7 +3084,7 @@
             },
             "value": {
               "hexValue": "35",
-              "id": 8010,
+              "id": 8179,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -3102,23 +3102,23 @@
           },
           {
             "body": {
-              "id": 8046,
+              "id": 8215,
               "nodeType": "Block",
               "src": "451:188:29",
               "statements": [
                 {
                   "expression": {
-                    "id": 8026,
+                    "id": 8195,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8022,
+                      "id": 8191,
                       "name": "nokaiStats",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7996,
+                      "referencedDeclaration": 8165,
                       "src": "462:10:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_NokaiStats_$4900",
@@ -3130,11 +3130,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8024,
+                          "id": 8193,
                           "name": "_nokaiStats",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8013,
+                          "referencedDeclaration": 8182,
                           "src": "486:11:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3149,7 +3149,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 8023,
+                        "id": 8192,
                         "name": "NokaiStats",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -3160,7 +3160,7 @@
                           "typeString": "type(contract NokaiStats)"
                         }
                       },
-                      "id": 8025,
+                      "id": 8194,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3181,26 +3181,26 @@
                       "typeString": "contract NokaiStats"
                     }
                   },
-                  "id": 8027,
+                  "id": 8196,
                   "nodeType": "ExpressionStatement",
                   "src": "462:36:29"
                 },
                 {
                   "expression": {
-                    "id": 8032,
+                    "id": 8201,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8028,
+                      "id": 8197,
                       "name": "potionEssence",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7999,
+                      "referencedDeclaration": 8168,
                       "src": "509:13:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
@@ -3209,11 +3209,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8030,
+                          "id": 8199,
                           "name": "_potionEssence",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8015,
+                          "referencedDeclaration": 8184,
                           "src": "530:14:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3228,18 +3228,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 8029,
+                        "id": 8198,
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8766,
+                        "referencedDeclaration": 8935,
                         "src": "525:4:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$8766_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$8935_$",
                           "typeString": "type(contract Item)"
                         }
                       },
-                      "id": 8031,
+                      "id": 8200,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3250,36 +3250,36 @@
                       "src": "525:20:29",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "509:36:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$8766",
+                      "typeIdentifier": "t_contract$_Item_$8935",
                       "typeString": "contract Item"
                     }
                   },
-                  "id": 8033,
+                  "id": 8202,
                   "nodeType": "ExpressionStatement",
                   "src": "509:36:29"
                 },
                 {
                   "expression": {
-                    "id": 8038,
+                    "id": 8207,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8034,
+                      "id": 8203,
                       "name": "lifeEssence",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8002,
+                      "referencedDeclaration": 8171,
                       "src": "556:11:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
@@ -3288,11 +3288,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8036,
+                          "id": 8205,
                           "name": "_lifeEssence",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8017,
+                          "referencedDeclaration": 8186,
                           "src": "575:12:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3307,18 +3307,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 8035,
+                        "id": 8204,
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8766,
+                        "referencedDeclaration": 8935,
                         "src": "570:4:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$8766_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$8935_$",
                           "typeString": "type(contract Item)"
                         }
                       },
-                      "id": 8037,
+                      "id": 8206,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3329,36 +3329,36 @@
                       "src": "570:18:29",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "556:32:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$8766",
+                      "typeIdentifier": "t_contract$_Item_$8935",
                       "typeString": "contract Item"
                     }
                   },
-                  "id": 8039,
+                  "id": 8208,
                   "nodeType": "ExpressionStatement",
                   "src": "556:32:29"
                 },
                 {
                   "expression": {
-                    "id": 8044,
+                    "id": 8213,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8040,
+                      "id": 8209,
                       "name": "energyShock",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8005,
+                      "referencedDeclaration": 8174,
                       "src": "599:11:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
@@ -3367,11 +3367,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8042,
+                          "id": 8211,
                           "name": "_energyShock",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8019,
+                          "referencedDeclaration": 8188,
                           "src": "618:12:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3386,18 +3386,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 8041,
+                        "id": 8210,
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8766,
+                        "referencedDeclaration": 8935,
                         "src": "613:4:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$8766_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$8935_$",
                           "typeString": "type(contract Item)"
                         }
                       },
-                      "id": 8043,
+                      "id": 8212,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3408,39 +3408,39 @@
                       "src": "613:18:29",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "599:32:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$8766",
+                      "typeIdentifier": "t_contract$_Item_$8935",
                       "typeString": "contract Item"
                     }
                   },
-                  "id": 8045,
+                  "id": 8214,
                   "nodeType": "ExpressionStatement",
                   "src": "599:32:29"
                 }
               ]
             },
-            "id": 8047,
+            "id": 8216,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8020,
+              "id": 8189,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8013,
+                  "id": 8182,
                   "mutability": "mutable",
                   "name": "_nokaiStats",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8047,
+                  "scope": 8216,
                   "src": "362:19:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3449,7 +3449,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8012,
+                    "id": 8181,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "362:7:29",
@@ -3463,11 +3463,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8015,
+                  "id": 8184,
                   "mutability": "mutable",
                   "name": "_potionEssence",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8047,
+                  "scope": 8216,
                   "src": "383:22:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3476,7 +3476,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8014,
+                    "id": 8183,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "383:7:29",
@@ -3490,11 +3490,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8017,
+                  "id": 8186,
                   "mutability": "mutable",
                   "name": "_lifeEssence",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8047,
+                  "scope": 8216,
                   "src": "407:20:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3503,7 +3503,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8016,
+                    "id": 8185,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "407:7:29",
@@ -3517,11 +3517,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8019,
+                  "id": 8188,
                   "mutability": "mutable",
                   "name": "_energyShock",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8047,
+                  "scope": 8216,
                   "src": "429:20:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3530,7 +3530,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8018,
+                    "id": 8187,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "429:7:29",
@@ -3546,12 +3546,12 @@
               "src": "361:89:29"
             },
             "returnParameters": {
-              "id": 8021,
+              "id": 8190,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "451:0:29"
             },
-            "scope": 8118,
+            "scope": 8287,
             "src": "350:289:29",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3559,7 +3559,7 @@
           },
           {
             "body": {
-              "id": 8071,
+              "id": 8240,
               "nodeType": "Block",
               "src": "708:119:29",
               "statements": [
@@ -3568,7 +3568,7 @@
                     "arguments": [
                       {
                         "expression": {
-                          "id": 8057,
+                          "id": 8226,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -3579,7 +3579,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 8058,
+                        "id": 8227,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3593,11 +3593,11 @@
                         }
                       },
                       {
-                        "id": 8059,
+                        "id": 8228,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8051,
+                        "referencedDeclaration": 8220,
                         "src": "753:6:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -3617,32 +3617,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 8054,
+                        "id": 8223,
                         "name": "potionEssence",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7999,
+                        "referencedDeclaration": 8168,
                         "src": "719:13:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$8766",
+                          "typeIdentifier": "t_contract$_Item_$8935",
                           "typeString": "contract Item"
                         }
                       },
-                      "id": 8056,
+                      "id": 8225,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8765,
+                      "referencedDeclaration": 8934,
                       "src": "719:21:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256) external"
                       }
                     },
-                    "id": 8060,
+                    "id": 8229,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3657,7 +3657,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8061,
+                  "id": 8230,
                   "nodeType": "ExpressionStatement",
                   "src": "719:41:29"
                 },
@@ -3665,11 +3665,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8065,
+                        "id": 8234,
                         "name": "nokaiId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8049,
+                        "referencedDeclaration": 8218,
                         "src": "787:7:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -3681,17 +3681,17 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 8068,
+                        "id": 8237,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8066,
+                          "id": 8235,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8051,
+                          "referencedDeclaration": 8220,
                           "src": "796:6:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -3701,11 +3701,11 @@
                         "nodeType": "BinaryOperation",
                         "operator": "*",
                         "rightExpression": {
-                          "id": 8067,
+                          "id": 8236,
                           "name": "healPerPotion",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8008,
+                          "referencedDeclaration": 8177,
                           "src": "805:13:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -3731,18 +3731,18 @@
                         }
                       ],
                       "expression": {
-                        "id": 8062,
+                        "id": 8231,
                         "name": "nokaiStats",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7996,
+                        "referencedDeclaration": 8165,
                         "src": "771:10:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_NokaiStats_$4900",
                           "typeString": "contract NokaiStats"
                         }
                       },
-                      "id": 8064,
+                      "id": 8233,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3756,7 +3756,7 @@
                         "typeString": "function (uint256,uint256) external"
                       }
                     },
-                    "id": 8069,
+                    "id": 8238,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3771,30 +3771,30 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8070,
+                  "id": 8239,
                   "nodeType": "ExpressionStatement",
                   "src": "771:48:29"
                 }
               ]
             },
             "functionSelector": "d1df6dd1",
-            "id": 8072,
+            "id": 8241,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "healNokai",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8052,
+              "id": 8221,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8049,
+                  "id": 8218,
                   "mutability": "mutable",
                   "name": "nokaiId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8072,
+                  "scope": 8241,
                   "src": "666:15:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3803,7 +3803,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8048,
+                    "id": 8217,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "666:7:29",
@@ -3816,11 +3816,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8051,
+                  "id": 8220,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8072,
+                  "scope": 8241,
                   "src": "683:14:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3829,7 +3829,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8050,
+                    "id": 8219,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "683:7:29",
@@ -3844,12 +3844,12 @@
               "src": "665:33:29"
             },
             "returnParameters": {
-              "id": 8053,
+              "id": 8222,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "708:0:29"
             },
-            "scope": 8118,
+            "scope": 8287,
             "src": "647:180:29",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3857,7 +3857,7 @@
           },
           {
             "body": {
-              "id": 8091,
+              "id": 8260,
               "nodeType": "Block",
               "src": "882:90:29",
               "statements": [
@@ -3866,7 +3866,7 @@
                     "arguments": [
                       {
                         "expression": {
-                          "id": 8080,
+                          "id": 8249,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -3877,7 +3877,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 8081,
+                        "id": 8250,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3892,7 +3892,7 @@
                       },
                       {
                         "hexValue": "31",
-                        "id": 8082,
+                        "id": 8251,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3919,32 +3919,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 8077,
+                        "id": 8246,
                         "name": "lifeEssence",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8002,
+                        "referencedDeclaration": 8171,
                         "src": "893:11:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$8766",
+                          "typeIdentifier": "t_contract$_Item_$8935",
                           "typeString": "contract Item"
                         }
                       },
-                      "id": 8079,
+                      "id": 8248,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8765,
+                      "referencedDeclaration": 8934,
                       "src": "893:19:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256) external"
                       }
                     },
-                    "id": 8083,
+                    "id": 8252,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3959,7 +3959,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8084,
+                  "id": 8253,
                   "nodeType": "ExpressionStatement",
                   "src": "893:34:29"
                 },
@@ -3967,11 +3967,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8088,
+                        "id": 8257,
                         "name": "nokaiId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8074,
+                        "referencedDeclaration": 8243,
                         "src": "956:7:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -3987,18 +3987,18 @@
                         }
                       ],
                       "expression": {
-                        "id": 8085,
+                        "id": 8254,
                         "name": "nokaiStats",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7996,
+                        "referencedDeclaration": 8165,
                         "src": "938:10:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_NokaiStats_$4900",
                           "typeString": "contract NokaiStats"
                         }
                       },
-                      "id": 8087,
+                      "id": 8256,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4012,7 +4012,7 @@
                         "typeString": "function (uint256) external"
                       }
                     },
-                    "id": 8089,
+                    "id": 8258,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4027,30 +4027,30 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8090,
+                  "id": 8259,
                   "nodeType": "ExpressionStatement",
                   "src": "938:26:29"
                 }
               ]
             },
             "functionSelector": "e9944d48",
-            "id": 8092,
+            "id": 8261,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "reviveNokai",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8075,
+              "id": 8244,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8074,
+                  "id": 8243,
                   "mutability": "mutable",
                   "name": "nokaiId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8092,
+                  "scope": 8261,
                   "src": "856:15:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4059,7 +4059,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8073,
+                    "id": 8242,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "856:7:29",
@@ -4074,12 +4074,12 @@
               "src": "855:17:29"
             },
             "returnParameters": {
-              "id": 8076,
+              "id": 8245,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "882:0:29"
             },
-            "scope": 8118,
+            "scope": 8287,
             "src": "835:137:29",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -4087,7 +4087,7 @@
           },
           {
             "body": {
-              "id": 8116,
+              "id": 8285,
               "nodeType": "Block",
               "src": "1045:118:29",
               "statements": [
@@ -4096,7 +4096,7 @@
                     "arguments": [
                       {
                         "expression": {
-                          "id": 8102,
+                          "id": 8271,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -4107,7 +4107,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 8103,
+                        "id": 8272,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4121,11 +4121,11 @@
                         }
                       },
                       {
-                        "id": 8104,
+                        "id": 8273,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8096,
+                        "referencedDeclaration": 8265,
                         "src": "1088:6:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4145,32 +4145,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 8099,
+                        "id": 8268,
                         "name": "energyShock",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8005,
+                        "referencedDeclaration": 8174,
                         "src": "1056:11:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$8766",
+                          "typeIdentifier": "t_contract$_Item_$8935",
                           "typeString": "contract Item"
                         }
                       },
-                      "id": 8101,
+                      "id": 8270,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8765,
+                      "referencedDeclaration": 8934,
                       "src": "1056:19:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256) external"
                       }
                     },
-                    "id": 8105,
+                    "id": 8274,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4185,7 +4185,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8106,
+                  "id": 8275,
                   "nodeType": "ExpressionStatement",
                   "src": "1056:39:29"
                 },
@@ -4193,11 +4193,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8110,
+                        "id": 8279,
                         "name": "nokaiId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8094,
+                        "referencedDeclaration": 8263,
                         "src": "1126:7:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4209,17 +4209,17 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 8113,
+                        "id": 8282,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8111,
+                          "id": 8280,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8096,
+                          "referencedDeclaration": 8265,
                           "src": "1135:6:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -4229,11 +4229,11 @@
                         "nodeType": "BinaryOperation",
                         "operator": "*",
                         "rightExpression": {
-                          "id": 8112,
+                          "id": 8281,
                           "name": "paPerShock",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8011,
+                          "referencedDeclaration": 8180,
                           "src": "1144:10:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -4259,18 +4259,18 @@
                         }
                       ],
                       "expression": {
-                        "id": 8107,
+                        "id": 8276,
                         "name": "nokaiStats",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7996,
+                        "referencedDeclaration": 8165,
                         "src": "1106:10:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_NokaiStats_$4900",
                           "typeString": "contract NokaiStats"
                         }
                       },
-                      "id": 8109,
+                      "id": 8278,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4284,7 +4284,7 @@
                         "typeString": "function (uint256,uint256) external"
                       }
                     },
-                    "id": 8114,
+                    "id": 8283,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4299,30 +4299,30 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8115,
+                  "id": 8284,
                   "nodeType": "ExpressionStatement",
                   "src": "1106:49:29"
                 }
               ]
             },
             "functionSelector": "a1b6f96f",
-            "id": 8117,
+            "id": 8286,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "energizeNokai",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8097,
+              "id": 8266,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8094,
+                  "id": 8263,
                   "mutability": "mutable",
                   "name": "nokaiId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8117,
+                  "scope": 8286,
                   "src": "1003:15:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4331,7 +4331,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8093,
+                    "id": 8262,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1003:7:29",
@@ -4344,11 +4344,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8096,
+                  "id": 8265,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8117,
+                  "scope": 8286,
                   "src": "1020:14:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4357,7 +4357,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8095,
+                    "id": 8264,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1020:7:29",
@@ -4372,19 +4372,19 @@
               "src": "1002:33:29"
             },
             "returnParameters": {
-              "id": 8098,
+              "id": 8267,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1045:0:29"
             },
-            "scope": 8118,
+            "scope": 8287,
             "src": "980:183:29",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 8119,
+        "scope": 8288,
         "src": "126:1040:29"
       }
     ],
@@ -4442,10 +4442,10 @@
         2100
       ],
       "Inventory": [
-        8118
+        8287
       ],
       "Item": [
-        8766
+        8935
       ],
       "Math": [
         3216
@@ -4460,18 +4460,18 @@
         4941
       ],
       "RandomUtils": [
-        9100
+        9269
       ],
       "Strings": [
         3092
       ]
     },
-    "id": 8119,
+    "id": 8288,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7991,
+        "id": 8160,
         "literals": [
           "solidity",
           "^",
@@ -4484,10 +4484,10 @@
       {
         "absolutePath": "project:/contracts/tokens/Item.sol",
         "file": "../tokens/Item.sol",
-        "id": 7992,
+        "id": 8161,
         "nodeType": "ImportDirective",
-        "scope": 8119,
-        "sourceUnit": 8767,
+        "scope": 8288,
+        "sourceUnit": 8936,
         "src": "27:28:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -4495,9 +4495,9 @@
       {
         "absolutePath": "project:/contracts/character/Nokai.sol",
         "file": "../character/Nokai.sol",
-        "id": 7993,
+        "id": 8162,
         "nodeType": "ImportDirective",
-        "scope": 8119,
+        "scope": 8288,
         "sourceUnit": 3752,
         "src": "57:32:29",
         "symbolAliases": [],
@@ -4509,20 +4509,20 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 8118,
+        "id": 8287,
         "linearizedBaseContracts": [
-          8118
+          8287
         ],
         "name": "Inventory",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 7996,
+            "id": 8165,
             "mutability": "mutable",
             "name": "nokaiStats",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "152:29:29",
             "stateVariable": true,
             "storageLocation": "default",
@@ -4531,10 +4531,10 @@
               "typeString": "contract NokaiStats"
             },
             "typeName": {
-              "id": 7995,
+              "id": 8164,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 7994,
+                "id": 8163,
                 "name": "NokaiStats",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 4900,
@@ -4551,32 +4551,32 @@
           },
           {
             "constant": false,
-            "id": 7999,
+            "id": 8168,
             "mutability": "mutable",
             "name": "potionEssence",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "188:26:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$8766",
+              "typeIdentifier": "t_contract$_Item_$8935",
               "typeString": "contract Item"
             },
             "typeName": {
-              "id": 7998,
+              "id": 8167,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 7997,
+                "id": 8166,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 8766,
+                "referencedDeclaration": 8935,
                 "src": "188:4:29"
               },
-              "referencedDeclaration": 8766,
+              "referencedDeclaration": 8935,
               "src": "188:4:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$8766",
+                "typeIdentifier": "t_contract$_Item_$8935",
                 "typeString": "contract Item"
               }
             },
@@ -4584,32 +4584,32 @@
           },
           {
             "constant": false,
-            "id": 8002,
+            "id": 8171,
             "mutability": "mutable",
             "name": "lifeEssence",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "221:24:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$8766",
+              "typeIdentifier": "t_contract$_Item_$8935",
               "typeString": "contract Item"
             },
             "typeName": {
-              "id": 8001,
+              "id": 8170,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 8000,
+                "id": 8169,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 8766,
+                "referencedDeclaration": 8935,
                 "src": "221:4:29"
               },
-              "referencedDeclaration": 8766,
+              "referencedDeclaration": 8935,
               "src": "221:4:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$8766",
+                "typeIdentifier": "t_contract$_Item_$8935",
                 "typeString": "contract Item"
               }
             },
@@ -4617,32 +4617,32 @@
           },
           {
             "constant": false,
-            "id": 8005,
+            "id": 8174,
             "mutability": "mutable",
             "name": "energyShock",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "252:24:29",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$8766",
+              "typeIdentifier": "t_contract$_Item_$8935",
               "typeString": "contract Item"
             },
             "typeName": {
-              "id": 8004,
+              "id": 8173,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 8003,
+                "id": 8172,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 8766,
+                "referencedDeclaration": 8935,
                 "src": "252:4:29"
               },
-              "referencedDeclaration": 8766,
+              "referencedDeclaration": 8935,
               "src": "252:4:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$8766",
+                "typeIdentifier": "t_contract$_Item_$8935",
                 "typeString": "contract Item"
               }
             },
@@ -4650,11 +4650,11 @@
           },
           {
             "constant": false,
-            "id": 8008,
+            "id": 8177,
             "mutability": "mutable",
             "name": "healPerPotion",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "285:27:29",
             "stateVariable": true,
             "storageLocation": "default",
@@ -4663,7 +4663,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 8006,
+              "id": 8175,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "285:7:29",
@@ -4674,7 +4674,7 @@
             },
             "value": {
               "hexValue": "313030",
-              "id": 8007,
+              "id": 8176,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -4692,11 +4692,11 @@
           },
           {
             "constant": false,
-            "id": 8011,
+            "id": 8180,
             "mutability": "mutable",
             "name": "paPerShock",
             "nodeType": "VariableDeclaration",
-            "scope": 8118,
+            "scope": 8287,
             "src": "319:22:29",
             "stateVariable": true,
             "storageLocation": "default",
@@ -4705,7 +4705,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 8009,
+              "id": 8178,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "319:7:29",
@@ -4716,7 +4716,7 @@
             },
             "value": {
               "hexValue": "35",
-              "id": 8010,
+              "id": 8179,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -4734,23 +4734,23 @@
           },
           {
             "body": {
-              "id": 8046,
+              "id": 8215,
               "nodeType": "Block",
               "src": "451:188:29",
               "statements": [
                 {
                   "expression": {
-                    "id": 8026,
+                    "id": 8195,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8022,
+                      "id": 8191,
                       "name": "nokaiStats",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7996,
+                      "referencedDeclaration": 8165,
                       "src": "462:10:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_NokaiStats_$4900",
@@ -4762,11 +4762,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8024,
+                          "id": 8193,
                           "name": "_nokaiStats",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8013,
+                          "referencedDeclaration": 8182,
                           "src": "486:11:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -4781,7 +4781,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 8023,
+                        "id": 8192,
                         "name": "NokaiStats",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -4792,7 +4792,7 @@
                           "typeString": "type(contract NokaiStats)"
                         }
                       },
-                      "id": 8025,
+                      "id": 8194,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4813,26 +4813,26 @@
                       "typeString": "contract NokaiStats"
                     }
                   },
-                  "id": 8027,
+                  "id": 8196,
                   "nodeType": "ExpressionStatement",
                   "src": "462:36:29"
                 },
                 {
                   "expression": {
-                    "id": 8032,
+                    "id": 8201,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8028,
+                      "id": 8197,
                       "name": "potionEssence",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7999,
+                      "referencedDeclaration": 8168,
                       "src": "509:13:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
@@ -4841,11 +4841,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8030,
+                          "id": 8199,
                           "name": "_potionEssence",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8015,
+                          "referencedDeclaration": 8184,
                           "src": "530:14:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -4860,18 +4860,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 8029,
+                        "id": 8198,
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8766,
+                        "referencedDeclaration": 8935,
                         "src": "525:4:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$8766_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$8935_$",
                           "typeString": "type(contract Item)"
                         }
                       },
-                      "id": 8031,
+                      "id": 8200,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4882,36 +4882,36 @@
                       "src": "525:20:29",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "509:36:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$8766",
+                      "typeIdentifier": "t_contract$_Item_$8935",
                       "typeString": "contract Item"
                     }
                   },
-                  "id": 8033,
+                  "id": 8202,
                   "nodeType": "ExpressionStatement",
                   "src": "509:36:29"
                 },
                 {
                   "expression": {
-                    "id": 8038,
+                    "id": 8207,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8034,
+                      "id": 8203,
                       "name": "lifeEssence",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8002,
+                      "referencedDeclaration": 8171,
                       "src": "556:11:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
@@ -4920,11 +4920,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8036,
+                          "id": 8205,
                           "name": "_lifeEssence",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8017,
+                          "referencedDeclaration": 8186,
                           "src": "575:12:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -4939,18 +4939,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 8035,
+                        "id": 8204,
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8766,
+                        "referencedDeclaration": 8935,
                         "src": "570:4:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$8766_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$8935_$",
                           "typeString": "type(contract Item)"
                         }
                       },
-                      "id": 8037,
+                      "id": 8206,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4961,36 +4961,36 @@
                       "src": "570:18:29",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "556:32:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$8766",
+                      "typeIdentifier": "t_contract$_Item_$8935",
                       "typeString": "contract Item"
                     }
                   },
-                  "id": 8039,
+                  "id": 8208,
                   "nodeType": "ExpressionStatement",
                   "src": "556:32:29"
                 },
                 {
                   "expression": {
-                    "id": 8044,
+                    "id": 8213,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8040,
+                      "id": 8209,
                       "name": "energyShock",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8005,
+                      "referencedDeclaration": 8174,
                       "src": "599:11:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
@@ -4999,11 +4999,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8042,
+                          "id": 8211,
                           "name": "_energyShock",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8019,
+                          "referencedDeclaration": 8188,
                           "src": "618:12:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -5018,18 +5018,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 8041,
+                        "id": 8210,
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8766,
+                        "referencedDeclaration": 8935,
                         "src": "613:4:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$8766_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$8935_$",
                           "typeString": "type(contract Item)"
                         }
                       },
-                      "id": 8043,
+                      "id": 8212,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5040,39 +5040,39 @@
                       "src": "613:18:29",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$8766",
+                        "typeIdentifier": "t_contract$_Item_$8935",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "599:32:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$8766",
+                      "typeIdentifier": "t_contract$_Item_$8935",
                       "typeString": "contract Item"
                     }
                   },
-                  "id": 8045,
+                  "id": 8214,
                   "nodeType": "ExpressionStatement",
                   "src": "599:32:29"
                 }
               ]
             },
-            "id": 8047,
+            "id": 8216,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8020,
+              "id": 8189,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8013,
+                  "id": 8182,
                   "mutability": "mutable",
                   "name": "_nokaiStats",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8047,
+                  "scope": 8216,
                   "src": "362:19:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5081,7 +5081,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8012,
+                    "id": 8181,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "362:7:29",
@@ -5095,11 +5095,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8015,
+                  "id": 8184,
                   "mutability": "mutable",
                   "name": "_potionEssence",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8047,
+                  "scope": 8216,
                   "src": "383:22:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5108,7 +5108,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8014,
+                    "id": 8183,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "383:7:29",
@@ -5122,11 +5122,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8017,
+                  "id": 8186,
                   "mutability": "mutable",
                   "name": "_lifeEssence",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8047,
+                  "scope": 8216,
                   "src": "407:20:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5135,7 +5135,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8016,
+                    "id": 8185,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "407:7:29",
@@ -5149,11 +5149,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8019,
+                  "id": 8188,
                   "mutability": "mutable",
                   "name": "_energyShock",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8047,
+                  "scope": 8216,
                   "src": "429:20:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5162,7 +5162,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8018,
+                    "id": 8187,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "429:7:29",
@@ -5178,12 +5178,12 @@
               "src": "361:89:29"
             },
             "returnParameters": {
-              "id": 8021,
+              "id": 8190,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "451:0:29"
             },
-            "scope": 8118,
+            "scope": 8287,
             "src": "350:289:29",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -5191,7 +5191,7 @@
           },
           {
             "body": {
-              "id": 8071,
+              "id": 8240,
               "nodeType": "Block",
               "src": "708:119:29",
               "statements": [
@@ -5200,7 +5200,7 @@
                     "arguments": [
                       {
                         "expression": {
-                          "id": 8057,
+                          "id": 8226,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -5211,7 +5211,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 8058,
+                        "id": 8227,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5225,11 +5225,11 @@
                         }
                       },
                       {
-                        "id": 8059,
+                        "id": 8228,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8051,
+                        "referencedDeclaration": 8220,
                         "src": "753:6:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -5249,32 +5249,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 8054,
+                        "id": 8223,
                         "name": "potionEssence",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7999,
+                        "referencedDeclaration": 8168,
                         "src": "719:13:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$8766",
+                          "typeIdentifier": "t_contract$_Item_$8935",
                           "typeString": "contract Item"
                         }
                       },
-                      "id": 8056,
+                      "id": 8225,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8765,
+                      "referencedDeclaration": 8934,
                       "src": "719:21:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256) external"
                       }
                     },
-                    "id": 8060,
+                    "id": 8229,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5289,7 +5289,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8061,
+                  "id": 8230,
                   "nodeType": "ExpressionStatement",
                   "src": "719:41:29"
                 },
@@ -5297,11 +5297,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8065,
+                        "id": 8234,
                         "name": "nokaiId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8049,
+                        "referencedDeclaration": 8218,
                         "src": "787:7:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -5313,17 +5313,17 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 8068,
+                        "id": 8237,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8066,
+                          "id": 8235,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8051,
+                          "referencedDeclaration": 8220,
                           "src": "796:6:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -5333,11 +5333,11 @@
                         "nodeType": "BinaryOperation",
                         "operator": "*",
                         "rightExpression": {
-                          "id": 8067,
+                          "id": 8236,
                           "name": "healPerPotion",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8008,
+                          "referencedDeclaration": 8177,
                           "src": "805:13:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -5363,18 +5363,18 @@
                         }
                       ],
                       "expression": {
-                        "id": 8062,
+                        "id": 8231,
                         "name": "nokaiStats",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7996,
+                        "referencedDeclaration": 8165,
                         "src": "771:10:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_NokaiStats_$4900",
                           "typeString": "contract NokaiStats"
                         }
                       },
-                      "id": 8064,
+                      "id": 8233,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5388,7 +5388,7 @@
                         "typeString": "function (uint256,uint256) external"
                       }
                     },
-                    "id": 8069,
+                    "id": 8238,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5403,30 +5403,30 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8070,
+                  "id": 8239,
                   "nodeType": "ExpressionStatement",
                   "src": "771:48:29"
                 }
               ]
             },
             "functionSelector": "d1df6dd1",
-            "id": 8072,
+            "id": 8241,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "healNokai",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8052,
+              "id": 8221,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8049,
+                  "id": 8218,
                   "mutability": "mutable",
                   "name": "nokaiId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8072,
+                  "scope": 8241,
                   "src": "666:15:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5435,7 +5435,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8048,
+                    "id": 8217,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "666:7:29",
@@ -5448,11 +5448,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8051,
+                  "id": 8220,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8072,
+                  "scope": 8241,
                   "src": "683:14:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5461,7 +5461,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8050,
+                    "id": 8219,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "683:7:29",
@@ -5476,12 +5476,12 @@
               "src": "665:33:29"
             },
             "returnParameters": {
-              "id": 8053,
+              "id": 8222,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "708:0:29"
             },
-            "scope": 8118,
+            "scope": 8287,
             "src": "647:180:29",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -5489,7 +5489,7 @@
           },
           {
             "body": {
-              "id": 8091,
+              "id": 8260,
               "nodeType": "Block",
               "src": "882:90:29",
               "statements": [
@@ -5498,7 +5498,7 @@
                     "arguments": [
                       {
                         "expression": {
-                          "id": 8080,
+                          "id": 8249,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -5509,7 +5509,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 8081,
+                        "id": 8250,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5524,7 +5524,7 @@
                       },
                       {
                         "hexValue": "31",
-                        "id": 8082,
+                        "id": 8251,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -5551,32 +5551,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 8077,
+                        "id": 8246,
                         "name": "lifeEssence",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8002,
+                        "referencedDeclaration": 8171,
                         "src": "893:11:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$8766",
+                          "typeIdentifier": "t_contract$_Item_$8935",
                           "typeString": "contract Item"
                         }
                       },
-                      "id": 8079,
+                      "id": 8248,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8765,
+                      "referencedDeclaration": 8934,
                       "src": "893:19:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256) external"
                       }
                     },
-                    "id": 8083,
+                    "id": 8252,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5591,7 +5591,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8084,
+                  "id": 8253,
                   "nodeType": "ExpressionStatement",
                   "src": "893:34:29"
                 },
@@ -5599,11 +5599,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8088,
+                        "id": 8257,
                         "name": "nokaiId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8074,
+                        "referencedDeclaration": 8243,
                         "src": "956:7:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -5619,18 +5619,18 @@
                         }
                       ],
                       "expression": {
-                        "id": 8085,
+                        "id": 8254,
                         "name": "nokaiStats",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7996,
+                        "referencedDeclaration": 8165,
                         "src": "938:10:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_NokaiStats_$4900",
                           "typeString": "contract NokaiStats"
                         }
                       },
-                      "id": 8087,
+                      "id": 8256,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5644,7 +5644,7 @@
                         "typeString": "function (uint256) external"
                       }
                     },
-                    "id": 8089,
+                    "id": 8258,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5659,30 +5659,30 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8090,
+                  "id": 8259,
                   "nodeType": "ExpressionStatement",
                   "src": "938:26:29"
                 }
               ]
             },
             "functionSelector": "e9944d48",
-            "id": 8092,
+            "id": 8261,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "reviveNokai",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8075,
+              "id": 8244,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8074,
+                  "id": 8243,
                   "mutability": "mutable",
                   "name": "nokaiId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8092,
+                  "scope": 8261,
                   "src": "856:15:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5691,7 +5691,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8073,
+                    "id": 8242,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "856:7:29",
@@ -5706,12 +5706,12 @@
               "src": "855:17:29"
             },
             "returnParameters": {
-              "id": 8076,
+              "id": 8245,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "882:0:29"
             },
-            "scope": 8118,
+            "scope": 8287,
             "src": "835:137:29",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -5719,7 +5719,7 @@
           },
           {
             "body": {
-              "id": 8116,
+              "id": 8285,
               "nodeType": "Block",
               "src": "1045:118:29",
               "statements": [
@@ -5728,7 +5728,7 @@
                     "arguments": [
                       {
                         "expression": {
-                          "id": 8102,
+                          "id": 8271,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -5739,7 +5739,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 8103,
+                        "id": 8272,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5753,11 +5753,11 @@
                         }
                       },
                       {
-                        "id": 8104,
+                        "id": 8273,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8096,
+                        "referencedDeclaration": 8265,
                         "src": "1088:6:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -5777,32 +5777,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 8099,
+                        "id": 8268,
                         "name": "energyShock",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8005,
+                        "referencedDeclaration": 8174,
                         "src": "1056:11:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$8766",
+                          "typeIdentifier": "t_contract$_Item_$8935",
                           "typeString": "contract Item"
                         }
                       },
-                      "id": 8101,
+                      "id": 8270,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8765,
+                      "referencedDeclaration": 8934,
                       "src": "1056:19:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256) external"
                       }
                     },
-                    "id": 8105,
+                    "id": 8274,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5817,7 +5817,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8106,
+                  "id": 8275,
                   "nodeType": "ExpressionStatement",
                   "src": "1056:39:29"
                 },
@@ -5825,11 +5825,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8110,
+                        "id": 8279,
                         "name": "nokaiId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8094,
+                        "referencedDeclaration": 8263,
                         "src": "1126:7:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -5841,17 +5841,17 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 8113,
+                        "id": 8282,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8111,
+                          "id": 8280,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8096,
+                          "referencedDeclaration": 8265,
                           "src": "1135:6:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -5861,11 +5861,11 @@
                         "nodeType": "BinaryOperation",
                         "operator": "*",
                         "rightExpression": {
-                          "id": 8112,
+                          "id": 8281,
                           "name": "paPerShock",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8011,
+                          "referencedDeclaration": 8180,
                           "src": "1144:10:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -5891,18 +5891,18 @@
                         }
                       ],
                       "expression": {
-                        "id": 8107,
+                        "id": 8276,
                         "name": "nokaiStats",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7996,
+                        "referencedDeclaration": 8165,
                         "src": "1106:10:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_NokaiStats_$4900",
                           "typeString": "contract NokaiStats"
                         }
                       },
-                      "id": 8109,
+                      "id": 8278,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5916,7 +5916,7 @@
                         "typeString": "function (uint256,uint256) external"
                       }
                     },
-                    "id": 8114,
+                    "id": 8283,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5931,30 +5931,30 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 8115,
+                  "id": 8284,
                   "nodeType": "ExpressionStatement",
                   "src": "1106:49:29"
                 }
               ]
             },
             "functionSelector": "a1b6f96f",
-            "id": 8117,
+            "id": 8286,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "energizeNokai",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8097,
+              "id": 8266,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8094,
+                  "id": 8263,
                   "mutability": "mutable",
                   "name": "nokaiId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8117,
+                  "scope": 8286,
                   "src": "1003:15:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5963,7 +5963,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8093,
+                    "id": 8262,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1003:7:29",
@@ -5976,11 +5976,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 8096,
+                  "id": 8265,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8117,
+                  "scope": 8286,
                   "src": "1020:14:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5989,7 +5989,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8095,
+                    "id": 8264,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1020:7:29",
@@ -6004,19 +6004,19 @@
               "src": "1002:33:29"
             },
             "returnParameters": {
-              "id": 8098,
+              "id": 8267,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1045:0:29"
             },
-            "scope": 8118,
+            "scope": 8287,
             "src": "980:183:29",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 8119,
+        "scope": 8288,
         "src": "126:1040:29"
       }
     ],
@@ -6030,12 +6030,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xba77190a205A9c372369A7dE02839A9eD3eE90Cc",
-      "transactionHash": "0x736177e76dedf62e0096298d9a09c320077efb10eb0e826c5cf26aa312876bf6"
+      "address": "0x9424777ca52dEF9474568b970350733AdAe0D77a",
+      "transactionHash": "0x984210ef0e4371e8700b2e76b574460a08c3c0f490b67c12e0d9753e2f458e98"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-08T07:46:19.811Z",
+  "updatedAt": "2021-12-08T10:03:38.754Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
