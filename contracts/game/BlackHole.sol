@@ -7,6 +7,7 @@ import "../utils/RandomUtils.sol";
 contract BlackHole is AccessControl {
     bytes32 public constant GAME_MANAGER_ROLE = keccak256("GAME_MANAGER_ROLE");
 
+    string public name;
     uint16 public maxX;
     uint16 public maxY;
     uint256 public totalPos;
@@ -40,7 +41,8 @@ contract BlackHole is AccessControl {
     mapping(uint256 => Territory) private blackhole;
     mapping(uint256 => Position) private nokaiPosition;
 
-    constructor(uint16 _width, uint16 _height)  {
+    constructor(string memory _name, uint16 _width, uint16 _height)  {
+        name = _name;
         maxX = _width;
         maxY = _height;
         totalPos = maxX * maxY;
@@ -176,26 +178,26 @@ contract BlackHole is AccessControl {
 
     function _discoverSlot(uint16 x, uint16 y, address by) private {
         uint256 pos = (y * maxX) + x;
-        uint256 wealth = 10;
-        if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3) {
-            wealth = 40;
-        }
-        if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
-            wealth = 80;
-        }
-        uint256 darkMatter = RandomUtils._rand(pos, 100) + wealth;
-        uint256 plasmaEnergy = RandomUtils._rand(pos + 1, 100) + wealth;
-        uint256 voidEssence = RandomUtils._rand(pos + 2, 100) + wealth;
-        if (darkMatter < plasmaEnergy || darkMatter < voidEssence) {
-            darkMatter = 0;
-        }
-        if (plasmaEnergy < darkMatter || plasmaEnergy < voidEssence) {
-            plasmaEnergy = 0;
-        }
-        if (voidEssence < darkMatter || voidEssence < plasmaEnergy) {
-            voidEssence = 0;
-        }
         if (blackhole[pos].discovered == false) {
+            uint256 wealth = 10;
+            if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3) {
+                wealth = 40;
+            }
+            if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
+                wealth = 80;
+            }
+            uint256 darkMatter = RandomUtils._rand(pos, 100) + wealth;
+            uint256 plasmaEnergy = RandomUtils._rand(pos + 1, 100) + wealth;
+            uint256 voidEssence = RandomUtils._rand(pos + 2, 100) + wealth;
+            if (darkMatter < plasmaEnergy || darkMatter < voidEssence) {
+                darkMatter = 0;
+            }
+            if (plasmaEnergy < darkMatter || plasmaEnergy < voidEssence) {
+                plasmaEnergy = 0;
+            }
+            if (voidEssence < darkMatter || voidEssence < plasmaEnergy) {
+                voidEssence = 0;
+            }
             blackhole[pos] = Territory({
             x : x,
             y : y,
@@ -262,6 +264,20 @@ contract BlackHole is AccessControl {
             }
         }
         return _blackhole;
+    }
+
+    function getAvailableForBox(uint256 startPos, uint256 endPos, uint256 startLine, uint256 endLine) external view returns (uint256[] memory) {
+        require(startPos < endPos && startPos >= 0 && endPos < maxX && startLine < endLine && startLine >= 0 && endLine < maxY, "invalid box request");
+        uint256[] memory _available = new uint256[]((endPos - startPos) * (endLine - startLine));
+        uint256 i = 0;
+        for (uint256 line = startLine; line < endLine; line++) {
+            for (uint256 pos = startPos; pos < endPos; pos++) {
+                if (blackhole[(line * maxX) + pos].owner == address(0)) {
+                    _available[i++] = (line * maxX) + pos;
+                }
+            }
+        }
+        return _available;
     }
 
     event SlotDiscovered(uint16 x, uint16 y, address by);

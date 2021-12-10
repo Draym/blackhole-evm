@@ -112,7 +112,7 @@ module.exports = async function (deployer, network, accounts) {
     console.log("BattleLogic: " + battleLogic.address)
     deployed.battleLogic = battleLogic.address
 
-    await deployer.deploy(BlackHole, 100, 100)
+    await deployer.deploy(BlackHole, "Neoverse", 10, 10)
     let blackHole = await BlackHole.deployed()
     console.log("BlackHole: " + blackHole.address)
     deployed.blackHole = blackHole.address
