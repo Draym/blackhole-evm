@@ -255,7 +255,7 @@ contract BlackHole is AccessControl {
     }
 
     function getForBox(uint256 startPos, uint256 endPos, uint256 startLine, uint256 endLine) external view returns (Territory[] memory) {
-        require(startPos < endPos && startPos >= 0 && endPos < maxX && startLine < endLine && startLine >= 0 && endLine < maxY, "invalid box request");
+        require(startPos < endPos && startPos >= 0 && endPos <= maxX && startLine < endLine && startLine >= 0 && endLine <= maxY, "invalid box request");
         Territory[] memory _blackhole = new Territory[]((endPos - startPos) * (endLine - startLine));
         uint256 i = 0;
         for (uint256 line = startLine; line < endLine; line++) {
@@ -267,7 +267,7 @@ contract BlackHole is AccessControl {
     }
 
     function getAvailableForBox(uint256 startPos, uint256 endPos, uint256 startLine, uint256 endLine) external view returns (uint256[] memory) {
-        require(startPos < endPos && startPos >= 0 && endPos < maxX && startLine < endLine && startLine >= 0 && endLine < maxY, "invalid box request");
+        require(startPos < endPos && startPos >= 0 && endPos <= maxX && startLine < endLine && startLine >= 0 && endLine <= maxY, "invalid box request");
         uint256[] memory _available = new uint256[]((endPos - startPos) * (endLine - startLine));
         uint256 i = 0;
         for (uint256 line = startLine; line < endLine; line++) {
