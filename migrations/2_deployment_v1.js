@@ -181,6 +181,9 @@ module.exports = async function (deployer, network, accounts) {
 
     await blackHole.grantRole(await blackHole.GAME_MANAGER_ROLE(), gameManager.address)
 
+    /** SETUP */
+    await nokai.setup(10)
+
     let path = `deployed/${currentVersion}/${network}`;
     await fs.mkdir(path, {recursive: true}, (err) => {
     });

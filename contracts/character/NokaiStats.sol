@@ -66,10 +66,10 @@ contract NokaiStats is AccessControl {
     function generateNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
         _saveNokaiProfile(
             newNokaiId,
-            Math.min(RandomUtils._rand(newNokaiId, 1000) + 200, 1000),
-            Math.min(RandomUtils._rand(newNokaiId + 1, 100) * 2 + 20, 2200),
-            Math.min(RandomUtils._rand(newNokaiId + 2, 100) + 10, 100),
-            Math.min(RandomUtils._rand(newNokaiId + 3, 100) + 20, 100),
+            Math.min(RandomUtils._rand(newNokaiId, 100) * 8 + 200, 1000),
+            Math.min(RandomUtils._rand(newNokaiId + 1, 10) * 8 + 20, 2200),
+            Math.min(RandomUtils._rand(newNokaiId + 2, 10) * 9 + 10, 100),
+            Math.min(RandomUtils._rand(newNokaiId + 3, 10) * 8 + 20, 100),
             RandomUtils._rand(newNokaiId + 4, 10)
         );
     }
@@ -77,33 +77,45 @@ contract NokaiStats is AccessControl {
     function generateHighNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
         _saveNokaiProfile(
             newNokaiId,
-            Math.min(RandomUtils._rand(newNokaiId, 1000) / 2 + 500, 1000),
-            Math.min(RandomUtils._rand(newNokaiId + 1, 100) + 100, 200),
-            Math.min(RandomUtils._rand(newNokaiId + 2, 100) / 2 + 50, 100),
-            Math.min(RandomUtils._rand(newNokaiId + 3, 100) / 2 + 50, 100),
-            5
+            Math.min(RandomUtils._rand(newNokaiId, 100) * 3 + 700, 1000),
+            Math.min(RandomUtils._rand(newNokaiId + 1, 10) * 5 + 150, 200),
+            Math.min(RandomUtils._rand(newNokaiId + 2, 10) * 3 + 70, 100),
+            Math.min(RandomUtils._rand(newNokaiId + 3, 10) * 3 + 70, 100),
+            RandomUtils._rand(newNokaiId + 4, 10) / 2 + 5
         );
     }
 
     function generateGodNokai(uint256 newNokaiId) external onlyRole(NOKAI_MANAGER_ROLE) {
-        _saveNokaiProfile(
-            newNokaiId,
-            RandomUtils._rand(newNokaiId, 100) + 900,
-            RandomUtils._rand(newNokaiId + 1, 10) * 2 + 180,
-            RandomUtils._rand(newNokaiId + 2, 10) + 90,
-            RandomUtils._rand(newNokaiId + 3, 10) + 90,
-            10
-        );
+        uint256 hp = (RandomUtils._rand(newNokaiId, 100) / 2) + 950;
+        profiles[newNokaiId] = Profile({
+        stats : Stats({
+        hp : hp,
+        attack : RandomUtils._rand(newNokaiId + 1, 10) * 2 + 180,
+        defense : RandomUtils._rand(newNokaiId + 3, 10) + 90,
+        regen : RandomUtils._rand(newNokaiId + 3, 10) + 90,
+        pa : 10,
+        technique1 : techniquePicker.get(newNokaiId + 5),
+        technique2 : techniquePicker.get(newNokaiId + 6),
+        grade : Rarity.God,
+        gradeValue : uint256(Rarity.God) + 1
+        }),
+        currentHp : hp,
+        currentPa : 10,
+        dead : false,
+        burned : false,
+        lastHpSet : block.timestamp,
+        lastPaSet : block.timestamp
+        });
     }
 
-    function _saveNokaiProfile(uint256 newNokaiId, uint256 hp, uint256 attack, uint256 defense, uint256 regen, uint256 _pa) private {
-        uint256 pa = _pa;
+    function _saveNokaiProfile(uint256 newNokaiId, uint256 hp, uint256 attack, uint256 defense, uint256 regen, uint256 pa) private {
+        uint256 _pa = pa;
         if (pa < 2) {
-            pa = 2;
+            _pa = 2;
         } else if (pa > 8) {
-            pa = 8;
+            _pa = 8;
         }
-        Rarity grade = _getBirthGrade(hp, attack, defense, regen, pa);
+        Rarity grade = _getBirthGrade(hp, attack, defense, regen, _pa);
 
         profiles[newNokaiId] = Profile({
         stats : Stats({
@@ -111,14 +123,14 @@ contract NokaiStats is AccessControl {
         attack : attack,
         defense : defense,
         regen : regen,
-        pa : pa,
+        pa : _pa,
         technique1 : techniquePicker.get(newNokaiId + 5),
         technique2 : techniquePicker.get(newNokaiId + 6),
         grade : grade,
         gradeValue : uint256(grade) + 1
         }),
         currentHp : hp,
-        currentPa : pa,
+        currentPa : _pa,
         dead : false,
         burned : false,
         lastHpSet : block.timestamp,
@@ -136,13 +148,13 @@ contract NokaiStats is AccessControl {
         profiles[targetId].burned = true;
 
         if (upgradeChoice == StatType.HP) {
-            profiles[nokaiId].stats.hp += profiles[targetId].stats.hp * profiles[targetId].stats.gradeValue / 100;
+            profiles[nokaiId].stats.hp += profiles[targetId].stats.hp * (profiles[targetId].stats.gradeValue * 2) / 100;
         } else if (upgradeChoice == StatType.ATTACK) {
-            profiles[nokaiId].stats.attack += profiles[targetId].stats.attack * profiles[targetId].stats.gradeValue / 100;
+            profiles[nokaiId].stats.attack += profiles[targetId].stats.attack * (profiles[targetId].stats.gradeValue * 2) / 100;
         } else if (upgradeChoice == StatType.DEFENSE) {
-            profiles[nokaiId].stats.defense += profiles[targetId].stats.defense * profiles[targetId].stats.gradeValue / 100;
+            profiles[nokaiId].stats.defense += profiles[targetId].stats.defense * (profiles[targetId].stats.gradeValue * 2) / 100;
         } else if (upgradeChoice == StatType.REGEN) {
-            profiles[nokaiId].stats.regen += profiles[targetId].stats.regen * profiles[targetId].stats.gradeValue / 100;
+            profiles[nokaiId].stats.regen += profiles[targetId].stats.regen * (profiles[targetId].stats.gradeValue * 2) / 100;
         } else if (upgradeChoice == StatType.PA) {
             profiles[nokaiId].stats.pa += profiles[targetId].stats.gradeValue / 2;
         }
@@ -151,13 +163,13 @@ contract NokaiStats is AccessControl {
     function _getBirthGrade(uint256 hp, uint256 attack, uint256 defense, uint256 regen, uint256 pa) private pure returns (Rarity) {
         uint256 total = hp + (attack * 5) + (defense * 10) + (pa * 100) + (regen * 10);
         // max should be 5000
-        if (total > 4900) {
+        if (total > 4600) {
             return Rarity.Legend;
-        } else if (total > 4200) {
+        } else if (total > 4000) {
             return Rarity.Astral;
-        } else if (total > 3300) {
+        } else if (total > 3000) {
             return Rarity.Overlord;
-        } else if (total > 1900) {
+        } else if (total > 1500) {
             return Rarity.Champion;
         } else {
             return Rarity.Spirit;
