@@ -47,6 +47,20 @@ contract Nokai is ERC721Enumerable, AccessControl {
         return _newNokaiId;
     }
 
+    function listFor(address owner) external view returns (uint256[] memory) {
+        uint256 total = balanceOf(owner);
+        if (total == 0) {
+            return new uint256[](0);
+        } else {
+            uint256[] memory result = new uint256[](total);
+
+            for (uint256 i = 0; i < total; i++) {
+                result[i] = tokenOfOwnerByIndex(owner, i);
+            }
+            return result;
+        }
+    }
+
     function absorb(uint256 nokaiId, uint256 targetId, NokaiStats.StatType upgradeChoice) external {
         require(ownerOf(nokaiId) == msg.sender, "you do not have ownership on this Nokai.");
         require(ownerOf(targetId) == msg.sender, "you do not have ownership on this target.");
