@@ -391,7 +391,7 @@
                           }
                         ],
                         "functionName": {
-                          "name": "convert_t_enum$_Technique_$4913_to_t_uint8",
+                          "name": "convert_t_enum$_Technique_$4974_to_t_uint8",
                           "nodeType": "YulIdentifier",
                           "src": "682:42:50"
                         },
@@ -412,7 +412,7 @@
                 }
               ]
             },
-            "name": "abi_encode_t_enum$_Technique_$4913_to_t_uint8_fromStack",
+            "name": "abi_encode_t_enum$_Technique_$4974_to_t_uint8_fromStack",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -812,7 +812,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "abi_encode_t_enum$_Technique_$4913_to_t_uint8_fromStack",
+                      "name": "abi_encode_t_enum$_Technique_$4974_to_t_uint8_fromStack",
                       "nodeType": "YulIdentifier",
                       "src": "1607:55:50"
                     },
@@ -824,7 +824,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_enum$_Technique_$4913__to_t_uint8__fromStack_reversed",
+            "name": "abi_encode_tuple_t_enum$_Technique_$4974__to_t_uint8__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -935,7 +935,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "validator_assert_t_enum$_Technique_$4913",
+                      "name": "validator_assert_t_enum$_Technique_$4974",
                       "nodeType": "YulIdentifier",
                       "src": "1891:40:50"
                     },
@@ -947,7 +947,7 @@
                 }
               ]
             },
-            "name": "cleanup_t_enum$_Technique_$4913",
+            "name": "cleanup_t_enum$_Technique_$4974",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -1088,7 +1088,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "cleanup_t_enum$_Technique_$4913",
+                      "name": "cleanup_t_enum$_Technique_$4974",
                       "nodeType": "YulIdentifier",
                       "src": "2260:31:50"
                     },
@@ -1105,7 +1105,7 @@
                 }
               ]
             },
-            "name": "convert_t_enum$_Technique_$4913_to_t_uint8",
+            "name": "convert_t_enum$_Technique_$4974_to_t_uint8",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -1757,7 +1757,7 @@
                 }
               ]
             },
-            "name": "validator_assert_t_enum$_Technique_$4913",
+            "name": "validator_assert_t_enum$_Technique_$4974",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -1872,7 +1872,7 @@
           }
         ]
       },
-      "contents": "{\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_address_to_t_address_nonPadded_inplace_fromStack(value, pos) {\n        mstore(pos, leftAlign_t_address(cleanup_t_address(value)))\n    }\n\n    function abi_encode_t_enum$_Technique_$4913_to_t_uint8_fromStack(value, pos) {\n        mstore(pos, convert_t_enum$_Technique_$4913_to_t_uint8(value))\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_nonPadded_inplace_fromStack(value, pos) {\n        mstore(pos, leftAlign_t_uint256(cleanup_t_uint256(value)))\n    }\n\n    function abi_encode_tuple_packed_t_uint256_t_address_t_uint256__to_t_uint256_t_address_t_uint256__nonPadded_inplace_fromStack_reversed(pos , value2, value1, value0) -> end {\n\n        abi_encode_t_uint256_to_t_uint256_nonPadded_inplace_fromStack(value0,  pos)\n        pos := add(pos, 32)\n\n        abi_encode_t_address_to_t_address_nonPadded_inplace_fromStack(value1,  pos)\n        pos := add(pos, 20)\n\n        abi_encode_t_uint256_to_t_uint256_nonPadded_inplace_fromStack(value2,  pos)\n        pos := add(pos, 32)\n\n        end := pos\n    }\n\n    function abi_encode_tuple_t_enum$_Technique_$4913__to_t_uint8__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_enum$_Technique_$4913_to_t_uint8_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function cleanup_t_enum$_Technique_$4913(value) -> cleaned {\n        cleaned := value validator_assert_t_enum$_Technique_$4913(value)\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function convert_t_enum$_Technique_$4913_to_t_uint8(value) -> converted {\n        converted := cleanup_t_enum$_Technique_$4913(value)\n    }\n\n    function leftAlign_t_address(value) -> aligned {\n        aligned := leftAlign_t_uint160(value)\n    }\n\n    function leftAlign_t_uint160(value) -> aligned {\n        aligned := shift_left_96(value)\n    }\n\n    function leftAlign_t_uint256(value) -> aligned {\n        aligned := value\n    }\n\n    function mod_t_uint256(x, y) -> r {\n        x := cleanup_t_uint256(x)\n        y := cleanup_t_uint256(y)\n        if iszero(y) { panic_error_0x12() }\n        r := mod(x, y)\n    }\n\n    function panic_error_0x12() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x12)\n        revert(0, 0x24)\n    }\n\n    function panic_error_0x21() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x21)\n        revert(0, 0x24)\n    }\n\n    function shift_left_96(value) -> newValue {\n        newValue :=\n\n        mul(value, 0x01000000000000000000000000)\n\n    }\n\n    function validator_assert_t_enum$_Technique_$4913(value) {\n        if iszero(lt(value, 10)) { panic_error_0x21() }\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n}\n",
+      "contents": "{\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_address_to_t_address_nonPadded_inplace_fromStack(value, pos) {\n        mstore(pos, leftAlign_t_address(cleanup_t_address(value)))\n    }\n\n    function abi_encode_t_enum$_Technique_$4974_to_t_uint8_fromStack(value, pos) {\n        mstore(pos, convert_t_enum$_Technique_$4974_to_t_uint8(value))\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_nonPadded_inplace_fromStack(value, pos) {\n        mstore(pos, leftAlign_t_uint256(cleanup_t_uint256(value)))\n    }\n\n    function abi_encode_tuple_packed_t_uint256_t_address_t_uint256__to_t_uint256_t_address_t_uint256__nonPadded_inplace_fromStack_reversed(pos , value2, value1, value0) -> end {\n\n        abi_encode_t_uint256_to_t_uint256_nonPadded_inplace_fromStack(value0,  pos)\n        pos := add(pos, 32)\n\n        abi_encode_t_address_to_t_address_nonPadded_inplace_fromStack(value1,  pos)\n        pos := add(pos, 20)\n\n        abi_encode_t_uint256_to_t_uint256_nonPadded_inplace_fromStack(value2,  pos)\n        pos := add(pos, 32)\n\n        end := pos\n    }\n\n    function abi_encode_tuple_t_enum$_Technique_$4974__to_t_uint8__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_enum$_Technique_$4974_to_t_uint8_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function cleanup_t_enum$_Technique_$4974(value) -> cleaned {\n        cleaned := value validator_assert_t_enum$_Technique_$4974(value)\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function convert_t_enum$_Technique_$4974_to_t_uint8(value) -> converted {\n        converted := cleanup_t_enum$_Technique_$4974(value)\n    }\n\n    function leftAlign_t_address(value) -> aligned {\n        aligned := leftAlign_t_uint160(value)\n    }\n\n    function leftAlign_t_uint160(value) -> aligned {\n        aligned := shift_left_96(value)\n    }\n\n    function leftAlign_t_uint256(value) -> aligned {\n        aligned := value\n    }\n\n    function mod_t_uint256(x, y) -> r {\n        x := cleanup_t_uint256(x)\n        y := cleanup_t_uint256(y)\n        if iszero(y) { panic_error_0x12() }\n        r := mod(x, y)\n    }\n\n    function panic_error_0x12() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x12)\n        revert(0, 0x24)\n    }\n\n    function panic_error_0x21() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x21)\n        revert(0, 0x24)\n    }\n\n    function shift_left_96(value) -> newValue {\n        newValue :=\n\n        mul(value, 0x01000000000000000000000000)\n\n    }\n\n    function validator_assert_t_enum$_Technique_$4974(value) {\n        if iszero(lt(value, 10)) { panic_error_0x21() }\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n}\n",
       "id": 50,
       "language": "Yul",
       "name": "#utility.yul"
@@ -1886,15 +1886,15 @@
     "absolutePath": "project:/contracts/character/NokaiTechnique.sol",
     "exportedSymbols": {
       "NokaiTechnique": [
-        4941
+        5002
       ]
     },
-    "id": 4942,
+    "id": 5003,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4902,
+        "id": 4963,
         "literals": [
           "solidity",
           "^",
@@ -1910,73 +1910,73 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 4941,
+        "id": 5002,
         "linearizedBaseContracts": [
-          4941
+          5002
         ],
         "name": "NokaiTechnique",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "NokaiTechnique.Technique",
-            "id": 4913,
+            "id": 4974,
             "members": [
               {
-                "id": 4903,
+                "id": 4964,
                 "name": "SPECIALIST",
                 "nodeType": "EnumValue",
                 "src": "119:10:23"
               },
               {
-                "id": 4904,
+                "id": 4965,
                 "name": "GUARDIAN",
                 "nodeType": "EnumValue",
                 "src": "160:8:23"
               },
               {
-                "id": 4905,
+                "id": 4966,
                 "name": "GLUTTON",
                 "nodeType": "EnumValue",
                 "src": "210:7:23"
               },
               {
-                "id": 4906,
+                "id": 4967,
                 "name": "BUFFOON",
                 "nodeType": "EnumValue",
                 "src": "264:7:23"
               },
               {
-                "id": 4907,
+                "id": 4968,
                 "name": "DESTROYER",
                 "nodeType": "EnumValue",
                 "src": "329:9:23"
               },
               {
-                "id": 4908,
+                "id": 4969,
                 "name": "FOOL",
                 "nodeType": "EnumValue",
                 "src": "381:4:23"
               },
               {
-                "id": 4909,
+                "id": 4970,
                 "name": "DEADLY",
                 "nodeType": "EnumValue",
                 "src": "426:6:23"
               },
               {
-                "id": 4910,
+                "id": 4971,
                 "name": "AUTHORITY",
                 "nodeType": "EnumValue",
                 "src": "475:9:23"
               },
               {
-                "id": 4911,
+                "id": 4972,
                 "name": "REVENGER",
                 "nodeType": "EnumValue",
                 "src": "546:8:23"
               },
               {
-                "id": 4912,
+                "id": 4973,
                 "name": "MIMIC",
                 "nodeType": "EnumValue",
                 "src": "595:5:23"
@@ -1988,7 +1988,7 @@
           },
           {
             "body": {
-              "id": 4939,
+              "id": 5000,
               "nodeType": "Block",
               "src": "710:117:23",
               "statements": [
@@ -2000,7 +2000,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 4936,
+                        "id": 4997,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2013,7 +2013,7 @@
                                   "arguments": [
                                     {
                                       "expression": {
-                                        "id": 4927,
+                                        "id": 4988,
                                         "name": "block",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
@@ -2024,7 +2024,7 @@
                                           "typeString": "block"
                                         }
                                       },
-                                      "id": 4928,
+                                      "id": 4989,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -2039,7 +2039,7 @@
                                     },
                                     {
                                       "expression": {
-                                        "id": 4929,
+                                        "id": 4990,
                                         "name": "msg",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
@@ -2050,7 +2050,7 @@
                                           "typeString": "msg"
                                         }
                                       },
-                                      "id": 4930,
+                                      "id": 4991,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -2064,11 +2064,11 @@
                                       }
                                     },
                                     {
-                                      "id": 4931,
+                                      "id": 4992,
                                       "name": "_newNokaiId",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 4915,
+                                      "referencedDeclaration": 4976,
                                       "src": "799:11:23",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
@@ -2092,7 +2092,7 @@
                                       }
                                     ],
                                     "expression": {
-                                      "id": 4925,
+                                      "id": 4986,
                                       "name": "abi",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
@@ -2103,7 +2103,7 @@
                                         "typeString": "abi"
                                       }
                                     },
-                                    "id": 4926,
+                                    "id": 4987,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -2116,7 +2116,7 @@
                                       "typeString": "function () pure returns (bytes memory)"
                                     }
                                   },
-                                  "id": 4932,
+                                  "id": 4993,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -2139,7 +2139,7 @@
                                     "typeString": "bytes memory"
                                   }
                                 ],
-                                "id": 4924,
+                                "id": 4985,
                                 "name": "keccak256",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
@@ -2150,7 +2150,7 @@
                                   "typeString": "function (bytes memory) pure returns (bytes32)"
                                 }
                               },
-                              "id": 4933,
+                              "id": 4994,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -2173,7 +2173,7 @@
                                 "typeString": "bytes32"
                               }
                             ],
-                            "id": 4923,
+                            "id": 4984,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2185,14 +2185,14 @@
                               "typeString": "type(uint256)"
                             },
                             "typeName": {
-                              "id": 4922,
+                              "id": 4983,
                               "name": "uint",
                               "nodeType": "ElementaryTypeName",
                               "src": "738:4:23",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 4934,
+                          "id": 4995,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2211,7 +2211,7 @@
                         "operator": "%",
                         "rightExpression": {
                           "hexValue": "3130",
-                          "id": 4935,
+                          "id": 4996,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2239,18 +2239,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 4921,
+                      "id": 4982,
                       "name": "Technique",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4913,
+                      "referencedDeclaration": 4974,
                       "src": "728:9:23",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_enum$_Technique_$4913_$",
+                        "typeIdentifier": "t_type$_t_enum$_Technique_$4974_$",
                         "typeString": "type(enum NokaiTechnique.Technique)"
                       }
                     },
-                    "id": 4937,
+                    "id": 4998,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2261,35 +2261,35 @@
                     "src": "728:91:23",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Technique_$4913",
+                      "typeIdentifier": "t_enum$_Technique_$4974",
                       "typeString": "enum NokaiTechnique.Technique"
                     }
                   },
-                  "functionReturnParameters": 4920,
-                  "id": 4938,
+                  "functionReturnParameters": 4981,
+                  "id": 4999,
                   "nodeType": "Return",
                   "src": "721:98:23"
                 }
               ]
             },
             "functionSelector": "9507d39a",
-            "id": 4940,
+            "id": 5001,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "get",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4916,
+              "id": 4977,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4915,
+                  "id": 4976,
                   "mutability": "mutable",
                   "name": "_newNokaiId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4940,
+                  "scope": 5001,
                   "src": "655:19:23",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2298,7 +2298,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4914,
+                    "id": 4975,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "655:7:23",
@@ -2313,37 +2313,37 @@
               "src": "654:21:23"
             },
             "returnParameters": {
-              "id": 4920,
+              "id": 4981,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4919,
+                  "id": 4980,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4940,
+                  "scope": 5001,
                   "src": "699:9:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Technique_$4913",
+                    "typeIdentifier": "t_enum$_Technique_$4974",
                     "typeString": "enum NokaiTechnique.Technique"
                   },
                   "typeName": {
-                    "id": 4918,
+                    "id": 4979,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 4917,
+                      "id": 4978,
                       "name": "Technique",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4913,
+                      "referencedDeclaration": 4974,
                       "src": "699:9:23"
                     },
-                    "referencedDeclaration": 4913,
+                    "referencedDeclaration": 4974,
                     "src": "699:9:23",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Technique_$4913",
+                      "typeIdentifier": "t_enum$_Technique_$4974",
                       "typeString": "enum NokaiTechnique.Technique"
                     }
                   },
@@ -2352,14 +2352,14 @@
               ],
               "src": "698:11:23"
             },
-            "scope": 4941,
+            "scope": 5002,
             "src": "642:185:23",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 4942,
+        "scope": 5003,
         "src": "60:770:23"
       }
     ],
@@ -2369,15 +2369,15 @@
     "absolutePath": "project:/contracts/character/NokaiTechnique.sol",
     "exportedSymbols": {
       "NokaiTechnique": [
-        4941
+        5002
       ]
     },
-    "id": 4942,
+    "id": 5003,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4902,
+        "id": 4963,
         "literals": [
           "solidity",
           "^",
@@ -2393,73 +2393,73 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 4941,
+        "id": 5002,
         "linearizedBaseContracts": [
-          4941
+          5002
         ],
         "name": "NokaiTechnique",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "NokaiTechnique.Technique",
-            "id": 4913,
+            "id": 4974,
             "members": [
               {
-                "id": 4903,
+                "id": 4964,
                 "name": "SPECIALIST",
                 "nodeType": "EnumValue",
                 "src": "119:10:23"
               },
               {
-                "id": 4904,
+                "id": 4965,
                 "name": "GUARDIAN",
                 "nodeType": "EnumValue",
                 "src": "160:8:23"
               },
               {
-                "id": 4905,
+                "id": 4966,
                 "name": "GLUTTON",
                 "nodeType": "EnumValue",
                 "src": "210:7:23"
               },
               {
-                "id": 4906,
+                "id": 4967,
                 "name": "BUFFOON",
                 "nodeType": "EnumValue",
                 "src": "264:7:23"
               },
               {
-                "id": 4907,
+                "id": 4968,
                 "name": "DESTROYER",
                 "nodeType": "EnumValue",
                 "src": "329:9:23"
               },
               {
-                "id": 4908,
+                "id": 4969,
                 "name": "FOOL",
                 "nodeType": "EnumValue",
                 "src": "381:4:23"
               },
               {
-                "id": 4909,
+                "id": 4970,
                 "name": "DEADLY",
                 "nodeType": "EnumValue",
                 "src": "426:6:23"
               },
               {
-                "id": 4910,
+                "id": 4971,
                 "name": "AUTHORITY",
                 "nodeType": "EnumValue",
                 "src": "475:9:23"
               },
               {
-                "id": 4911,
+                "id": 4972,
                 "name": "REVENGER",
                 "nodeType": "EnumValue",
                 "src": "546:8:23"
               },
               {
-                "id": 4912,
+                "id": 4973,
                 "name": "MIMIC",
                 "nodeType": "EnumValue",
                 "src": "595:5:23"
@@ -2471,7 +2471,7 @@
           },
           {
             "body": {
-              "id": 4939,
+              "id": 5000,
               "nodeType": "Block",
               "src": "710:117:23",
               "statements": [
@@ -2483,7 +2483,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 4936,
+                        "id": 4997,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2496,7 +2496,7 @@
                                   "arguments": [
                                     {
                                       "expression": {
-                                        "id": 4927,
+                                        "id": 4988,
                                         "name": "block",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
@@ -2507,7 +2507,7 @@
                                           "typeString": "block"
                                         }
                                       },
-                                      "id": 4928,
+                                      "id": 4989,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -2522,7 +2522,7 @@
                                     },
                                     {
                                       "expression": {
-                                        "id": 4929,
+                                        "id": 4990,
                                         "name": "msg",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
@@ -2533,7 +2533,7 @@
                                           "typeString": "msg"
                                         }
                                       },
-                                      "id": 4930,
+                                      "id": 4991,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -2547,11 +2547,11 @@
                                       }
                                     },
                                     {
-                                      "id": 4931,
+                                      "id": 4992,
                                       "name": "_newNokaiId",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 4915,
+                                      "referencedDeclaration": 4976,
                                       "src": "799:11:23",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
@@ -2575,7 +2575,7 @@
                                       }
                                     ],
                                     "expression": {
-                                      "id": 4925,
+                                      "id": 4986,
                                       "name": "abi",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
@@ -2586,7 +2586,7 @@
                                         "typeString": "abi"
                                       }
                                     },
-                                    "id": 4926,
+                                    "id": 4987,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -2599,7 +2599,7 @@
                                       "typeString": "function () pure returns (bytes memory)"
                                     }
                                   },
-                                  "id": 4932,
+                                  "id": 4993,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -2622,7 +2622,7 @@
                                     "typeString": "bytes memory"
                                   }
                                 ],
-                                "id": 4924,
+                                "id": 4985,
                                 "name": "keccak256",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
@@ -2633,7 +2633,7 @@
                                   "typeString": "function (bytes memory) pure returns (bytes32)"
                                 }
                               },
-                              "id": 4933,
+                              "id": 4994,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -2656,7 +2656,7 @@
                                 "typeString": "bytes32"
                               }
                             ],
-                            "id": 4923,
+                            "id": 4984,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2668,14 +2668,14 @@
                               "typeString": "type(uint256)"
                             },
                             "typeName": {
-                              "id": 4922,
+                              "id": 4983,
                               "name": "uint",
                               "nodeType": "ElementaryTypeName",
                               "src": "738:4:23",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 4934,
+                          "id": 4995,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2694,7 +2694,7 @@
                         "operator": "%",
                         "rightExpression": {
                           "hexValue": "3130",
-                          "id": 4935,
+                          "id": 4996,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2722,18 +2722,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 4921,
+                      "id": 4982,
                       "name": "Technique",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4913,
+                      "referencedDeclaration": 4974,
                       "src": "728:9:23",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_enum$_Technique_$4913_$",
+                        "typeIdentifier": "t_type$_t_enum$_Technique_$4974_$",
                         "typeString": "type(enum NokaiTechnique.Technique)"
                       }
                     },
-                    "id": 4937,
+                    "id": 4998,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2744,35 +2744,35 @@
                     "src": "728:91:23",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Technique_$4913",
+                      "typeIdentifier": "t_enum$_Technique_$4974",
                       "typeString": "enum NokaiTechnique.Technique"
                     }
                   },
-                  "functionReturnParameters": 4920,
-                  "id": 4938,
+                  "functionReturnParameters": 4981,
+                  "id": 4999,
                   "nodeType": "Return",
                   "src": "721:98:23"
                 }
               ]
             },
             "functionSelector": "9507d39a",
-            "id": 4940,
+            "id": 5001,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "get",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4916,
+              "id": 4977,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4915,
+                  "id": 4976,
                   "mutability": "mutable",
                   "name": "_newNokaiId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4940,
+                  "scope": 5001,
                   "src": "655:19:23",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2781,7 +2781,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4914,
+                    "id": 4975,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "655:7:23",
@@ -2796,37 +2796,37 @@
               "src": "654:21:23"
             },
             "returnParameters": {
-              "id": 4920,
+              "id": 4981,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4919,
+                  "id": 4980,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4940,
+                  "scope": 5001,
                   "src": "699:9:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Technique_$4913",
+                    "typeIdentifier": "t_enum$_Technique_$4974",
                     "typeString": "enum NokaiTechnique.Technique"
                   },
                   "typeName": {
-                    "id": 4918,
+                    "id": 4979,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 4917,
+                      "id": 4978,
                       "name": "Technique",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4913,
+                      "referencedDeclaration": 4974,
                       "src": "699:9:23"
                     },
-                    "referencedDeclaration": 4913,
+                    "referencedDeclaration": 4974,
                     "src": "699:9:23",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Technique_$4913",
+                      "typeIdentifier": "t_enum$_Technique_$4974",
                       "typeString": "enum NokaiTechnique.Technique"
                     }
                   },
@@ -2835,14 +2835,14 @@
               ],
               "src": "698:11:23"
             },
-            "scope": 4941,
+            "scope": 5002,
             "src": "642:185:23",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 4942,
+        "scope": 5003,
         "src": "60:770:23"
       }
     ],
@@ -2856,12 +2856,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x45C4676e326866E672abC2360b0D67d70E992a7b",
-      "transactionHash": "0x2c8d58f3941523e69697cbfd46fc8e4dda097369ab1d1c1f0c51051cad8303ef"
+      "address": "0x23d977E1005CaDA787BBc093Ffe421eB0925F86e",
+      "transactionHash": "0x901ec3d3c01907def1dcf98dd99811c5c91f06253053ef0f52b20de21a637a13"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-10T04:31:05.313Z",
+  "updatedAt": "2021-12-10T04:57:27.558Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

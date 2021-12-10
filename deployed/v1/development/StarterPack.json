@@ -14272,10 +14272,10 @@
         308
       ],
       "BurnableToken": [
-        8830
+        8891
       ],
       "BuyableToken": [
-        8939
+        9000
       ],
       "Context": [
         2815
@@ -14287,7 +14287,7 @@
         1032
       ],
       "GiftableToken": [
-        8993
+        9054
       ],
       "IAccessControl": [
         381
@@ -14305,18 +14305,18 @@
         486
       ],
       "StarterPack": [
-        9349
+        9410
       ],
       "Strings": [
         3092
       ]
     },
-    "id": 9350,
+    "id": 9411,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9313,
+        "id": 9374,
         "literals": [
           "solidity",
           "^",
@@ -14329,10 +14329,10 @@
       {
         "absolutePath": "project:/contracts/tokens/BuyableToken.sol",
         "file": "../BuyableToken.sol",
-        "id": 9314,
+        "id": 9375,
         "nodeType": "ImportDirective",
-        "scope": 9350,
-        "sourceUnit": 8940,
+        "scope": 9411,
+        "sourceUnit": 9001,
         "src": "27:29:48",
         "symbolAliases": [],
         "unitAlias": ""
@@ -14340,10 +14340,10 @@
       {
         "absolutePath": "project:/contracts/tokens/BurnableToken.sol",
         "file": "../BurnableToken.sol",
-        "id": 9315,
+        "id": 9376,
         "nodeType": "ImportDirective",
-        "scope": 9350,
-        "sourceUnit": 8831,
+        "scope": 9411,
+        "sourceUnit": 8892,
         "src": "58:30:48",
         "symbolAliases": [],
         "unitAlias": ""
@@ -14351,10 +14351,10 @@
       {
         "absolutePath": "project:/contracts/tokens/GiftableToken.sol",
         "file": "../GiftableToken.sol",
-        "id": 9316,
+        "id": 9377,
         "nodeType": "ImportDirective",
-        "scope": 9350,
-        "sourceUnit": 8994,
+        "scope": 9411,
+        "sourceUnit": 9055,
         "src": "90:30:48",
         "symbolAliases": [],
         "unitAlias": ""
@@ -14364,37 +14364,37 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 9317,
+              "id": 9378,
               "name": "BuyableToken",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8939,
+              "referencedDeclaration": 9000,
               "src": "181:12:48"
             },
-            "id": 9318,
+            "id": 9379,
             "nodeType": "InheritanceSpecifier",
             "src": "181:12:48"
           },
           {
             "baseName": {
-              "id": 9319,
+              "id": 9380,
               "name": "BurnableToken",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8830,
+              "referencedDeclaration": 8891,
               "src": "195:13:48"
             },
-            "id": 9320,
+            "id": 9381,
             "nodeType": "InheritanceSpecifier",
             "src": "195:13:48"
           },
           {
             "baseName": {
-              "id": 9321,
+              "id": 9382,
               "name": "GiftableToken",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8993,
+              "referencedDeclaration": 9054,
               "src": "210:13:48"
             },
-            "id": 9322,
+            "id": 9383,
             "nodeType": "InheritanceSpecifier",
             "src": "210:13:48"
           }
@@ -14409,19 +14409,19 @@
           2815,
           3116,
           3128,
-          8830,
-          8939,
-          8993
+          8891,
+          9000,
+          9054
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 9349,
+        "id": 9410,
         "linearizedBaseContracts": [
-          9349,
-          8993,
+          9410,
+          9054,
           486,
-          8830,
-          8939,
+          8891,
+          9000,
           308,
           3116,
           3128,
@@ -14436,23 +14436,23 @@
         "nodes": [
           {
             "body": {
-              "id": 9347,
+              "id": 9408,
               "nodeType": "Block",
               "src": "288:138:48",
               "statements": [
                 {
                   "expression": {
-                    "id": 9333,
+                    "id": 9394,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 9331,
+                      "id": 9392,
                       "name": "costPerUnit",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8850,
+                      "referencedDeclaration": 8911,
                       "src": "299:11:48",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -14462,11 +14462,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 9332,
+                      "id": 9393,
                       "name": "cost",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9324,
+                      "referencedDeclaration": 9385,
                       "src": "313:4:48",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -14479,7 +14479,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 9334,
+                  "id": 9395,
                   "nodeType": "ExpressionStatement",
                   "src": "299:18:48"
                 },
@@ -14487,7 +14487,7 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 9336,
+                        "id": 9397,
                         "name": "DEFAULT_ADMIN_ROLE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -14500,7 +14500,7 @@
                       },
                       {
                         "expression": {
-                          "id": 9337,
+                          "id": 9398,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -14511,7 +14511,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 9338,
+                        "id": 9399,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14536,7 +14536,7 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 9335,
+                      "id": 9396,
                       "name": "_setupRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -14547,7 +14547,7 @@
                         "typeString": "function (bytes32,address)"
                       }
                     },
-                    "id": 9339,
+                    "id": 9400,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14562,7 +14562,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 9340,
+                  "id": 9401,
                   "nodeType": "ExpressionStatement",
                   "src": "328:42:48"
                 },
@@ -14570,11 +14570,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 9342,
+                        "id": 9403,
                         "name": "WITHDRAW_ROLE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8848,
+                        "referencedDeclaration": 8909,
                         "src": "392:13:48",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -14583,7 +14583,7 @@
                       },
                       {
                         "expression": {
-                          "id": 9343,
+                          "id": 9404,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -14594,7 +14594,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 9344,
+                        "id": 9405,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14619,7 +14619,7 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 9341,
+                      "id": 9402,
                       "name": "_grantRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -14630,7 +14630,7 @@
                         "typeString": "function (bytes32,address)"
                       }
                     },
-                    "id": 9345,
+                    "id": 9406,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14645,13 +14645,13 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 9346,
+                  "id": 9407,
                   "nodeType": "ExpressionStatement",
                   "src": "381:37:48"
                 }
               ]
             },
-            "id": 9348,
+            "id": 9409,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -14659,7 +14659,7 @@
                 "arguments": [
                   {
                     "hexValue": "537461727465725061636b",
-                    "id": 9327,
+                    "id": 9388,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -14675,7 +14675,7 @@
                   },
                   {
                     "hexValue": "4e4557424945",
-                    "id": 9328,
+                    "id": 9389,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -14690,9 +14690,9 @@
                     "value": "NEWBIE"
                   }
                 ],
-                "id": 9329,
+                "id": 9390,
                 "modifierName": {
-                  "id": 9326,
+                  "id": 9387,
                   "name": "ERC20",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 1032,
@@ -14705,16 +14705,16 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9325,
+              "id": 9386,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9324,
+                  "id": 9385,
                   "mutability": "mutable",
                   "name": "cost",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9348,
+                  "scope": 9409,
                   "src": "243:12:48",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -14723,7 +14723,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9323,
+                    "id": 9384,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "243:7:48",
@@ -14738,19 +14738,19 @@
               "src": "242:14:48"
             },
             "returnParameters": {
-              "id": 9330,
+              "id": 9391,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "288:0:48"
             },
-            "scope": 9349,
+            "scope": 9410,
             "src": "231:195:48",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 9350,
+        "scope": 9411,
         "src": "157:272:48"
       }
     ],
@@ -14763,10 +14763,10 @@
         308
       ],
       "BurnableToken": [
-        8830
+        8891
       ],
       "BuyableToken": [
-        8939
+        9000
       ],
       "Context": [
         2815
@@ -14778,7 +14778,7 @@
         1032
       ],
       "GiftableToken": [
-        8993
+        9054
       ],
       "IAccessControl": [
         381
@@ -14796,18 +14796,18 @@
         486
       ],
       "StarterPack": [
-        9349
+        9410
       ],
       "Strings": [
         3092
       ]
     },
-    "id": 9350,
+    "id": 9411,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9313,
+        "id": 9374,
         "literals": [
           "solidity",
           "^",
@@ -14820,10 +14820,10 @@
       {
         "absolutePath": "project:/contracts/tokens/BuyableToken.sol",
         "file": "../BuyableToken.sol",
-        "id": 9314,
+        "id": 9375,
         "nodeType": "ImportDirective",
-        "scope": 9350,
-        "sourceUnit": 8940,
+        "scope": 9411,
+        "sourceUnit": 9001,
         "src": "27:29:48",
         "symbolAliases": [],
         "unitAlias": ""
@@ -14831,10 +14831,10 @@
       {
         "absolutePath": "project:/contracts/tokens/BurnableToken.sol",
         "file": "../BurnableToken.sol",
-        "id": 9315,
+        "id": 9376,
         "nodeType": "ImportDirective",
-        "scope": 9350,
-        "sourceUnit": 8831,
+        "scope": 9411,
+        "sourceUnit": 8892,
         "src": "58:30:48",
         "symbolAliases": [],
         "unitAlias": ""
@@ -14842,10 +14842,10 @@
       {
         "absolutePath": "project:/contracts/tokens/GiftableToken.sol",
         "file": "../GiftableToken.sol",
-        "id": 9316,
+        "id": 9377,
         "nodeType": "ImportDirective",
-        "scope": 9350,
-        "sourceUnit": 8994,
+        "scope": 9411,
+        "sourceUnit": 9055,
         "src": "90:30:48",
         "symbolAliases": [],
         "unitAlias": ""
@@ -14855,37 +14855,37 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 9317,
+              "id": 9378,
               "name": "BuyableToken",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8939,
+              "referencedDeclaration": 9000,
               "src": "181:12:48"
             },
-            "id": 9318,
+            "id": 9379,
             "nodeType": "InheritanceSpecifier",
             "src": "181:12:48"
           },
           {
             "baseName": {
-              "id": 9319,
+              "id": 9380,
               "name": "BurnableToken",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8830,
+              "referencedDeclaration": 8891,
               "src": "195:13:48"
             },
-            "id": 9320,
+            "id": 9381,
             "nodeType": "InheritanceSpecifier",
             "src": "195:13:48"
           },
           {
             "baseName": {
-              "id": 9321,
+              "id": 9382,
               "name": "GiftableToken",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8993,
+              "referencedDeclaration": 9054,
               "src": "210:13:48"
             },
-            "id": 9322,
+            "id": 9383,
             "nodeType": "InheritanceSpecifier",
             "src": "210:13:48"
           }
@@ -14900,19 +14900,19 @@
           2815,
           3116,
           3128,
-          8830,
-          8939,
-          8993
+          8891,
+          9000,
+          9054
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 9349,
+        "id": 9410,
         "linearizedBaseContracts": [
-          9349,
-          8993,
+          9410,
+          9054,
           486,
-          8830,
-          8939,
+          8891,
+          9000,
           308,
           3116,
           3128,
@@ -14927,23 +14927,23 @@
         "nodes": [
           {
             "body": {
-              "id": 9347,
+              "id": 9408,
               "nodeType": "Block",
               "src": "288:138:48",
               "statements": [
                 {
                   "expression": {
-                    "id": 9333,
+                    "id": 9394,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 9331,
+                      "id": 9392,
                       "name": "costPerUnit",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8850,
+                      "referencedDeclaration": 8911,
                       "src": "299:11:48",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -14953,11 +14953,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 9332,
+                      "id": 9393,
                       "name": "cost",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9324,
+                      "referencedDeclaration": 9385,
                       "src": "313:4:48",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -14970,7 +14970,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 9334,
+                  "id": 9395,
                   "nodeType": "ExpressionStatement",
                   "src": "299:18:48"
                 },
@@ -14978,7 +14978,7 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 9336,
+                        "id": 9397,
                         "name": "DEFAULT_ADMIN_ROLE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -14991,7 +14991,7 @@
                       },
                       {
                         "expression": {
-                          "id": 9337,
+                          "id": 9398,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -15002,7 +15002,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 9338,
+                        "id": 9399,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -15027,7 +15027,7 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 9335,
+                      "id": 9396,
                       "name": "_setupRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -15038,7 +15038,7 @@
                         "typeString": "function (bytes32,address)"
                       }
                     },
-                    "id": 9339,
+                    "id": 9400,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -15053,7 +15053,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 9340,
+                  "id": 9401,
                   "nodeType": "ExpressionStatement",
                   "src": "328:42:48"
                 },
@@ -15061,11 +15061,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 9342,
+                        "id": 9403,
                         "name": "WITHDRAW_ROLE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8848,
+                        "referencedDeclaration": 8909,
                         "src": "392:13:48",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -15074,7 +15074,7 @@
                       },
                       {
                         "expression": {
-                          "id": 9343,
+                          "id": 9404,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -15085,7 +15085,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 9344,
+                        "id": 9405,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -15110,7 +15110,7 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 9341,
+                      "id": 9402,
                       "name": "_grantRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -15121,7 +15121,7 @@
                         "typeString": "function (bytes32,address)"
                       }
                     },
-                    "id": 9345,
+                    "id": 9406,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -15136,13 +15136,13 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 9346,
+                  "id": 9407,
                   "nodeType": "ExpressionStatement",
                   "src": "381:37:48"
                 }
               ]
             },
-            "id": 9348,
+            "id": 9409,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -15150,7 +15150,7 @@
                 "arguments": [
                   {
                     "hexValue": "537461727465725061636b",
-                    "id": 9327,
+                    "id": 9388,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -15166,7 +15166,7 @@
                   },
                   {
                     "hexValue": "4e4557424945",
-                    "id": 9328,
+                    "id": 9389,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -15181,9 +15181,9 @@
                     "value": "NEWBIE"
                   }
                 ],
-                "id": 9329,
+                "id": 9390,
                 "modifierName": {
-                  "id": 9326,
+                  "id": 9387,
                   "name": "ERC20",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 1032,
@@ -15196,16 +15196,16 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9325,
+              "id": 9386,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9324,
+                  "id": 9385,
                   "mutability": "mutable",
                   "name": "cost",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9348,
+                  "scope": 9409,
                   "src": "243:12:48",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -15214,7 +15214,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9323,
+                    "id": 9384,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "243:7:48",
@@ -15229,19 +15229,19 @@
               "src": "242:14:48"
             },
             "returnParameters": {
-              "id": 9330,
+              "id": 9391,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "288:0:48"
             },
-            "scope": 9349,
+            "scope": 9410,
             "src": "231:195:48",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 9350,
+        "scope": 9411,
         "src": "157:272:48"
       }
     ],
@@ -15400,12 +15400,12 @@
         }
       },
       "links": {},
-      "address": "0xEd480766BB8E17b7568E9BC4CFdE69e9D69e5628",
-      "transactionHash": "0xb854a2314167b8b8fcd40e38e9f0ed8f60dd5d47952642a6e091cbc22ecddd2c"
+      "address": "0xa6387C097104E8a7963B3242bf28f36f5e101B6F",
+      "transactionHash": "0x1c3176c8b27a6c5b97adc6cdbf361326b58f0fe8c333aa7575ab37162d896381"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-10T04:31:05.443Z",
+  "updatedAt": "2021-12-10T04:57:27.682Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
