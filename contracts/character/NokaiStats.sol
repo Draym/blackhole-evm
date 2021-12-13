@@ -256,11 +256,22 @@ contract NokaiStats is AccessControl {
         });
     }
 
-    function profiles(uint256[] calldata nokaiIds) external view returns (Profile[] memory) {
-        Profile[] memory nokais = new Profile[](nokaiIds.length);
+    struct ProfileDTO {
+        uint256 nokaiId;
+        Stats stats;
+        uint256 currentHp;
+        uint256 currentPa;
+        bool dead;
+        bool burned;
+        uint256 lastHpSet;
+        uint256 lastPaSet;
+    }
+    function profiles(uint256[] calldata nokaiIds) external view returns (ProfileDTO[] memory) {
+        ProfileDTO[] memory nokais = new ProfileDTO[](nokaiIds.length);
 
         for (uint256 i = 0; i < nokaiIds.length; i++) {
-            nokais[i] = Profile({
+            nokais[i] = ProfileDTO({
+            nokaiId : nokaiIds[i],
             stats : _profiles[nokaiIds[i]].stats,
             currentHp : _calculateHp(nokaiIds[i]),
             currentPa : _calculatePa(nokaiIds[i]),
