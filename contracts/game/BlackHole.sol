@@ -37,9 +37,9 @@ contract BlackHole is AccessControl {
         uint16 y;
     }
 
-    mapping(address => uint256) private userTerritoryCount;
-    mapping(uint256 => Territory) private blackhole;
-    mapping(uint256 => NokaiPos) private nokaiPosition;
+    mapping(address => uint256) private _userTerritoryCount;
+    mapping(uint256 => Territory) private _blackhole;
+    mapping(uint256 => NokaiPos) private _nokaiPosition;
 
     constructor(string memory _name, uint16 _width, uint16 _height)  {
         name = _name;
@@ -48,7 +48,7 @@ contract BlackHole is AccessControl {
         totalPos = maxX * maxY;
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
 
-        blackhole[((maxY / 2) * maxX) + maxX / 2] = Territory({
+        _blackhole[((maxY / 2) * maxX) + maxX / 2] = Territory({
         x : maxX / 2,
         y : maxY / 2,
         uxonium : 10,
@@ -64,30 +64,30 @@ contract BlackHole is AccessControl {
 
     function completeExtraction(uint16 x, uint16 y, address by) external onlyRole(GAME_MANAGER_ROLE) returns (uint256, uint256, uint256, uint256) {
         uint256 pos = (y * maxX) + x;
-        require(blackhole[pos].owner == by, "you are not the owner of the specified territory.");
-        uint256 nbHours = (block.timestamp - blackhole[pos].extractor.lastExtract) / 3600;
-        blackhole[pos].extractor.lastExtract = block.timestamp;
-        uint256 _uxonium = blackhole[pos].uxonium != 0 ? blackhole[pos].uxonium * blackhole[pos].extractor.level * nbHours : 0;
-        uint256 _darkMatter = blackhole[pos].darkMatter != 0 ? blackhole[pos].darkMatter * blackhole[pos].extractor.level * nbHours : 0;
-        uint256 _plasmaEnergy = blackhole[pos].plasmaEnergy != 0 ? blackhole[pos].plasmaEnergy * blackhole[pos].extractor.level * nbHours : 0;
-        uint256 _voidEssence = blackhole[pos].voidEssence != 0 ? blackhole[pos].voidEssence * blackhole[pos].extractor.level * nbHours : 0;
+        require(_blackhole[pos].owner == by, "you are not the owner of the specified territory.");
+        uint256 nbHours = (block.timestamp - _blackhole[pos].extractor.lastExtract) / 3600;
+        _blackhole[pos].extractor.lastExtract = block.timestamp;
+        uint256 _uxonium = _blackhole[pos].uxonium != 0 ? _blackhole[pos].uxonium * _blackhole[pos].extractor.level * nbHours : 0;
+        uint256 _darkMatter = _blackhole[pos].darkMatter != 0 ? _blackhole[pos].darkMatter * _blackhole[pos].extractor.level * nbHours : 0;
+        uint256 _plasmaEnergy = _blackhole[pos].plasmaEnergy != 0 ? _blackhole[pos].plasmaEnergy * _blackhole[pos].extractor.level * nbHours : 0;
+        uint256 _voidEssence = _blackhole[pos].voidEssence != 0 ? _blackhole[pos].voidEssence * _blackhole[pos].extractor.level * nbHours : 0;
         emit TerritoryExtracted(x, y, by);
         return (_uxonium, _darkMatter, _plasmaEnergy, _voidEssence);
     }
 
     function upgradeExtractor(uint16 x, uint16 y, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 pos = (y * maxX) + x;
-        require(blackhole[pos].owner == by, "you are not the owner of the specified territory.");
-        blackhole[pos].extractor.level += 1;
-        blackhole[pos].extractor.cost *= 2;
-        blackhole[pos].extractor.lastExtract = block.timestamp;
-        emit ExtractorUpgraded(x, y, by, blackhole[pos].extractor.level);
+        require(_blackhole[pos].owner == by, "you are not the owner of the specified territory.");
+        _blackhole[pos].extractor.level += 1;
+        _blackhole[pos].extractor.cost *= 2;
+        _blackhole[pos].extractor.lastExtract = block.timestamp;
+        emit ExtractorUpgraded(x, y, by, _blackhole[pos].extractor.level);
     }
 
 
     function assignNokai(uint16 x, uint16 y, uint256 nokaiId, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 pos = (y * maxX) + x;
-        if (userTerritoryCount[by] > 0) {
+        if (_userTerritoryCount[by] > 0) {
             _assignNokai(pos, x, y, nokaiId, by);
         } else {
             _assignNokaiNewTerritory(pos, x, y, nokaiId);
@@ -95,21 +95,21 @@ contract BlackHole is AccessControl {
     }
 
     function _assignNokaiNewTerritory(uint256 pos, uint16 x, uint16 y, uint256 nokaiId) private {
-        require(blackhole[pos].owner == address(0), "The specified territory is owned by another player.");
-        require(blackhole[pos].nokai == 0, "Specified territory is already occupied by a Nokai.");
-        blackhole[pos].nokai = nokaiId;
-        nokaiPosition[nokaiId].onBoard = true;
-        nokaiPosition[nokaiId].x = x;
-        nokaiPosition[nokaiId].y = y;
+        require(_blackhole[pos].owner == address(0), "The specified territory is owned by another player.");
+        require(_blackhole[pos].nokai == 0, "Specified territory is already occupied by a Nokai.");
+        _blackhole[pos].nokai = nokaiId;
+        _nokaiPosition[nokaiId].onBoard = true;
+        _nokaiPosition[nokaiId].x = x;
+        _nokaiPosition[nokaiId].y = y;
     }
 
     function _assignNokai(uint256 pos, uint16 x, uint16 y, uint256 nokaiId, address by) private {
-        require(blackhole[pos].owner == by, "You are not the owner of the specified territory.");
-        require(blackhole[pos].nokai == 0, "Specified territory is already occupied by a Nokai.");
-        blackhole[pos].nokai = nokaiId;
-        nokaiPosition[nokaiId].onBoard = true;
-        nokaiPosition[nokaiId].x = x;
-        nokaiPosition[nokaiId].y = y;
+        require(_blackhole[pos].owner == by, "You are not the owner of the specified territory.");
+        require(_blackhole[pos].nokai == 0, "Specified territory is already occupied by a Nokai.");
+        _blackhole[pos].nokai = nokaiId;
+        _nokaiPosition[nokaiId].onBoard = true;
+        _nokaiPosition[nokaiId].x = x;
+        _nokaiPosition[nokaiId].y = y;
     }
 
     function withdrawDeadNokai(uint16 x, uint16 y, uint256 nokaiId) external onlyRole(GAME_MANAGER_ROLE) {
@@ -118,52 +118,52 @@ contract BlackHole is AccessControl {
 
     function withdrawNokai(uint16 x, uint16 y, uint256 nokaiId, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 pos = (y * maxX) + x;
-        require(blackhole[pos].owner == by, "You are not the owner of the specified territory.");
-        require(blackhole[pos].nokai == 1, "Specified territory is not occupied by a Nokai.");
+        require(_blackhole[pos].owner == by, "You are not the owner of the specified territory.");
+        require(_blackhole[pos].nokai == 1, "Specified territory is not occupied by a Nokai.");
         _withdrawNokai(pos, nokaiId);
     }
 
     function _withdrawNokai(uint256 pos, uint256 nokaiId) internal {
-        require(blackhole[pos].nokai == nokaiId, "Specified Nokai is not on specified territory.");
-        blackhole[pos].nokai = 0;
-        nokaiPosition[nokaiId].onBoard = false;
-        nokaiPosition[nokaiId].x = 0;
-        nokaiPosition[nokaiId].y = 0;
+        require(_blackhole[pos].nokai == nokaiId, "Specified Nokai is not on specified territory.");
+        _blackhole[pos].nokai = 0;
+        _nokaiPosition[nokaiId].onBoard = false;
+        _nokaiPosition[nokaiId].x = 0;
+        _nokaiPosition[nokaiId].y = 0;
     }
 
     function conquest(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 from = (toY * maxX) + toX;
         uint256 to = (toY * maxX) + toX;
-        require(blackhole[from].owner == by, "You are not the owner of the original territory.");
-        require(blackhole[from].owner != blackhole[to].owner, "Current and target territories are from the same owner.");
-        require(blackhole[to].nokai == 0, "Target territory is still defended by a Nokai.");
-        require(blackhole[from].nokai != 0, "Current territory does not have any Nokai to move.");
+        require(_blackhole[from].owner == by, "You are not the owner of the original territory.");
+        require(_blackhole[from].owner != _blackhole[to].owner, "Current and target territories are from the same owner.");
+        require(_blackhole[to].nokai == 0, "Target territory is still defended by a Nokai.");
+        require(_blackhole[from].nokai != 0, "Current territory does not have any Nokai to move.");
 
-        address previousOwner = blackhole[to].owner;
+        address previousOwner = _blackhole[to].owner;
 
-        userTerritoryCount[previousOwner] = userTerritoryCount[previousOwner] > 0 ? userTerritoryCount[previousOwner] - 1 : 0;
-        userTerritoryCount[by] += 1;
+        _userTerritoryCount[previousOwner] = _userTerritoryCount[previousOwner] > 0 ? _userTerritoryCount[previousOwner] - 1 : 0;
+        _userTerritoryCount[by] += 1;
 
-        blackhole[to].owner = by;
-        _assignNokai(to, toX, toY, blackhole[from].nokai, by);
-        blackhole[from].nokai = 0;
+        _blackhole[to].owner = by;
+        _assignNokai(to, toX, toY, _blackhole[from].nokai, by);
+        _blackhole[from].nokai = 0;
 
-        _discover(toX, toY, blackhole[from].owner);
-        emit NokaiMoved(fromX, fromY, toX, toY, blackhole[to].nokai, blackhole[from].owner);
+        _discover(toX, toY, _blackhole[from].owner);
+        emit NokaiMoved(fromX, fromY, toX, toY, _blackhole[to].nokai, _blackhole[from].owner);
         emit SlotConquered(toX, toY, previousOwner, by);
     }
 
     function move(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 from = (toY * maxX) + toX;
         uint256 to = (toY * maxX) + toX;
-        require(blackhole[from].owner == blackhole[to].owner, "Current and target territories are not from the same owner.");
-        require(blackhole[from].nokai != 0, "Current territory does not have any Nokai to move.");
+        require(_blackhole[from].owner == _blackhole[to].owner, "Current and target territories are not from the same owner.");
+        require(_blackhole[from].nokai != 0, "Current territory does not have any Nokai to move.");
 
-        _assignNokai(to, toX, toY, blackhole[from].nokai, by);
-        blackhole[from].nokai = 0;
+        _assignNokai(to, toX, toY, _blackhole[from].nokai, by);
+        _blackhole[from].nokai = 0;
 
-        _discover(toX, toY, blackhole[from].owner);
-        emit NokaiMoved(fromX, fromY, toX, toY, blackhole[to].nokai, blackhole[from].owner);
+        _discover(toX, toY, _blackhole[from].owner);
+        emit NokaiMoved(fromX, fromY, toX, toY, _blackhole[to].nokai, _blackhole[from].owner);
     }
 
     function _discover(uint16 x, uint16 y, address by) private {
@@ -177,7 +177,7 @@ contract BlackHole is AccessControl {
 
     function _discoverSlot(uint16 x, uint16 y, address by) private {
         uint256 pos = (y * maxX) + x;
-        if (blackhole[pos].discovered == false) {
+        if (_blackhole[pos].discovered == false) {
             uint256 wealth = 10;
             if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3) {
                 wealth = 40;
@@ -197,7 +197,7 @@ contract BlackHole is AccessControl {
             if (voidEssence < darkMatter || voidEssence < plasmaEnergy) {
                 voidEssence = 0;
             }
-            blackhole[pos] = Territory({
+            _blackhole[pos] = Territory({
             x : x,
             y : y,
             uxonium : 0,
@@ -214,69 +214,69 @@ contract BlackHole is AccessControl {
     }
 
     function nokaiAt(uint16 x, uint16 y) external view returns (uint256) {
-        return blackhole[(y * maxX) + x].nokai;
+        return _blackhole[(y * maxX) + x].nokai;
     }
 
     function nokaiPos(uint256 nokaiId) external view returns (NokaiPos memory) {
-        return nokaiPosition[nokaiId];
+        return _nokaiPosition[nokaiId];
     }
 
     function territoryCount(address user) external view returns (uint256) {
-        return userTerritoryCount[user];
+        return _userTerritoryCount[user];
     }
 
     function extractorCostAt(uint16 x, uint16 y) external view returns (uint256) {
-        return blackhole[(y * maxX) + x].extractor.cost;
+        return _blackhole[(y * maxX) + x].extractor.cost;
     }
 
     function get(uint16 x, uint16 y) external view returns (Territory memory) {
-        return blackhole[(y * maxX) + x];
+        return _blackhole[(y * maxX) + x];
     }
 
     function getForRange(uint256 from, uint256 to) external view returns (Territory[] memory) {
         require(from >= 0 && to < totalPos, "invalid range request");
-        Territory[] memory _blackhole = new Territory[](to - from);
+        Territory[] memory blackhole = new Territory[](to - from);
         for (uint256 i = from; i < to; i++) {
-            _blackhole[i] = blackhole[i];
+            blackhole[i] = _blackhole[i];
         }
-        return _blackhole;
+        return blackhole;
     }
 
     function getFor(uint256[] calldata choices) external view returns (Territory[] memory) {
-        Territory[] memory _blackhole = new Territory[](choices.length);
+        Territory[] memory blackhole = new Territory[](choices.length);
         for (uint256 i = 0; i < choices.length; i++) {
             uint256 pos = choices[i];
             if (pos >= 0 && pos < totalPos) {
-                _blackhole[i] = blackhole[pos];
+                blackhole[i] = _blackhole[pos];
             }
         }
-        return _blackhole;
+        return blackhole;
     }
 
     function getForBox(uint256 startPos, uint256 endPos, uint256 startLine, uint256 endLine) external view returns (Territory[] memory) {
         require(startPos < endPos && startPos >= 0 && endPos <= maxX && startLine < endLine && startLine >= 0 && endLine <= maxY, "invalid box request");
-        Territory[] memory _blackhole = new Territory[]((endPos - startPos) * (endLine - startLine));
+        Territory[] memory blackhole = new Territory[]((endPos - startPos) * (endLine - startLine));
         uint256 i = 0;
         for (uint256 line = startLine; line < endLine; line++) {
             for (uint256 pos = startPos; pos < endPos; pos++) {
-                _blackhole[i++] = blackhole[(line * maxX) + pos];
+                blackhole[i++] = _blackhole[(line * maxX) + pos];
             }
         }
-        return _blackhole;
+        return blackhole;
     }
 
     function getAvailableForBox(uint256 startPos, uint256 endPos, uint256 startLine, uint256 endLine) external view returns (uint256[] memory) {
         require(startPos < endPos && startPos >= 0 && endPos <= maxX && startLine < endLine && startLine >= 0 && endLine <= maxY, "invalid box request");
-        uint256[] memory _available = new uint256[]((endPos - startPos) * (endLine - startLine));
+        uint256[] memory available = new uint256[]((endPos - startPos) * (endLine - startLine));
         uint256 i = 0;
         for (uint256 line = startLine; line < endLine; line++) {
             for (uint256 pos = startPos; pos < endPos; pos++) {
-                if (blackhole[(line * maxX) + pos].owner == address(0)) {
-                    _available[i++] = (line * maxX) + pos;
+                if (_blackhole[(line * maxX) + pos].owner == address(0)) {
+                    available[i++] = (line * maxX) + pos;
                 }
             }
         }
-        return _available;
+        return available;
     }
 
     event SlotDiscovered(uint16 x, uint16 y, address by);

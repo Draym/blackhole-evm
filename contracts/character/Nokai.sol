@@ -13,15 +13,15 @@ contract Nokai is ERC721Enumerable, AccessControl {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    NokaiStats private nokaiStats;
+    NokaiStats private _nokaiStats;
 
     bool isSetup;
     bool mintLocked;
     bool transferLocked;
     string uri;
 
-    constructor(address _nokaiStats, string memory baseUri) ERC721("Nokai", "KAI") {
-        nokaiStats = NokaiStats(_nokaiStats);
+    constructor(address nokaiStats, string memory baseUri) ERC721("Nokai", "KAI") {
+        _nokaiStats = NokaiStats(nokaiStats);
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
         uri = baseUri;
     }
@@ -39,9 +39,9 @@ contract Nokai is ERC721Enumerable, AccessControl {
         _safeMint(msg.sender, _newNokaiId);
 
         if (isRare == true) {
-            nokaiStats.generateHighNokai(_newNokaiId);
+            _nokaiStats.generateHighNokai(_newNokaiId);
         } else {
-            nokaiStats.generateNokai(_newNokaiId);
+            _nokaiStats.generateNokai(_newNokaiId);
         }
         emit NokaiBorn(_newNokaiId, msg.sender);
         return _newNokaiId;
@@ -67,7 +67,7 @@ contract Nokai is ERC721Enumerable, AccessControl {
 
         _burn(targetId);
 
-        nokaiStats.upgradeFromNokaiBurn(nokaiId, targetId, upgradeChoice);
+        _nokaiStats.upgradeFromNokaiBurn(nokaiId, targetId, upgradeChoice);
 
         emit NokaiUpgraded(nokaiId, msg.sender);
     }
@@ -80,7 +80,7 @@ contract Nokai is ERC721Enumerable, AccessControl {
             _tokenIds.increment();
             uint256 _newNokaiId = _tokenIds.current();
             _safeMint(msg.sender, _newNokaiId);
-            nokaiStats.generateGodNokai(_newNokaiId);
+            _nokaiStats.generateGodNokai(_newNokaiId);
         }
     }
 

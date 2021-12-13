@@ -15,7 +15,7 @@ const migrate = async function () {
     await fs.copyFile("build/contracts/DarkMatter.json", `${path}/DarkMatter.json`);
     await fs.copyFile("build/contracts/PlasmaEnergy.json", `${path}/PlasmaEnergy.json`);
     await fs.copyFile("build/contracts/VoidEssence.json", `${path}/VoidEssence.json`);
-    await fs.copyFile("build/contracts/LegendCore.json", `${path}/LegendCore.json`);
+    await fs.copyFile("build/contracts/LegendaryCore.json", `${path}/LegendaryCore.json`);
     await fs.copyFile("build/contracts/HolyCore.json", `${path}/HolyCore.json`);
     await fs.copyFile("build/contracts/StarterPack.json", `${path}/StarterPack.json`);
     await fs.copyFile("build/contracts/CraftsmanProfile.json", `${path}/CraftsmanProfile.json`);

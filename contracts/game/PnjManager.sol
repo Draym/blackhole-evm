@@ -15,20 +15,20 @@ contract PnjManager is AccessControl {
     using Counters for Counters.Counter;
     Counters.Counter private _ids;
 
-    struct Monster {
+    struct PNJ {
         uint256 position;
         // TODO define specs
     }
 
     // position holding a monster
-    mapping(uint256 => uint256) private pos_to_monster;
-    mapping(uint256 => Monster) private monsters;
-    uint256 private totalMonsters;
+    mapping(uint256 => uint256) private _pos_to_pnj;
+    mapping(uint256 => PNJ) private _pnj;
+    uint256 private _totalPnj;
 
-    BlackHole private blackhole;
+    BlackHole private _blackhole;
 
-    constructor(address _blackhole)  {
-        blackhole = BlackHole(_blackhole);
+    constructor(address blackhole)  {
+        _blackhole = BlackHole(blackhole);
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
@@ -36,24 +36,24 @@ contract PnjManager is AccessControl {
         // TODO impl random generator
     }
 
-    function monsterKilled(uint256 monsterId) external onlyRole(GAME_MANAGER_ROLE) {
-        delete pos_to_monster[monsters[monsterId].position];
-        delete monsters[monsterId];
+    function monsterKilled(uint256 id) external onlyRole(GAME_MANAGER_ROLE) {
+        delete _pos_to_pnj[_pnj[id].position];
+        delete _pnj[id];
     }
 
-    function getMonsters() external view returns (Monster[] memory) {
-        Monster[] memory _monsters = new Monster[](totalMonsters);
-        for (uint256 i = 0; i < totalMonsters; i++) {
-            _monsters[i] = monsters[i];
+    function getPNJs() external view returns (PNJ[] memory) {
+        PNJ[] memory pnjs = new PNJ[](_totalPnj);
+        for (uint256 i = 0; i < _totalPnj; i++) {
+            pnjs[i] = _pnj[i];
         }
-        return _monsters;
+        return pnjs;
     }
 
-    function atPosition(uint16 x, uint16 y) external view returns (Monster memory) {
-        return monsters[pos_to_monster[(y * x) + x]];
+    function atPosition(uint16 x, uint16 y) external view returns (PNJ memory) {
+        return _pnj[_pos_to_pnj[(y * x) + x]];
     }
 
-    function byId(uint256 monsterId) external view returns (Monster memory) {
-        return monsters[monsterId];
+    function byId(uint256 id) external view returns (PNJ memory) {
+        return _pnj[id];
     }
 }

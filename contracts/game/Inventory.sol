@@ -5,33 +5,33 @@ import "../character/Nokai.sol";
 
 // SPDX-License-Identifier: MIT
 contract Inventory {
-    NokaiStats private nokaiStats;
-    Item private potionEssence;
-    Item private lifeEssence;
-    Item private energyShock;
+    NokaiStats private _nokaiStats;
+    Item private _potionEssence;
+    Item private _lifeEssence;
+    Item private _energyShock;
 
     uint256 healPerPotion = 100;
     uint256 paPerShock = 5;
 
-    constructor(address _nokaiStats, address _potionEssence, address _lifeEssence, address _energyShock) {
-        nokaiStats = NokaiStats(_nokaiStats);
-        potionEssence = Item(_potionEssence);
-        lifeEssence = Item(_lifeEssence);
-        energyShock = Item(_energyShock);
+    constructor(address nokaiStats, address potionEssence, address lifeEssence, address energyShock) {
+        _nokaiStats = NokaiStats(nokaiStats);
+        _potionEssence = Item(potionEssence);
+        _lifeEssence = Item(lifeEssence);
+        _energyShock = Item(energyShock);
     }
 
     function healNokai(uint256 nokaiId, uint256 amount) external {
-        potionEssence.consume(msg.sender, amount);
-        nokaiStats.heal(nokaiId, amount * healPerPotion);
+        _potionEssence.consume(msg.sender, amount);
+        _nokaiStats.heal(nokaiId, amount * healPerPotion);
     }
 
     function reviveNokai(uint256 nokaiId) external {
-        lifeEssence.consume(msg.sender, 1);
-        nokaiStats.reborn(nokaiId);
+        _lifeEssence.consume(msg.sender, 1);
+        _nokaiStats.reborn(nokaiId);
     }
 
     function energizeNokai(uint256 nokaiId, uint256 amount) external {
-        energyShock.consume(msg.sender, amount);
-        nokaiStats.energize(nokaiId, amount * paPerShock);
+        _energyShock.consume(msg.sender, amount);
+        _nokaiStats.energize(nokaiId, amount * paPerShock);
     }
 }

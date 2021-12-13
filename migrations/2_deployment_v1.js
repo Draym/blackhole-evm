@@ -19,7 +19,7 @@ const Uxonium = artifacts.require('Uxonium')
 const DarkMatter = artifacts.require('DarkMatter')
 const PlasmaEnergy = artifacts.require('PlasmaEnergy')
 const VoidEssence = artifacts.require('VoidEssence')
-const LegendCore = artifacts.require('LegendCore')
+const LegendaryCore = artifacts.require('LegendaryCore')
 const HolyCore = artifacts.require('HolyCore')
 const StarterPack = artifacts.require('StarterPack')
 
@@ -70,10 +70,10 @@ module.exports = async function (deployer, network, accounts) {
     console.log("VoidEssence: " + voidEssence.address)
     deployed.voidEssence = voidEssence.address
 
-    await deployer.deploy(LegendCore, "40000000000000000")
-    let legendCore = await LegendCore.deployed()
-    console.log("LegendCore: " + legendCore.address)
-    deployed.legendCore = legendCore.address
+    await deployer.deploy(LegendaryCore, "40000000000000000")
+    let legendaryCore = await LegendaryCore.deployed()
+    console.log("LegendaryCore: " + legendaryCore.address)
+    deployed.legendaryCore = legendaryCore.address
 
     await deployer.deploy(HolyCore, "10000000000000000")
     let holyCore = await HolyCore.deployed()
@@ -117,7 +117,7 @@ module.exports = async function (deployer, network, accounts) {
     console.log("BlackHole: " + blackHole.address)
     deployed.blackHole = blackHole.address
 
-    await deployer.deploy(CraftManager, craftsmanProfile.address, holyCore.address, legendCore.address, potionEssence.address, lifeEssence.address, energyShock.address, uxonium.address, darkMatter.address, plasmaEnergy.address, voidEssence.address)
+    await deployer.deploy(CraftManager, craftsmanProfile.address, holyCore.address, legendaryCore.address, potionEssence.address, lifeEssence.address, energyShock.address, uxonium.address, darkMatter.address, plasmaEnergy.address, voidEssence.address)
     let craftManager = await CraftManager.deployed()
     console.log("CraftManager: " + craftManager.address)
     deployed.craftManager = craftManager.address
@@ -133,7 +133,7 @@ module.exports = async function (deployer, network, accounts) {
     deployed.inventory = inventory.address
 
     /** Tokenomics */
-    await deployer.deploy(NokaiGacha, nokai.address, holyCore.address, legendCore.address)
+    await deployer.deploy(NokaiGacha, nokai.address, holyCore.address, legendaryCore.address)
     let nokaiGacha = await NokaiGacha.deployed()
     console.log("NokaiGacha: " + nokaiGacha.address)
     deployed.nokaiGacha = nokaiGacha.address
@@ -143,8 +143,8 @@ module.exports = async function (deployer, network, accounts) {
     await holyCore.grantRole(await holyCore.MINT_ROLE(), craftManager.address)
     await holyCore.grantRole(await holyCore.BURN_ROLE(), nokaiGacha.address)
 
-    await legendCore.grantRole(await legendCore.MINT_ROLE(), craftManager.address)
-    await legendCore.grantRole(await legendCore.BURN_ROLE(), nokaiGacha.address)
+    await legendaryCore.grantRole(await legendaryCore.MINT_ROLE(), craftManager.address)
+    await legendaryCore.grantRole(await legendaryCore.BURN_ROLE(), nokaiGacha.address)
 
     await energyShock.grantRole(await energyShock.MINT_ROLE(), craftManager.address)
     await energyShock.grantRole(await energyShock.BURN_ROLE(), inventory.address)

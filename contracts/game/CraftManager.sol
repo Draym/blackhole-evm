@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 import "../tokens/ticket/HolyCore.sol";
 import "../tokens/Item.sol";
 import "../tokens/Resource.sol";
-import "../tokens/ticket/LegendCore.sol";
+import "../tokens/ticket/LegendaryCore.sol";
 import "../character/CraftsmanProfile.sol";
 
 // SPDX-License-Identifier: MIT
@@ -11,7 +11,7 @@ contract CraftManager {
 
     CraftsmanProfile private _craftsmanProfile;
     HolyCore private _holyCore;
-    LegendCore private _legendCore;
+    LegendaryCore private _legendaryCore;
     Item private _potionEssence;
     Item private _lifeEssence;
     Item private _energyShock;
@@ -20,10 +20,10 @@ contract CraftManager {
     Resource private _plasmaEnergy;
     Resource private _voidEssence;
 
-    constructor(address craftsmanProfile, address holyCore, address legendCore, address potionEssence, address lifeEssence, address energyShock, address uxonium, address darkMatter, address plasmaEnergy, address voidEssence) {
+    constructor(address craftsmanProfile, address holyCore, address legendaryCore, address potionEssence, address lifeEssence, address energyShock, address uxonium, address darkMatter, address plasmaEnergy, address voidEssence) {
         _craftsmanProfile = CraftsmanProfile(craftsmanProfile);
         _holyCore = HolyCore(holyCore);
-        _legendCore = LegendCore(legendCore);
+        _legendaryCore = LegendaryCore(legendaryCore);
         _potionEssence = Item(potionEssence);
         _lifeEssence = Item(lifeEssence);
         _energyShock = Item(energyShock);
@@ -48,7 +48,7 @@ contract CraftManager {
         _darkMatter.consume(msg.sender, 10000 * number);
         _plasmaEnergy.consume(msg.sender, 20000 * number);
         _voidEssence.consume(msg.sender, 30000 * number);
-        _legendCore.craft(msg.sender, number);
+        _legendaryCore.craft(msg.sender, number);
         _craftsmanProfile.addExperience(60066 * number, msg.sender);
     }
 
