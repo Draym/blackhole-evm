@@ -21,7 +21,7 @@ contract BlackHole is AccessControl {
     struct Territory {
         uint16 x;
         uint16 y;
-        uint256 darkEnergy;
+        uint256 uxonium;
         uint256 darkMatter;
         uint256 plasmaEnergy;
         uint256 voidEssence;
@@ -31,7 +31,7 @@ contract BlackHole is AccessControl {
         bool discovered;
     }
 
-    struct Position {
+    struct NokaiPos {
         bool onBoard;
         uint16 x;
         uint16 y;
@@ -39,7 +39,7 @@ contract BlackHole is AccessControl {
 
     mapping(address => uint256) private userTerritoryCount;
     mapping(uint256 => Territory) private blackhole;
-    mapping(uint256 => Position) private nokaiPosition;
+    mapping(uint256 => NokaiPos) private nokaiPosition;
 
     constructor(string memory _name, uint16 _width, uint16 _height)  {
         name = _name;
@@ -51,7 +51,7 @@ contract BlackHole is AccessControl {
         blackhole[((maxY / 2) * maxX) + maxX / 2] = Territory({
         x : maxX / 2,
         y : maxY / 2,
-        darkEnergy : 10,
+        uxonium : 10,
         darkMatter : 100,
         plasmaEnergy : 100,
         voidEssence : 100,
@@ -67,12 +67,12 @@ contract BlackHole is AccessControl {
         require(blackhole[pos].owner == by, "you are not the owner of the specified territory.");
         uint256 nbHours = (block.timestamp - blackhole[pos].extractor.lastExtract) / 3600;
         blackhole[pos].extractor.lastExtract = block.timestamp;
-        uint256 _darkEnergy = blackhole[pos].darkEnergy != 0 ? blackhole[pos].darkEnergy * blackhole[pos].extractor.level * nbHours : 0;
+        uint256 _uxonium = blackhole[pos].uxonium != 0 ? blackhole[pos].uxonium * blackhole[pos].extractor.level * nbHours : 0;
         uint256 _darkMatter = blackhole[pos].darkMatter != 0 ? blackhole[pos].darkMatter * blackhole[pos].extractor.level * nbHours : 0;
         uint256 _plasmaEnergy = blackhole[pos].plasmaEnergy != 0 ? blackhole[pos].plasmaEnergy * blackhole[pos].extractor.level * nbHours : 0;
         uint256 _voidEssence = blackhole[pos].voidEssence != 0 ? blackhole[pos].voidEssence * blackhole[pos].extractor.level * nbHours : 0;
         emit TerritoryExtracted(x, y, by);
-        return (_darkEnergy, _darkMatter, _plasmaEnergy, _voidEssence);
+        return (_uxonium, _darkMatter, _plasmaEnergy, _voidEssence);
     }
 
     function upgradeExtractor(uint16 x, uint16 y, address by) external onlyRole(GAME_MANAGER_ROLE) {
@@ -130,7 +130,6 @@ contract BlackHole is AccessControl {
         nokaiPosition[nokaiId].x = 0;
         nokaiPosition[nokaiId].y = 0;
     }
-
 
     function conquest(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 from = (toY * maxX) + toX;
@@ -201,7 +200,7 @@ contract BlackHole is AccessControl {
             blackhole[pos] = Territory({
             x : x,
             y : y,
-            darkEnergy : 0,
+            uxonium : 0,
             darkMatter : darkMatter,
             plasmaEnergy : plasmaEnergy,
             voidEssence : voidEssence / 10,
@@ -218,7 +217,7 @@ contract BlackHole is AccessControl {
         return blackhole[(y * maxX) + x].nokai;
     }
 
-    function nokaiPos(uint256 nokaiId) external view returns (Position memory) {
+    function nokaiPos(uint256 nokaiId) external view returns (NokaiPos memory) {
         return nokaiPosition[nokaiId];
     }
 

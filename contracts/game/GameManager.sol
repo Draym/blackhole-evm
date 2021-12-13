@@ -18,17 +18,17 @@ contract GameManager is Ownable {
     Nokai private nokai;
     NokaiStats private nokaiStats;
     BattleLogic private battleLogic;
-    Resource private darkEnergy;
+    Resource private uxonium;
     Resource private darkMatter;
     Resource private plasmaEnergy;
     Resource private voidEssence;
 
-    constructor(address _blackHole, address _nokai, address _nokaiStats, address _battleLogic, address _darkEnergy, address _darkMatter, address _plasmaEnergy, address _voidEssence) {
+    constructor(address _blackHole, address _nokai, address _nokaiStats, address _battleLogic, address _uxonium, address _darkMatter, address _plasmaEnergy, address _voidEssence) {
         blackHole = BlackHole(_blackHole);
         nokai = Nokai(_nokai);
         nokaiStats = NokaiStats(_nokaiStats);
         battleLogic = BattleLogic(_battleLogic);
-        darkEnergy = Resource(_darkEnergy);
+        uxonium = Resource(_uxonium);
         darkMatter = Resource(_darkMatter);
         plasmaEnergy = Resource(_plasmaEnergy);
         voidEssence = Resource(_voidEssence);
@@ -130,10 +130,35 @@ contract GameManager is Ownable {
     }
 
     function collectResources(uint16 x, uint16 y) public {
-        (uint256 _darkEnergy, uint256 _darkMatter, uint256 _plasmaEnergy, uint256 _voidEssence) = blackHole.completeExtraction(x, y, msg.sender);
-        darkEnergy.collect(msg.sender, _darkEnergy);
+        (uint256 _uxonium, uint256 _darkMatter, uint256 _plasmaEnergy, uint256 _voidEssence) = blackHole.completeExtraction(x, y, msg.sender);
+        uxonium.collect(msg.sender, _uxonium);
         darkMatter.collect(msg.sender, _darkMatter);
         plasmaEnergy.collect(msg.sender, _plasmaEnergy);
         voidEssence.collect(msg.sender, _voidEssence);
+    }
+
+    struct Pos {
+        uint16 x;
+        uint16 y;
+    }
+
+    function collectResources(Pos[] calldata positions) public {
+        uint256 totalUxonium;
+        uint256 totalDarkMatter;
+        uint256 totalPlasmaEnergy;
+        uint256 totalVoidEssence;
+
+        for (uint256 i = 0; i < positions.length; i++) {
+            (uint256 _uxonium, uint256 _darkMatter, uint256 _plasmaEnergy, uint256 _voidEssence) = blackHole.completeExtraction(positions[i].x, positions[i].y, msg.sender);
+            totalUxonium += _uxonium;
+            totalDarkMatter += _darkMatter;
+            totalPlasmaEnergy += _plasmaEnergy;
+            totalVoidEssence += _voidEssence;
+        }
+
+        uxonium.collect(msg.sender, totalUxonium);
+        darkMatter.collect(msg.sender, totalDarkMatter);
+        plasmaEnergy.collect(msg.sender, totalPlasmaEnergy);
+        voidEssence.collect(msg.sender, totalVoidEssence);
     }
 }

@@ -8,7 +8,7 @@ abstract contract BurnableToken is ERC20, AccessControl {
     bytes32 public constant BURN_ROLE = keccak256("BURN_ROLE");
 
     function consume(address user, uint256 number) external onlyRole(BURN_ROLE) {
-        require(balanceOf(user) >= number, "user do not own enough tokens");
+        require(balanceOf(user) >= number, "User do not own enough tokens.");
          _burn(user, number);
     }
 }

@@ -20,9 +20,9 @@ abstract contract BuyableToken is ERC20, AccessControl {
     }
 
     function purchase(uint256 number) external payable {
-        require(isPurchaseAllowed == true, "purchase is closed at the moment");
+        require(isPurchaseAllowed == true, "Purchase is closed at the moment.");
         uint256 cost = costPerUnit * number;
-        require(msg.value == cost, "fund insufficient to validate the purchase");
+        require(msg.value == cost, "Fund insufficient to validate the purchase.");
         _mint(msg.sender, number);
     }
 
@@ -31,7 +31,7 @@ abstract contract BuyableToken is ERC20, AccessControl {
      * only available for given WITHDRAW_ROLE
      */
     function withdraw() external onlyRole(WITHDRAW_ROLE) {
-        (bool success,) = msg.sender.call{value : address(this).balance}("withdraw eth");
+        (bool success,) = msg.sender.call{value : address(this).balance}("withdraw sells");
         require(success, "withdraw failed");
     }
 

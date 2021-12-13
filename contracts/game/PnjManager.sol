@@ -8,7 +8,7 @@ import "./BlackHole.sol";
  * Spawn PNJ in the map randomly through community events. If beaten player gains resources.
  */
 // SPDX-License-Identifier: MIT
-contract MonsterManager is AccessControl {
+contract PnjManager is AccessControl {
     bytes32 public constant GENERATOR_ROLE = keccak256("GENERATOR_ROLE");
     bytes32 public constant GAME_MANAGER_ROLE = keccak256("GAME_MANAGER_ROLE");
 
