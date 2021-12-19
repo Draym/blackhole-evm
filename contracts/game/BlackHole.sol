@@ -190,7 +190,7 @@ contract BlackHole is AccessControl {
             if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
                 wealth = 10;
             }
-            uint256 resource = Math.max(RandomUtils._rand(pos, 10) * wealth, 20);
+            uint256 resource = Math.min((RandomUtils._rand(pos, 10) * wealth) + (wealth * 4), 100);
             uint256 picker = RandomUtils._rand(pos + 1, 10);
 
             _blackhole[pos] = Territory({
