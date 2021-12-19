@@ -91,7 +91,8 @@ contract BlackHole is AccessControl {
             _assignNokai(pos, x, y, nokaiId, by);
         } else {
             _assignNokaiNewTerritory(pos, x, y, nokaiId);
-            _discover(x, y, by);
+            _discoverSlot(x, y, by);
+            _discoverAround(x, y, by);
         }
         emit NokaiAssigned(x, y, nokaiId, by);
     }
@@ -149,7 +150,7 @@ contract BlackHole is AccessControl {
         _assignNokai(to, toX, toY, _blackhole[from].nokaiId, by);
         _blackhole[from].nokaiId = 0;
 
-        _discover(toX, toY, _blackhole[from].owner);
+        _discoverAround(toX, toY, _blackhole[from].owner);
         emit NokaiMoved(fromX, fromY, toX, toY, _blackhole[to].nokaiId, _blackhole[from].owner);
         emit SlotConquered(toX, toY, previousOwner, by);
     }
@@ -163,11 +164,11 @@ contract BlackHole is AccessControl {
         _assignNokai(to, toX, toY, _blackhole[from].nokaiId, by);
         _blackhole[from].nokaiId = 0;
 
-        _discover(toX, toY, _blackhole[from].owner);
+        _discoverAround(toX, toY, _blackhole[from].owner);
         emit NokaiMoved(fromX, fromY, toX, toY, _blackhole[to].nokaiId, _blackhole[from].owner);
     }
 
-    function _discover(uint16 x, uint16 y, address by) private {
+    function _discoverAround(uint16 x, uint16 y, address by) private {
         _discoverSlot(x - 1, y, by);
         _discoverSlot(x - (y % 2 == 0 ? 1 : 0), y - 1, by);
         _discoverSlot(x + (y % 2 == 0 ? 0 : 1), y - 1, by);
