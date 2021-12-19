@@ -38,10 +38,19 @@ contract GameManager is Ownable {
         _battleLogic = BattleLogic(battleLogic);
     }
 
+    enum PositionTarget {
+        TOP_LEFT,
+        TOP_RIGHT,
+        RIGHT,
+        BOT_RIGHT,
+        BOT_LEFT,
+        LEFT
+    }
+
     /**
      * Nokai Actions
      */
-    function move(uint16 fromX, uint16 fromY, uint16 target) external {
+    function move(uint16 fromX, uint16 fromY, PositionTarget target) external {
         _verifyPos(fromX, fromY, _blackHole.maxX(), _blackHole.maxY());
         uint256 nokaiId = _blackHole.nokaiAt(fromX, fromY);
         require(nokaiId != 0, "There is no Nokai on the selected territory.");
@@ -102,19 +111,19 @@ contract GameManager is Ownable {
         require(y < maxY, "position out of board");
     }
 
-    function _getPos(uint16 fromX, uint16 fromY, uint16 target) internal pure returns (uint16, uint16) {
-        if (target == 0) {
+    function _getPos(uint16 fromX, uint16 fromY, PositionTarget target) internal pure returns (uint16, uint16) {
+        if (target == PositionTarget.LEFT) {
             return (fromX - 1, fromY);
-        } else if (target == 1) {
-            return (fromX, fromY - 1);
-        } else if (target == 1) {
-            return (fromX + 1, fromY - 1);
-        } else if (target == 1) {
+        } else if (target == PositionTarget.TOP_LEFT) {
+            return (fromX - (fromY % 2 == 0 ? 1 : 0), fromY - 1);
+        } else if (target == PositionTarget.TOP_RIGHT) {
+            return (fromX + (fromY % 2 == 0 ? 0 : 1), fromY - 1);
+        } else if (target == PositionTarget.RIGHT) {
             return (fromX + 1, fromY);
-        } else if (target == 1) {
-            return (fromX + 1, fromY + 1);
+        } else if (target == PositionTarget.BOT_RIGHT) {
+            return (fromX + (fromY % 2 == 0 ? 0 : 1), fromY + 1);
         } else {
-            return (fromX, fromY + 1);
+            return (fromX - (fromY % 2 == 0 ? 1 : 0), fromY + 1);
         }
     }
 
@@ -142,7 +151,7 @@ contract GameManager is Ownable {
         uint16 y;
     }
 
-    function collectResources(Pos[] calldata positions) public {
+    function collectResourcesBash(Pos[] calldata positions) public {
         uint256 totalUxonium;
         uint256 totalDarkMatter;
         uint256 totalPlasmaEnergy;
