@@ -61,7 +61,7 @@ contract GameManager is Ownable {
         _blackHole.conquest(fromX, fromY, targetX, targetY, msg.sender);
     }
 
-    function conquer(uint16 fromX, uint16 fromY, uint16 target) external returns (uint256, bool) {
+    function conquer(uint16 fromX, uint16 fromY, PositionTarget target) external returns (uint256, bool) {
         _verifyPos(fromX, fromY, _blackHole.maxX(), _blackHole.maxY());
         uint256 attackerId = _blackHole.nokaiAt(fromX, fromY);
         require(attackerId != 0, "There is no Nokai on the selected territory.");
