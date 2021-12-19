@@ -169,11 +169,11 @@ contract BlackHole is AccessControl {
 
     function _discover(uint16 x, uint16 y, address by) private {
         _discoverSlot(x - 1, y, by);
-        _discoverSlot(x, y - 1, by);
-        _discoverSlot(x + 1, y - 1, by);
+        _discoverSlot(x - (y % 2 == 0 ? 1 : 0), y - 1, by);
+        _discoverSlot(x + (y % 2 == 0 ? 0 : 1), y - 1, by);
         _discoverSlot(x + 1, y, by);
-        _discoverSlot(x + 1, y + 1, by);
-        _discoverSlot(x, y + 1, by);
+        _discoverSlot(x + (y % 2 == 0 ? 0 : 1), y + 1, by);
+        _discoverSlot(x - (y % 2 == 0 ? 1 : 0), y + 1, by);
     }
 
     function _discoverSlot(uint16 x, uint16 y, address by) private {
