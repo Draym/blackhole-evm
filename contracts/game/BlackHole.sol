@@ -92,6 +92,7 @@ contract BlackHole is AccessControl {
         } else {
             _assignNokaiNewTerritory(pos, x, y, nokaiId);
         }
+        emit NokaiAssigned(x, y, nokaiId, by);
     }
 
     function _assignNokaiNewTerritory(uint256 pos, uint16 x, uint16 y, uint256 nokaiId) private {
@@ -126,9 +127,8 @@ contract BlackHole is AccessControl {
     function _withdrawNokai(uint256 pos, uint256 nokaiId) internal {
         require(_blackhole[pos].nokai == nokaiId, "Specified Nokai is not on specified territory.");
         _blackhole[pos].nokai = 0;
-        _nokaiPosition[nokaiId].onBoard = false;
-        _nokaiPosition[nokaiId].x = 0;
-        _nokaiPosition[nokaiId].y = 0;
+        delete _nokaiPosition[nokaiId];
+        emit NokaiWithdrawn(nokaiId);
     }
 
     function conquest(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, address by) external onlyRole(GAME_MANAGER_ROLE) {
@@ -281,6 +281,8 @@ contract BlackHole is AccessControl {
 
     event SlotDiscovered(uint16 x, uint16 y, address by);
     event SlotConquered(uint16 x, uint16 y, address indexed previousOwner, address indexed newOwner);
+    event NokaiAssigned(uint16 x, uint16 y, uint256 indexed nokai, address indexed owner);
+    event NokaiWithdrawn(uint256 indexed nokai);
     event NokaiMoved(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, uint256 indexed nokai, address indexed owner);
     event TerritoryExtracted(uint16 x, uint16 y, address by);
     event ExtractorUpgraded(uint16 x, uint16 y, address by, uint256 level);
