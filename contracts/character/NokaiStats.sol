@@ -67,7 +67,7 @@ contract NokaiStats is AccessControl {
         _saveNokaiProfile(
             newNokaiId,
             Math.min(RandomUtils._rand(newNokaiId, 100) * 8 + 200, 1000),
-            Math.min(RandomUtils._rand(newNokaiId + 1, 10) * 8 + 20, 2200),
+            Math.min(RandomUtils._rand(newNokaiId + 1, 10) * 8 + 20, 200),
             Math.min(RandomUtils._rand(newNokaiId + 2, 10) * 9 + 10, 100),
             Math.min(RandomUtils._rand(newNokaiId + 3, 10) * 8 + 20, 100),
             RandomUtils._rand(newNokaiId + 4, 10)

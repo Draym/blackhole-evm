@@ -1,5 +1,6 @@
 pragma solidity ^0.8.0;
 
+import "@openzeppelin/contracts/utils/math/Math.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "../utils/RandomUtils.sol";
 
@@ -180,16 +181,16 @@ contract BlackHole is AccessControl {
     function _discoverSlot(uint16 x, uint16 y, address by) private {
         uint256 pos = (y * maxX) + x;
         if (_blackhole[pos].discovered == false) {
-            uint256 wealth = 10;
+            uint256 wealth = 6;
             if (wealth > totalPos / 4 && wealth < (totalPos / 4) * 3) {
-                wealth = 40;
+                wealth = 8;
             }
             if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
-                wealth = 80;
+                wealth = 10;
             }
-            uint256 darkMatter = RandomUtils._rand(pos, 100) + wealth;
-            uint256 plasmaEnergy = RandomUtils._rand(pos + 1, 100) + wealth;
-            uint256 voidEssence = RandomUtils._rand(pos + 2, 100) + wealth;
+            uint256 darkMatter = Math.max(RandomUtils._rand(pos, 10) * wealth, 20);
+            uint256 plasmaEnergy = Math.max(RandomUtils._rand(pos + 1, 10) * wealth, 20);
+            uint256 voidEssence = Math.max(RandomUtils._rand(pos + 2, 10) * wealth, 20);
             if (darkMatter < plasmaEnergy || darkMatter < voidEssence) {
                 darkMatter = 0;
             }
