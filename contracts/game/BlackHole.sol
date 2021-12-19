@@ -26,7 +26,7 @@ contract BlackHole is AccessControl {
         uint256 plasmaEnergy;
         uint256 voidEssence;
         Extractor extractor; // extract resources
-        uint256 nokai;
+        uint256 nokaiId;
         address owner;
         bool discovered;
     }
@@ -56,7 +56,7 @@ contract BlackHole is AccessControl {
         plasmaEnergy : 100,
         voidEssence : 100,
         extractor : Extractor({level : 1, cost : 1000, lastExtract : block.timestamp}),
-        nokai : 0,
+        nokaiId : 0,
         owner : address(0),
         discovered : true
         });
@@ -91,14 +91,15 @@ contract BlackHole is AccessControl {
             _assignNokai(pos, x, y, nokaiId, by);
         } else {
             _assignNokaiNewTerritory(pos, x, y, nokaiId);
+            _discover(x, y, by);
         }
         emit NokaiAssigned(x, y, nokaiId, by);
     }
 
     function _assignNokaiNewTerritory(uint256 pos, uint16 x, uint16 y, uint256 nokaiId) private {
         require(_blackhole[pos].owner == address(0), "The specified territory is owned by another player.");
-        require(_blackhole[pos].nokai == 0, "Specified territory is already occupied by a Nokai.");
-        _blackhole[pos].nokai = nokaiId;
+        require(_blackhole[pos].nokaiId == 0, "Specified territory is already occupied by a Nokai.");
+        _blackhole[pos].nokaiId = nokaiId;
         _nokaiPosition[nokaiId].onBoard = true;
         _nokaiPosition[nokaiId].x = x;
         _nokaiPosition[nokaiId].y = y;
@@ -106,8 +107,8 @@ contract BlackHole is AccessControl {
 
     function _assignNokai(uint256 pos, uint16 x, uint16 y, uint256 nokaiId, address by) private {
         require(_blackhole[pos].owner == by, "You are not the owner of the specified territory.");
-        require(_blackhole[pos].nokai == 0, "Specified territory is already occupied by a Nokai.");
-        _blackhole[pos].nokai = nokaiId;
+        require(_blackhole[pos].nokaiId == 0, "Specified territory is already occupied by a Nokai.");
+        _blackhole[pos].nokaiId = nokaiId;
         _nokaiPosition[nokaiId].onBoard = true;
         _nokaiPosition[nokaiId].x = x;
         _nokaiPosition[nokaiId].y = y;
@@ -120,13 +121,13 @@ contract BlackHole is AccessControl {
     function withdrawNokai(uint16 x, uint16 y, uint256 nokaiId, address by) external onlyRole(GAME_MANAGER_ROLE) {
         uint256 pos = (y * maxX) + x;
         require(_blackhole[pos].owner == by, "You are not the owner of the specified territory.");
-        require(_blackhole[pos].nokai == 1, "Specified territory is not occupied by a Nokai.");
+        require(_blackhole[pos].nokaiId == 1, "Specified territory is not occupied by a Nokai.");
         _withdrawNokai(pos, nokaiId);
     }
 
     function _withdrawNokai(uint256 pos, uint256 nokaiId) internal {
-        require(_blackhole[pos].nokai == nokaiId, "Specified Nokai is not on specified territory.");
-        _blackhole[pos].nokai = 0;
+        require(_blackhole[pos].nokaiId == nokaiId, "Specified Nokai is not on specified territory.");
+        _blackhole[pos].nokaiId = 0;
         delete _nokaiPosition[nokaiId];
         emit NokaiWithdrawn(nokaiId);
     }
@@ -136,8 +137,8 @@ contract BlackHole is AccessControl {
         uint256 to = (toY * maxX) + toX;
         require(_blackhole[from].owner == by, "You are not the owner of the original territory.");
         require(_blackhole[from].owner != _blackhole[to].owner, "Current and target territories are from the same owner.");
-        require(_blackhole[to].nokai == 0, "Target territory is still defended by a Nokai.");
-        require(_blackhole[from].nokai != 0, "Current territory does not have any Nokai to move.");
+        require(_blackhole[to].nokaiId == 0, "Target territory is still defended by a Nokai.");
+        require(_blackhole[from].nokaiId != 0, "Current territory does not have any Nokai to move.");
 
         address previousOwner = _blackhole[to].owner;
 
@@ -145,11 +146,11 @@ contract BlackHole is AccessControl {
         _userTerritoryCount[by] += 1;
 
         _blackhole[to].owner = by;
-        _assignNokai(to, toX, toY, _blackhole[from].nokai, by);
-        _blackhole[from].nokai = 0;
+        _assignNokai(to, toX, toY, _blackhole[from].nokaiId, by);
+        _blackhole[from].nokaiId = 0;
 
         _discover(toX, toY, _blackhole[from].owner);
-        emit NokaiMoved(fromX, fromY, toX, toY, _blackhole[to].nokai, _blackhole[from].owner);
+        emit NokaiMoved(fromX, fromY, toX, toY, _blackhole[to].nokaiId, _blackhole[from].owner);
         emit SlotConquered(toX, toY, previousOwner, by);
     }
 
@@ -157,13 +158,13 @@ contract BlackHole is AccessControl {
         uint256 from = (toY * maxX) + toX;
         uint256 to = (toY * maxX) + toX;
         require(_blackhole[from].owner == _blackhole[to].owner, "Current and target territories are not from the same owner.");
-        require(_blackhole[from].nokai != 0, "Current territory does not have any Nokai to move.");
+        require(_blackhole[from].nokaiId != 0, "Current territory does not have any Nokai to move.");
 
-        _assignNokai(to, toX, toY, _blackhole[from].nokai, by);
-        _blackhole[from].nokai = 0;
+        _assignNokai(to, toX, toY, _blackhole[from].nokaiId, by);
+        _blackhole[from].nokaiId = 0;
 
         _discover(toX, toY, _blackhole[from].owner);
-        emit NokaiMoved(fromX, fromY, toX, toY, _blackhole[to].nokai, _blackhole[from].owner);
+        emit NokaiMoved(fromX, fromY, toX, toY, _blackhole[to].nokaiId, _blackhole[from].owner);
     }
 
     function _discover(uint16 x, uint16 y, address by) private {
@@ -204,7 +205,7 @@ contract BlackHole is AccessControl {
             darkMatter : darkMatter,
             plasmaEnergy : plasmaEnergy,
             voidEssence : voidEssence / 10,
-            nokai : 0,
+            nokaiId : 0,
             extractor : Extractor({level : 0, cost : 500, lastExtract : block.timestamp}),
             owner : by,
             discovered : true
@@ -214,7 +215,7 @@ contract BlackHole is AccessControl {
     }
 
     function nokaiAt(uint16 x, uint16 y) external view returns (uint256) {
-        return _blackhole[(y * maxX) + x].nokai;
+        return _blackhole[(y * maxX) + x].nokaiId;
     }
 
     function nokaiPos(uint256 nokaiId) external view returns (NokaiPos memory) {
@@ -281,9 +282,9 @@ contract BlackHole is AccessControl {
 
     event SlotDiscovered(uint16 x, uint16 y, address by);
     event SlotConquered(uint16 x, uint16 y, address indexed previousOwner, address indexed newOwner);
-    event NokaiAssigned(uint16 x, uint16 y, uint256 indexed nokai, address indexed owner);
-    event NokaiWithdrawn(uint256 indexed nokai);
-    event NokaiMoved(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, uint256 indexed nokai, address indexed owner);
+    event NokaiAssigned(uint16 x, uint16 y, uint256 indexed nokaiId, address indexed owner);
+    event NokaiWithdrawn(uint256 indexed nokaiId);
+    event NokaiMoved(uint16 fromX, uint16 fromY, uint16 toX, uint16 toY, uint256 indexed nokaiId, address indexed owner);
     event TerritoryExtracted(uint16 x, uint16 y, address by);
     event ExtractorUpgraded(uint16 x, uint16 y, address by, uint256 level);
 }
