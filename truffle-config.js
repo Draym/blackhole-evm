@@ -48,7 +48,7 @@ module.exports = {
             network_id: "*",       // Any network (default: none)
         },
         rinkebyTestnet: {
-            provider: () => new HDWalletProvider(accounts.test, `wss://rinkeby.infura.io/ws/v3/b874d57d5dfc4c5ca56b85f7a2850abe`),
+            provider: () => new HDWalletProvider(accounts.test, `wss://rinkeby.infura.io/ws/v3/762a998ae97f40649db1f95783820a60`),
             network_id: 4,
             confirmations: 10,
             timeoutBlocks: 2000,
@@ -56,7 +56,7 @@ module.exports = {
             skipDryRun: true
         },
         kovanTestnet: {
-            provider: () => new HDWalletProvider(accounts.test, `wss://kovan.infura.io/ws/v3/b874d57d5dfc4c5ca56b85f7a2850abe`),
+            provider: () => new HDWalletProvider(accounts.test, `wss://kovan.infura.io/ws/v3/762a998ae97f40649db1f95783820a60`),
             network_id: 42,
             confirmations: 10,
             timeoutBlocks: 2000,
@@ -81,6 +81,13 @@ module.exports = {
         bsc3: {
             provider: () => new HDWalletProvider(accounts.test, `https://bsc-dataseed3.binance.org`),
             network_id: 56,
+            confirmations: 10,
+            timeoutBlocks: 200,
+            skipDryRun: true
+        },
+        polygonTestnet: {
+            provider: () => new HDWalletProvider(accounts.test, `https://rpc-mumbai.matic.today`),
+            network_id: 80001,
             confirmations: 10,
             timeoutBlocks: 200,
             skipDryRun: true
