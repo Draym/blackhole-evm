@@ -3391,10 +3391,10 @@
         308
       ],
       "BurnableToken": [
-        9279
+        9330
       ],
       "BuyableToken": [
-        9388
+        9439
       ],
       "Context": [
         2815
@@ -3403,7 +3403,7 @@
         7805
       ],
       "CraftableToken": [
-        9418
+        9469
       ],
       "CraftsmanProfile": [
         3396
@@ -3415,10 +3415,10 @@
         1032
       ],
       "GiftableToken": [
-        9442
+        9493
       ],
       "HolyCore": [
-        9719
+        9770
       ],
       "IAccessControl": [
         381
@@ -3433,16 +3433,16 @@
         1135
       ],
       "Item": [
-        9511
+        9562
       ],
       "LegendaryCore": [
-        9760
+        9811
       ],
       "Ownable": [
         486
       ],
       "Resource": [
-        9580
+        9631
       ],
       "Strings": [
         3092
@@ -3469,7 +3469,7 @@
         "id": 7362,
         "nodeType": "ImportDirective",
         "scope": 7806,
-        "sourceUnit": 9720,
+        "sourceUnit": 9771,
         "src": "27:39:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3480,7 +3480,7 @@
         "id": 7363,
         "nodeType": "ImportDirective",
         "scope": 7806,
-        "sourceUnit": 9512,
+        "sourceUnit": 9563,
         "src": "68:28:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3491,7 +3491,7 @@
         "id": 7364,
         "nodeType": "ImportDirective",
         "scope": 7806,
-        "sourceUnit": 9581,
+        "sourceUnit": 9632,
         "src": "98:32:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3502,7 +3502,7 @@
         "id": 7365,
         "nodeType": "ImportDirective",
         "scope": 7806,
-        "sourceUnit": 9761,
+        "sourceUnit": 9812,
         "src": "132:44:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3575,7 +3575,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_HolyCore_$9719",
+              "typeIdentifier": "t_contract$_HolyCore_$9770",
               "typeString": "contract HolyCore"
             },
             "typeName": {
@@ -3585,13 +3585,13 @@
                 "id": 7370,
                 "name": "HolyCore",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9719,
+                "referencedDeclaration": 9770,
                 "src": "338:8:27"
               },
-              "referencedDeclaration": 9719,
+              "referencedDeclaration": 9770,
               "src": "338:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_HolyCore_$9719",
+                "typeIdentifier": "t_contract$_HolyCore_$9770",
                 "typeString": "contract HolyCore"
               }
             },
@@ -3608,7 +3608,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+              "typeIdentifier": "t_contract$_LegendaryCore_$9811",
               "typeString": "contract LegendaryCore"
             },
             "typeName": {
@@ -3618,13 +3618,13 @@
                 "id": 7373,
                 "name": "LegendaryCore",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9760,
+                "referencedDeclaration": 9811,
                 "src": "371:13:27"
               },
-              "referencedDeclaration": 9760,
+              "referencedDeclaration": 9811,
               "src": "371:13:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                 "typeString": "contract LegendaryCore"
               }
             },
@@ -3641,7 +3641,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$9511",
+              "typeIdentifier": "t_contract$_Item_$9562",
               "typeString": "contract Item"
             },
             "typeName": {
@@ -3651,13 +3651,13 @@
                 "id": 7376,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9511,
+                "referencedDeclaration": 9562,
                 "src": "414:4:27"
               },
-              "referencedDeclaration": 9511,
+              "referencedDeclaration": 9562,
               "src": "414:4:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$9511",
+                "typeIdentifier": "t_contract$_Item_$9562",
                 "typeString": "contract Item"
               }
             },
@@ -3674,7 +3674,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$9511",
+              "typeIdentifier": "t_contract$_Item_$9562",
               "typeString": "contract Item"
             },
             "typeName": {
@@ -3684,13 +3684,13 @@
                 "id": 7379,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9511,
+                "referencedDeclaration": 9562,
                 "src": "448:4:27"
               },
-              "referencedDeclaration": 9511,
+              "referencedDeclaration": 9562,
               "src": "448:4:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$9511",
+                "typeIdentifier": "t_contract$_Item_$9562",
                 "typeString": "contract Item"
               }
             },
@@ -3707,7 +3707,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$9511",
+              "typeIdentifier": "t_contract$_Item_$9562",
               "typeString": "contract Item"
             },
             "typeName": {
@@ -3717,13 +3717,13 @@
                 "id": 7382,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9511,
+                "referencedDeclaration": 9562,
                 "src": "480:4:27"
               },
-              "referencedDeclaration": 9511,
+              "referencedDeclaration": 9562,
               "src": "480:4:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$9511",
+                "typeIdentifier": "t_contract$_Item_$9562",
                 "typeString": "contract Item"
               }
             },
@@ -3740,7 +3740,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Resource_$9580",
+              "typeIdentifier": "t_contract$_Resource_$9631",
               "typeString": "contract Resource"
             },
             "typeName": {
@@ -3750,13 +3750,13 @@
                 "id": 7385,
                 "name": "Resource",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9580,
+                "referencedDeclaration": 9631,
                 "src": "512:8:27"
               },
-              "referencedDeclaration": 9580,
+              "referencedDeclaration": 9631,
               "src": "512:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Resource_$9580",
+                "typeIdentifier": "t_contract$_Resource_$9631",
                 "typeString": "contract Resource"
               }
             },
@@ -3773,7 +3773,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Resource_$9580",
+              "typeIdentifier": "t_contract$_Resource_$9631",
               "typeString": "contract Resource"
             },
             "typeName": {
@@ -3783,13 +3783,13 @@
                 "id": 7388,
                 "name": "Resource",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9580,
+                "referencedDeclaration": 9631,
                 "src": "544:8:27"
               },
-              "referencedDeclaration": 9580,
+              "referencedDeclaration": 9631,
               "src": "544:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Resource_$9580",
+                "typeIdentifier": "t_contract$_Resource_$9631",
                 "typeString": "contract Resource"
               }
             },
@@ -3806,7 +3806,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Resource_$9580",
+              "typeIdentifier": "t_contract$_Resource_$9631",
               "typeString": "contract Resource"
             },
             "typeName": {
@@ -3816,13 +3816,13 @@
                 "id": 7391,
                 "name": "Resource",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9580,
+                "referencedDeclaration": 9631,
                 "src": "579:8:27"
               },
-              "referencedDeclaration": 9580,
+              "referencedDeclaration": 9631,
               "src": "579:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Resource_$9580",
+                "typeIdentifier": "t_contract$_Resource_$9631",
                 "typeString": "contract Resource"
               }
             },
@@ -3839,7 +3839,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Resource_$9580",
+              "typeIdentifier": "t_contract$_Resource_$9631",
               "typeString": "contract Resource"
             },
             "typeName": {
@@ -3849,13 +3849,13 @@
                 "id": 7394,
                 "name": "Resource",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9580,
+                "referencedDeclaration": 9631,
                 "src": "616:8:27"
               },
-              "referencedDeclaration": 9580,
+              "referencedDeclaration": 9631,
               "src": "616:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Resource_$9580",
+                "typeIdentifier": "t_contract$_Resource_$9631",
                 "typeString": "contract Resource"
               }
             },
@@ -3961,7 +3961,7 @@
                       "referencedDeclaration": 7372,
                       "src": "954:9:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_HolyCore_$9719",
+                        "typeIdentifier": "t_contract$_HolyCore_$9770",
                         "typeString": "contract HolyCore"
                       }
                     },
@@ -3993,10 +3993,10 @@
                         "name": "HolyCore",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9719,
+                        "referencedDeclaration": 9770,
                         "src": "966:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_HolyCore_$9719_$",
+                          "typeIdentifier": "t_type$_t_contract$_HolyCore_$9770_$",
                           "typeString": "type(contract HolyCore)"
                         }
                       },
@@ -4011,13 +4011,13 @@
                       "src": "966:18:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_HolyCore_$9719",
+                        "typeIdentifier": "t_contract$_HolyCore_$9770",
                         "typeString": "contract HolyCore"
                       }
                     },
                     "src": "954:30:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_HolyCore_$9719",
+                      "typeIdentifier": "t_contract$_HolyCore_$9770",
                       "typeString": "contract HolyCore"
                     }
                   },
@@ -4040,7 +4040,7 @@
                       "referencedDeclaration": 7375,
                       "src": "995:14:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                        "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                         "typeString": "contract LegendaryCore"
                       }
                     },
@@ -4072,10 +4072,10 @@
                         "name": "LegendaryCore",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9760,
+                        "referencedDeclaration": 9811,
                         "src": "1012:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LegendaryCore_$9760_$",
+                          "typeIdentifier": "t_type$_t_contract$_LegendaryCore_$9811_$",
                           "typeString": "type(contract LegendaryCore)"
                         }
                       },
@@ -4090,13 +4090,13 @@
                       "src": "1012:28:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                        "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                         "typeString": "contract LegendaryCore"
                       }
                     },
                     "src": "995:45:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                      "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                       "typeString": "contract LegendaryCore"
                     }
                   },
@@ -4119,7 +4119,7 @@
                       "referencedDeclaration": 7378,
                       "src": "1051:14:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
@@ -4151,10 +4151,10 @@
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9511,
+                        "referencedDeclaration": 9562,
                         "src": "1068:4:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$9511_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$9562_$",
                           "typeString": "type(contract Item)"
                         }
                       },
@@ -4169,13 +4169,13 @@
                       "src": "1068:19:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "1051:36:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$9511",
+                      "typeIdentifier": "t_contract$_Item_$9562",
                       "typeString": "contract Item"
                     }
                   },
@@ -4198,7 +4198,7 @@
                       "referencedDeclaration": 7381,
                       "src": "1098:12:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
@@ -4230,10 +4230,10 @@
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9511,
+                        "referencedDeclaration": 9562,
                         "src": "1113:4:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$9511_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$9562_$",
                           "typeString": "type(contract Item)"
                         }
                       },
@@ -4248,13 +4248,13 @@
                       "src": "1113:17:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "1098:32:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$9511",
+                      "typeIdentifier": "t_contract$_Item_$9562",
                       "typeString": "contract Item"
                     }
                   },
@@ -4277,7 +4277,7 @@
                       "referencedDeclaration": 7384,
                       "src": "1141:12:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
@@ -4309,10 +4309,10 @@
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9511,
+                        "referencedDeclaration": 9562,
                         "src": "1156:4:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$9511_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$9562_$",
                           "typeString": "type(contract Item)"
                         }
                       },
@@ -4327,13 +4327,13 @@
                       "src": "1156:17:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "1141:32:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$9511",
+                      "typeIdentifier": "t_contract$_Item_$9562",
                       "typeString": "contract Item"
                     }
                   },
@@ -4356,7 +4356,7 @@
                       "referencedDeclaration": 7387,
                       "src": "1184:8:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
@@ -4388,10 +4388,10 @@
                         "name": "Resource",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9580,
+                        "referencedDeclaration": 9631,
                         "src": "1195:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Resource_$9580_$",
+                          "typeIdentifier": "t_type$_t_contract$_Resource_$9631_$",
                           "typeString": "type(contract Resource)"
                         }
                       },
@@ -4406,13 +4406,13 @@
                       "src": "1195:17:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
                     "src": "1184:28:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Resource_$9580",
+                      "typeIdentifier": "t_contract$_Resource_$9631",
                       "typeString": "contract Resource"
                     }
                   },
@@ -4435,7 +4435,7 @@
                       "referencedDeclaration": 7390,
                       "src": "1223:11:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
@@ -4467,10 +4467,10 @@
                         "name": "Resource",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9580,
+                        "referencedDeclaration": 9631,
                         "src": "1237:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Resource_$9580_$",
+                          "typeIdentifier": "t_type$_t_contract$_Resource_$9631_$",
                           "typeString": "type(contract Resource)"
                         }
                       },
@@ -4485,13 +4485,13 @@
                       "src": "1237:20:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
                     "src": "1223:34:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Resource_$9580",
+                      "typeIdentifier": "t_contract$_Resource_$9631",
                       "typeString": "contract Resource"
                     }
                   },
@@ -4514,7 +4514,7 @@
                       "referencedDeclaration": 7393,
                       "src": "1268:13:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
@@ -4546,10 +4546,10 @@
                         "name": "Resource",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9580,
+                        "referencedDeclaration": 9631,
                         "src": "1284:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Resource_$9580_$",
+                          "typeIdentifier": "t_type$_t_contract$_Resource_$9631_$",
                           "typeString": "type(contract Resource)"
                         }
                       },
@@ -4564,13 +4564,13 @@
                       "src": "1284:22:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
                     "src": "1268:38:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Resource_$9580",
+                      "typeIdentifier": "t_contract$_Resource_$9631",
                       "typeString": "contract Resource"
                     }
                   },
@@ -4593,7 +4593,7 @@
                       "referencedDeclaration": 7396,
                       "src": "1317:12:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
@@ -4625,10 +4625,10 @@
                         "name": "Resource",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9580,
+                        "referencedDeclaration": 9631,
                         "src": "1332:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Resource_$9580_$",
+                          "typeIdentifier": "t_type$_t_contract$_Resource_$9631_$",
                           "typeString": "type(contract Resource)"
                         }
                       },
@@ -4643,13 +4643,13 @@
                       "src": "1332:21:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
                     "src": "1317:36:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Resource_$9580",
+                      "typeIdentifier": "t_contract$_Resource_$9631",
                       "typeString": "contract Resource"
                     }
                   },
@@ -5230,7 +5230,7 @@
                         "referencedDeclaration": 7390,
                         "src": "1523:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -5241,7 +5241,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "1523:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -5362,7 +5362,7 @@
                         "referencedDeclaration": 7393,
                         "src": "1580:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -5373,7 +5373,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "1580:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -5494,7 +5494,7 @@
                         "referencedDeclaration": 7396,
                         "src": "1639:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -5505,7 +5505,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "1639:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -5592,7 +5592,7 @@
                         "referencedDeclaration": 7372,
                         "src": "1698:9:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_HolyCore_$9719",
+                          "typeIdentifier": "t_contract$_HolyCore_$9770",
                           "typeString": "contract HolyCore"
                         }
                       },
@@ -5603,7 +5603,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9417,
+                      "referencedDeclaration": 9468,
                       "src": "1698:15:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -6091,7 +6091,7 @@
                         "referencedDeclaration": 7387,
                         "src": "1977:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -6102,7 +6102,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "1977:16:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -6223,7 +6223,7 @@
                         "referencedDeclaration": 7390,
                         "src": "2029:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -6234,7 +6234,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2029:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -6355,7 +6355,7 @@
                         "referencedDeclaration": 7393,
                         "src": "2087:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -6366,7 +6366,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2087:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -6487,7 +6487,7 @@
                         "referencedDeclaration": 7396,
                         "src": "2147:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -6498,7 +6498,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2147:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -6585,7 +6585,7 @@
                         "referencedDeclaration": 7375,
                         "src": "2206:14:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                          "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                           "typeString": "contract LegendaryCore"
                         }
                       },
@@ -6596,7 +6596,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9417,
+                      "referencedDeclaration": 9468,
                       "src": "2206:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -6909,7 +6909,7 @@
                         "referencedDeclaration": 7390,
                         "src": "2396:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -6920,7 +6920,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2396:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -7041,7 +7041,7 @@
                         "referencedDeclaration": 7393,
                         "src": "2451:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -7052,7 +7052,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2451:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -7173,7 +7173,7 @@
                         "referencedDeclaration": 7396,
                         "src": "2509:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -7184,7 +7184,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2509:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -7271,7 +7271,7 @@
                         "referencedDeclaration": 7378,
                         "src": "2566:14:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$9511",
+                          "typeIdentifier": "t_contract$_Item_$9562",
                           "typeString": "contract Item"
                         }
                       },
@@ -7282,7 +7282,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9494,
+                      "referencedDeclaration": 9545,
                       "src": "2566:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -7770,7 +7770,7 @@
                         "referencedDeclaration": 7390,
                         "src": "2847:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -7781,7 +7781,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2847:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -7902,7 +7902,7 @@
                         "referencedDeclaration": 7393,
                         "src": "2903:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -7913,7 +7913,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2903:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -8034,7 +8034,7 @@
                         "referencedDeclaration": 7396,
                         "src": "2962:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -8045,7 +8045,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2962:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -8132,7 +8132,7 @@
                         "referencedDeclaration": 7381,
                         "src": "3020:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$9511",
+                          "typeIdentifier": "t_contract$_Item_$9562",
                           "typeString": "contract Item"
                         }
                       },
@@ -8143,7 +8143,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9494,
+                      "referencedDeclaration": 9545,
                       "src": "3020:18:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -8631,7 +8631,7 @@
                         "referencedDeclaration": 7390,
                         "src": "3300:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -8642,7 +8642,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "3300:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -8763,7 +8763,7 @@
                         "referencedDeclaration": 7393,
                         "src": "3356:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -8774,7 +8774,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "3356:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -8895,7 +8895,7 @@
                         "referencedDeclaration": 7396,
                         "src": "3415:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -8906,7 +8906,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "3415:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -8993,7 +8993,7 @@
                         "referencedDeclaration": 7384,
                         "src": "3472:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$9511",
+                          "typeIdentifier": "t_contract$_Item_$9562",
                           "typeString": "contract Item"
                         }
                       },
@@ -9004,7 +9004,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9494,
+                      "referencedDeclaration": 9545,
                       "src": "3472:18:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -9230,10 +9230,10 @@
         308
       ],
       "BurnableToken": [
-        9279
+        9330
       ],
       "BuyableToken": [
-        9388
+        9439
       ],
       "Context": [
         2815
@@ -9242,7 +9242,7 @@
         7805
       ],
       "CraftableToken": [
-        9418
+        9469
       ],
       "CraftsmanProfile": [
         3396
@@ -9254,10 +9254,10 @@
         1032
       ],
       "GiftableToken": [
-        9442
+        9493
       ],
       "HolyCore": [
-        9719
+        9770
       ],
       "IAccessControl": [
         381
@@ -9272,16 +9272,16 @@
         1135
       ],
       "Item": [
-        9511
+        9562
       ],
       "LegendaryCore": [
-        9760
+        9811
       ],
       "Ownable": [
         486
       ],
       "Resource": [
-        9580
+        9631
       ],
       "Strings": [
         3092
@@ -9308,7 +9308,7 @@
         "id": 7362,
         "nodeType": "ImportDirective",
         "scope": 7806,
-        "sourceUnit": 9720,
+        "sourceUnit": 9771,
         "src": "27:39:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -9319,7 +9319,7 @@
         "id": 7363,
         "nodeType": "ImportDirective",
         "scope": 7806,
-        "sourceUnit": 9512,
+        "sourceUnit": 9563,
         "src": "68:28:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -9330,7 +9330,7 @@
         "id": 7364,
         "nodeType": "ImportDirective",
         "scope": 7806,
-        "sourceUnit": 9581,
+        "sourceUnit": 9632,
         "src": "98:32:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -9341,7 +9341,7 @@
         "id": 7365,
         "nodeType": "ImportDirective",
         "scope": 7806,
-        "sourceUnit": 9761,
+        "sourceUnit": 9812,
         "src": "132:44:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -9414,7 +9414,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_HolyCore_$9719",
+              "typeIdentifier": "t_contract$_HolyCore_$9770",
               "typeString": "contract HolyCore"
             },
             "typeName": {
@@ -9424,13 +9424,13 @@
                 "id": 7370,
                 "name": "HolyCore",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9719,
+                "referencedDeclaration": 9770,
                 "src": "338:8:27"
               },
-              "referencedDeclaration": 9719,
+              "referencedDeclaration": 9770,
               "src": "338:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_HolyCore_$9719",
+                "typeIdentifier": "t_contract$_HolyCore_$9770",
                 "typeString": "contract HolyCore"
               }
             },
@@ -9447,7 +9447,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+              "typeIdentifier": "t_contract$_LegendaryCore_$9811",
               "typeString": "contract LegendaryCore"
             },
             "typeName": {
@@ -9457,13 +9457,13 @@
                 "id": 7373,
                 "name": "LegendaryCore",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9760,
+                "referencedDeclaration": 9811,
                 "src": "371:13:27"
               },
-              "referencedDeclaration": 9760,
+              "referencedDeclaration": 9811,
               "src": "371:13:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                 "typeString": "contract LegendaryCore"
               }
             },
@@ -9480,7 +9480,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$9511",
+              "typeIdentifier": "t_contract$_Item_$9562",
               "typeString": "contract Item"
             },
             "typeName": {
@@ -9490,13 +9490,13 @@
                 "id": 7376,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9511,
+                "referencedDeclaration": 9562,
                 "src": "414:4:27"
               },
-              "referencedDeclaration": 9511,
+              "referencedDeclaration": 9562,
               "src": "414:4:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$9511",
+                "typeIdentifier": "t_contract$_Item_$9562",
                 "typeString": "contract Item"
               }
             },
@@ -9513,7 +9513,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$9511",
+              "typeIdentifier": "t_contract$_Item_$9562",
               "typeString": "contract Item"
             },
             "typeName": {
@@ -9523,13 +9523,13 @@
                 "id": 7379,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9511,
+                "referencedDeclaration": 9562,
                 "src": "448:4:27"
               },
-              "referencedDeclaration": 9511,
+              "referencedDeclaration": 9562,
               "src": "448:4:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$9511",
+                "typeIdentifier": "t_contract$_Item_$9562",
                 "typeString": "contract Item"
               }
             },
@@ -9546,7 +9546,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Item_$9511",
+              "typeIdentifier": "t_contract$_Item_$9562",
               "typeString": "contract Item"
             },
             "typeName": {
@@ -9556,13 +9556,13 @@
                 "id": 7382,
                 "name": "Item",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9511,
+                "referencedDeclaration": 9562,
                 "src": "480:4:27"
               },
-              "referencedDeclaration": 9511,
+              "referencedDeclaration": 9562,
               "src": "480:4:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Item_$9511",
+                "typeIdentifier": "t_contract$_Item_$9562",
                 "typeString": "contract Item"
               }
             },
@@ -9579,7 +9579,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Resource_$9580",
+              "typeIdentifier": "t_contract$_Resource_$9631",
               "typeString": "contract Resource"
             },
             "typeName": {
@@ -9589,13 +9589,13 @@
                 "id": 7385,
                 "name": "Resource",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9580,
+                "referencedDeclaration": 9631,
                 "src": "512:8:27"
               },
-              "referencedDeclaration": 9580,
+              "referencedDeclaration": 9631,
               "src": "512:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Resource_$9580",
+                "typeIdentifier": "t_contract$_Resource_$9631",
                 "typeString": "contract Resource"
               }
             },
@@ -9612,7 +9612,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Resource_$9580",
+              "typeIdentifier": "t_contract$_Resource_$9631",
               "typeString": "contract Resource"
             },
             "typeName": {
@@ -9622,13 +9622,13 @@
                 "id": 7388,
                 "name": "Resource",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9580,
+                "referencedDeclaration": 9631,
                 "src": "544:8:27"
               },
-              "referencedDeclaration": 9580,
+              "referencedDeclaration": 9631,
               "src": "544:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Resource_$9580",
+                "typeIdentifier": "t_contract$_Resource_$9631",
                 "typeString": "contract Resource"
               }
             },
@@ -9645,7 +9645,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Resource_$9580",
+              "typeIdentifier": "t_contract$_Resource_$9631",
               "typeString": "contract Resource"
             },
             "typeName": {
@@ -9655,13 +9655,13 @@
                 "id": 7391,
                 "name": "Resource",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9580,
+                "referencedDeclaration": 9631,
                 "src": "579:8:27"
               },
-              "referencedDeclaration": 9580,
+              "referencedDeclaration": 9631,
               "src": "579:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Resource_$9580",
+                "typeIdentifier": "t_contract$_Resource_$9631",
                 "typeString": "contract Resource"
               }
             },
@@ -9678,7 +9678,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Resource_$9580",
+              "typeIdentifier": "t_contract$_Resource_$9631",
               "typeString": "contract Resource"
             },
             "typeName": {
@@ -9688,13 +9688,13 @@
                 "id": 7394,
                 "name": "Resource",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 9580,
+                "referencedDeclaration": 9631,
                 "src": "616:8:27"
               },
-              "referencedDeclaration": 9580,
+              "referencedDeclaration": 9631,
               "src": "616:8:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Resource_$9580",
+                "typeIdentifier": "t_contract$_Resource_$9631",
                 "typeString": "contract Resource"
               }
             },
@@ -9800,7 +9800,7 @@
                       "referencedDeclaration": 7372,
                       "src": "954:9:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_HolyCore_$9719",
+                        "typeIdentifier": "t_contract$_HolyCore_$9770",
                         "typeString": "contract HolyCore"
                       }
                     },
@@ -9832,10 +9832,10 @@
                         "name": "HolyCore",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9719,
+                        "referencedDeclaration": 9770,
                         "src": "966:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_HolyCore_$9719_$",
+                          "typeIdentifier": "t_type$_t_contract$_HolyCore_$9770_$",
                           "typeString": "type(contract HolyCore)"
                         }
                       },
@@ -9850,13 +9850,13 @@
                       "src": "966:18:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_HolyCore_$9719",
+                        "typeIdentifier": "t_contract$_HolyCore_$9770",
                         "typeString": "contract HolyCore"
                       }
                     },
                     "src": "954:30:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_HolyCore_$9719",
+                      "typeIdentifier": "t_contract$_HolyCore_$9770",
                       "typeString": "contract HolyCore"
                     }
                   },
@@ -9879,7 +9879,7 @@
                       "referencedDeclaration": 7375,
                       "src": "995:14:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                        "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                         "typeString": "contract LegendaryCore"
                       }
                     },
@@ -9911,10 +9911,10 @@
                         "name": "LegendaryCore",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9760,
+                        "referencedDeclaration": 9811,
                         "src": "1012:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LegendaryCore_$9760_$",
+                          "typeIdentifier": "t_type$_t_contract$_LegendaryCore_$9811_$",
                           "typeString": "type(contract LegendaryCore)"
                         }
                       },
@@ -9929,13 +9929,13 @@
                       "src": "1012:28:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                        "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                         "typeString": "contract LegendaryCore"
                       }
                     },
                     "src": "995:45:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                      "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                       "typeString": "contract LegendaryCore"
                     }
                   },
@@ -9958,7 +9958,7 @@
                       "referencedDeclaration": 7378,
                       "src": "1051:14:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
@@ -9990,10 +9990,10 @@
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9511,
+                        "referencedDeclaration": 9562,
                         "src": "1068:4:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$9511_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$9562_$",
                           "typeString": "type(contract Item)"
                         }
                       },
@@ -10008,13 +10008,13 @@
                       "src": "1068:19:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "1051:36:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$9511",
+                      "typeIdentifier": "t_contract$_Item_$9562",
                       "typeString": "contract Item"
                     }
                   },
@@ -10037,7 +10037,7 @@
                       "referencedDeclaration": 7381,
                       "src": "1098:12:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
@@ -10069,10 +10069,10 @@
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9511,
+                        "referencedDeclaration": 9562,
                         "src": "1113:4:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$9511_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$9562_$",
                           "typeString": "type(contract Item)"
                         }
                       },
@@ -10087,13 +10087,13 @@
                       "src": "1113:17:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "1098:32:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$9511",
+                      "typeIdentifier": "t_contract$_Item_$9562",
                       "typeString": "contract Item"
                     }
                   },
@@ -10116,7 +10116,7 @@
                       "referencedDeclaration": 7384,
                       "src": "1141:12:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
@@ -10148,10 +10148,10 @@
                         "name": "Item",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9511,
+                        "referencedDeclaration": 9562,
                         "src": "1156:4:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Item_$9511_$",
+                          "typeIdentifier": "t_type$_t_contract$_Item_$9562_$",
                           "typeString": "type(contract Item)"
                         }
                       },
@@ -10166,13 +10166,13 @@
                       "src": "1156:17:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Item_$9511",
+                        "typeIdentifier": "t_contract$_Item_$9562",
                         "typeString": "contract Item"
                       }
                     },
                     "src": "1141:32:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Item_$9511",
+                      "typeIdentifier": "t_contract$_Item_$9562",
                       "typeString": "contract Item"
                     }
                   },
@@ -10195,7 +10195,7 @@
                       "referencedDeclaration": 7387,
                       "src": "1184:8:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
@@ -10227,10 +10227,10 @@
                         "name": "Resource",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9580,
+                        "referencedDeclaration": 9631,
                         "src": "1195:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Resource_$9580_$",
+                          "typeIdentifier": "t_type$_t_contract$_Resource_$9631_$",
                           "typeString": "type(contract Resource)"
                         }
                       },
@@ -10245,13 +10245,13 @@
                       "src": "1195:17:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
                     "src": "1184:28:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Resource_$9580",
+                      "typeIdentifier": "t_contract$_Resource_$9631",
                       "typeString": "contract Resource"
                     }
                   },
@@ -10274,7 +10274,7 @@
                       "referencedDeclaration": 7390,
                       "src": "1223:11:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
@@ -10306,10 +10306,10 @@
                         "name": "Resource",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9580,
+                        "referencedDeclaration": 9631,
                         "src": "1237:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Resource_$9580_$",
+                          "typeIdentifier": "t_type$_t_contract$_Resource_$9631_$",
                           "typeString": "type(contract Resource)"
                         }
                       },
@@ -10324,13 +10324,13 @@
                       "src": "1237:20:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
                     "src": "1223:34:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Resource_$9580",
+                      "typeIdentifier": "t_contract$_Resource_$9631",
                       "typeString": "contract Resource"
                     }
                   },
@@ -10353,7 +10353,7 @@
                       "referencedDeclaration": 7393,
                       "src": "1268:13:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
@@ -10385,10 +10385,10 @@
                         "name": "Resource",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9580,
+                        "referencedDeclaration": 9631,
                         "src": "1284:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Resource_$9580_$",
+                          "typeIdentifier": "t_type$_t_contract$_Resource_$9631_$",
                           "typeString": "type(contract Resource)"
                         }
                       },
@@ -10403,13 +10403,13 @@
                       "src": "1284:22:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
                     "src": "1268:38:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Resource_$9580",
+                      "typeIdentifier": "t_contract$_Resource_$9631",
                       "typeString": "contract Resource"
                     }
                   },
@@ -10432,7 +10432,7 @@
                       "referencedDeclaration": 7396,
                       "src": "1317:12:27",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
@@ -10464,10 +10464,10 @@
                         "name": "Resource",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9580,
+                        "referencedDeclaration": 9631,
                         "src": "1332:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Resource_$9580_$",
+                          "typeIdentifier": "t_type$_t_contract$_Resource_$9631_$",
                           "typeString": "type(contract Resource)"
                         }
                       },
@@ -10482,13 +10482,13 @@
                       "src": "1332:21:27",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Resource_$9580",
+                        "typeIdentifier": "t_contract$_Resource_$9631",
                         "typeString": "contract Resource"
                       }
                     },
                     "src": "1317:36:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Resource_$9580",
+                      "typeIdentifier": "t_contract$_Resource_$9631",
                       "typeString": "contract Resource"
                     }
                   },
@@ -11069,7 +11069,7 @@
                         "referencedDeclaration": 7390,
                         "src": "1523:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -11080,7 +11080,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "1523:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -11201,7 +11201,7 @@
                         "referencedDeclaration": 7393,
                         "src": "1580:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -11212,7 +11212,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "1580:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -11333,7 +11333,7 @@
                         "referencedDeclaration": 7396,
                         "src": "1639:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -11344,7 +11344,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "1639:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -11431,7 +11431,7 @@
                         "referencedDeclaration": 7372,
                         "src": "1698:9:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_HolyCore_$9719",
+                          "typeIdentifier": "t_contract$_HolyCore_$9770",
                           "typeString": "contract HolyCore"
                         }
                       },
@@ -11442,7 +11442,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9417,
+                      "referencedDeclaration": 9468,
                       "src": "1698:15:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -11930,7 +11930,7 @@
                         "referencedDeclaration": 7387,
                         "src": "1977:8:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -11941,7 +11941,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "1977:16:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -12062,7 +12062,7 @@
                         "referencedDeclaration": 7390,
                         "src": "2029:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -12073,7 +12073,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2029:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -12194,7 +12194,7 @@
                         "referencedDeclaration": 7393,
                         "src": "2087:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -12205,7 +12205,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2087:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -12326,7 +12326,7 @@
                         "referencedDeclaration": 7396,
                         "src": "2147:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -12337,7 +12337,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2147:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -12424,7 +12424,7 @@
                         "referencedDeclaration": 7375,
                         "src": "2206:14:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_LegendaryCore_$9760",
+                          "typeIdentifier": "t_contract$_LegendaryCore_$9811",
                           "typeString": "contract LegendaryCore"
                         }
                       },
@@ -12435,7 +12435,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9417,
+                      "referencedDeclaration": 9468,
                       "src": "2206:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -12748,7 +12748,7 @@
                         "referencedDeclaration": 7390,
                         "src": "2396:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -12759,7 +12759,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2396:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -12880,7 +12880,7 @@
                         "referencedDeclaration": 7393,
                         "src": "2451:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -12891,7 +12891,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2451:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -13012,7 +13012,7 @@
                         "referencedDeclaration": 7396,
                         "src": "2509:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -13023,7 +13023,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2509:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -13110,7 +13110,7 @@
                         "referencedDeclaration": 7378,
                         "src": "2566:14:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$9511",
+                          "typeIdentifier": "t_contract$_Item_$9562",
                           "typeString": "contract Item"
                         }
                       },
@@ -13121,7 +13121,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9494,
+                      "referencedDeclaration": 9545,
                       "src": "2566:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -13609,7 +13609,7 @@
                         "referencedDeclaration": 7390,
                         "src": "2847:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -13620,7 +13620,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2847:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -13741,7 +13741,7 @@
                         "referencedDeclaration": 7393,
                         "src": "2903:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -13752,7 +13752,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2903:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -13873,7 +13873,7 @@
                         "referencedDeclaration": 7396,
                         "src": "2962:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -13884,7 +13884,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "2962:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -13971,7 +13971,7 @@
                         "referencedDeclaration": 7381,
                         "src": "3020:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$9511",
+                          "typeIdentifier": "t_contract$_Item_$9562",
                           "typeString": "contract Item"
                         }
                       },
@@ -13982,7 +13982,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9494,
+                      "referencedDeclaration": 9545,
                       "src": "3020:18:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -14470,7 +14470,7 @@
                         "referencedDeclaration": 7390,
                         "src": "3300:11:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -14481,7 +14481,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "3300:19:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -14602,7 +14602,7 @@
                         "referencedDeclaration": 7393,
                         "src": "3356:13:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -14613,7 +14613,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "3356:21:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -14734,7 +14734,7 @@
                         "referencedDeclaration": 7396,
                         "src": "3415:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Resource_$9580",
+                          "typeIdentifier": "t_contract$_Resource_$9631",
                           "typeString": "contract Resource"
                         }
                       },
@@ -14745,7 +14745,7 @@
                       "lValueRequested": false,
                       "memberName": "consume",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9579,
+                      "referencedDeclaration": 9630,
                       "src": "3415:20:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -14832,7 +14832,7 @@
                         "referencedDeclaration": 7384,
                         "src": "3472:12:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Item_$9511",
+                          "typeIdentifier": "t_contract$_Item_$9562",
                           "typeString": "contract Item"
                         }
                       },
@@ -14843,7 +14843,7 @@
                       "lValueRequested": false,
                       "memberName": "craft",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9494,
+                      "referencedDeclaration": 9545,
                       "src": "3472:18:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -15070,12 +15070,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x26459D0140443685c498b5a5277217B75Fc43D10",
-      "transactionHash": "0x692e247b3792ed832933dd08b6e533b97024170bdf8080889e9ddf803f75ab5f"
+      "address": "0x16846A71134e4d75185edaED7cff85c82EABA445",
+      "transactionHash": "0x1f245dd7d58a6c500f792290cf064a542dcf69b76742aea4da5b78c9e027843d"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-17T23:10:59.173Z",
+  "updatedAt": "2021-12-19T10:45:24.019Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
