@@ -90,8 +90,8 @@ contract BlackHole is AccessControl {
         if (_userTerritoryCount[by] > 0) {
             _assignNokai(pos, x, y, nokaiId, by);
         } else {
-            _assignNokaiNewTerritory(pos, x, y, nokaiId);
             _discoverSlot(x, y, by);
+            _assignNokaiNewTerritory(pos, x, y, nokaiId);
             _discoverAround(x, y, by);
         }
         emit NokaiAssigned(x, y, nokaiId, by);
@@ -205,10 +205,10 @@ contract BlackHole is AccessControl {
             uxonium : 0,
             darkMatter : darkMatter,
             plasmaEnergy : plasmaEnergy,
-            voidEssence : voidEssence / 10,
+            voidEssence : voidEssence,
             nokaiId : 0,
             extractor : Extractor({level : 0, cost : 500, lastExtract : block.timestamp}),
-            owner : by,
+            owner : address(0),
             discovered : true
             });
             emit SlotDiscovered(x, y, by);
