@@ -92,16 +92,18 @@ contract BlackHole is AccessControl {
             _assignNokai(pos, x, y, nokaiId, by);
         } else {
             _discoverSlot(x, y, by);
-            _assignNokaiNewTerritory(pos, x, y, nokaiId);
+            _assignNokaiNewTerritory(pos, x, y, nokaiId, by);
             _discoverAround(x, y, by);
         }
         emit NokaiAssigned(x, y, nokaiId, by);
     }
 
-    function _assignNokaiNewTerritory(uint256 pos, uint16 x, uint16 y, uint256 nokaiId) private {
+    function _assignNokaiNewTerritory(uint256 pos, uint16 x, uint16 y, uint256 nokaiId, address by) private {
         require(_blackhole[pos].owner == address(0), "The specified territory is owned by another player.");
         require(_blackhole[pos].nokaiId == 0, "Specified territory is already occupied by a Nokai.");
+        _userTerritoryCount[by] += 1;
         _blackhole[pos].nokaiId = nokaiId;
+        _blackhole[pos].owner = by;
         _nokaiPosition[nokaiId].onBoard = true;
         _nokaiPosition[nokaiId].x = x;
         _nokaiPosition[nokaiId].y = y;
@@ -188,25 +190,16 @@ contract BlackHole is AccessControl {
             if (wealth > ((totalPos / 5) * 2) && wealth < (totalPos / 5) * 3) {
                 wealth = 10;
             }
-            uint256 darkMatter = Math.max(RandomUtils._rand(pos, 10) * wealth, 20);
-            uint256 plasmaEnergy = Math.max(RandomUtils._rand(pos + 1, 10) * wealth, 20);
-            uint256 voidEssence = Math.max(RandomUtils._rand(pos + 2, 10) * wealth, 20);
-            if (darkMatter < plasmaEnergy || darkMatter < voidEssence) {
-                darkMatter = 0;
-            }
-            if (plasmaEnergy < darkMatter || plasmaEnergy < voidEssence) {
-                plasmaEnergy = 0;
-            }
-            if (voidEssence < darkMatter || voidEssence < plasmaEnergy) {
-                voidEssence = 0;
-            }
+            uint256 resource = Math.max(RandomUtils._rand(pos, 10) * wealth, 20);
+            uint256 picker = RandomUtils._rand(pos + 1, 10);
+
             _blackhole[pos] = Territory({
             x : x,
             y : y,
             uxonium : 0,
-            darkMatter : darkMatter,
-            plasmaEnergy : plasmaEnergy,
-            voidEssence : voidEssence,
+            darkMatter : picker < 4 ? resource : 0,
+            plasmaEnergy : picker >= 4 && picker < 7 ? resource : 0,
+            voidEssence : picker >= 7 ? resource : 0,
             nokaiId : 0,
             extractor : Extractor({level : 0, cost : 500, lastExtract : block.timestamp}),
             owner : address(0),
