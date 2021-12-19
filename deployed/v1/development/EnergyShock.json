@@ -10934,7 +10934,7 @@
         1032
       ],
       "EnergyShock": [
-        9645
+        9654
       ],
       "IAccessControl": [
         381
@@ -10949,18 +10949,18 @@
         1135
       ],
       "Item": [
-        9562
+        9571
       ],
       "Strings": [
         3092
       ]
     },
-    "id": 9646,
+    "id": 9655,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9633,
+        "id": 9642,
         "literals": [
           "solidity",
           "^",
@@ -10973,10 +10973,10 @@
       {
         "absolutePath": "project:/contracts/tokens/Item.sol",
         "file": "../Item.sol",
-        "id": 9634,
+        "id": 9643,
         "nodeType": "ImportDirective",
-        "scope": 9646,
-        "sourceUnit": 9563,
+        "scope": 9655,
+        "sourceUnit": 9572,
         "src": "27:21:39",
         "symbolAliases": [],
         "unitAlias": ""
@@ -10986,13 +10986,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 9635,
+              "id": 9644,
               "name": "Item",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 9562,
+              "referencedDeclaration": 9571,
               "src": "109:4:39"
             },
-            "id": 9636,
+            "id": 9645,
             "nodeType": "InheritanceSpecifier",
             "src": "109:4:39"
           }
@@ -11006,14 +11006,14 @@
           2815,
           3116,
           3128,
-          9562
+          9571
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 9645,
+        "id": 9654,
         "linearizedBaseContracts": [
-          9645,
-          9562,
+          9654,
+          9571,
           308,
           3116,
           3128,
@@ -11028,12 +11028,12 @@
         "nodes": [
           {
             "body": {
-              "id": 9643,
+              "id": 9652,
               "nodeType": "Block",
               "src": "163:8:39",
               "statements": []
             },
-            "id": 9644,
+            "id": 9653,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -11041,7 +11041,7 @@
                 "arguments": [
                   {
                     "hexValue": "456e6572677953686f636b",
-                    "id": 9639,
+                    "id": 9648,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -11057,7 +11057,7 @@
                   },
                   {
                     "hexValue": "454e4759",
-                    "id": 9640,
+                    "id": 9649,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -11072,12 +11072,12 @@
                     "value": "ENGY"
                   }
                 ],
-                "id": 9641,
+                "id": 9650,
                 "modifierName": {
-                  "id": 9638,
+                  "id": 9647,
                   "name": "Item",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 9562,
+                  "referencedDeclaration": 9571,
                   "src": "135:4:39"
                 },
                 "nodeType": "ModifierInvocation",
@@ -11087,25 +11087,25 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9637,
+              "id": 9646,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "132:2:39"
             },
             "returnParameters": {
-              "id": 9642,
+              "id": 9651,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "163:0:39"
             },
-            "scope": 9645,
+            "scope": 9654,
             "src": "121:50:39",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 9646,
+        "scope": 9655,
         "src": "85:89:39"
       }
     ],
@@ -11127,7 +11127,7 @@
         1032
       ],
       "EnergyShock": [
-        9645
+        9654
       ],
       "IAccessControl": [
         381
@@ -11142,18 +11142,18 @@
         1135
       ],
       "Item": [
-        9562
+        9571
       ],
       "Strings": [
         3092
       ]
     },
-    "id": 9646,
+    "id": 9655,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9633,
+        "id": 9642,
         "literals": [
           "solidity",
           "^",
@@ -11166,10 +11166,10 @@
       {
         "absolutePath": "project:/contracts/tokens/Item.sol",
         "file": "../Item.sol",
-        "id": 9634,
+        "id": 9643,
         "nodeType": "ImportDirective",
-        "scope": 9646,
-        "sourceUnit": 9563,
+        "scope": 9655,
+        "sourceUnit": 9572,
         "src": "27:21:39",
         "symbolAliases": [],
         "unitAlias": ""
@@ -11179,13 +11179,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 9635,
+              "id": 9644,
               "name": "Item",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 9562,
+              "referencedDeclaration": 9571,
               "src": "109:4:39"
             },
-            "id": 9636,
+            "id": 9645,
             "nodeType": "InheritanceSpecifier",
             "src": "109:4:39"
           }
@@ -11199,14 +11199,14 @@
           2815,
           3116,
           3128,
-          9562
+          9571
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 9645,
+        "id": 9654,
         "linearizedBaseContracts": [
-          9645,
-          9562,
+          9654,
+          9571,
           308,
           3116,
           3128,
@@ -11221,12 +11221,12 @@
         "nodes": [
           {
             "body": {
-              "id": 9643,
+              "id": 9652,
               "nodeType": "Block",
               "src": "163:8:39",
               "statements": []
             },
-            "id": 9644,
+            "id": 9653,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -11234,7 +11234,7 @@
                 "arguments": [
                   {
                     "hexValue": "456e6572677953686f636b",
-                    "id": 9639,
+                    "id": 9648,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -11250,7 +11250,7 @@
                   },
                   {
                     "hexValue": "454e4759",
-                    "id": 9640,
+                    "id": 9649,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -11265,12 +11265,12 @@
                     "value": "ENGY"
                   }
                 ],
-                "id": 9641,
+                "id": 9650,
                 "modifierName": {
-                  "id": 9638,
+                  "id": 9647,
                   "name": "Item",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 9562,
+                  "referencedDeclaration": 9571,
                   "src": "135:4:39"
                 },
                 "nodeType": "ModifierInvocation",
@@ -11280,25 +11280,25 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9637,
+              "id": 9646,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "132:2:39"
             },
             "returnParameters": {
-              "id": 9642,
+              "id": 9651,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "163:0:39"
             },
-            "scope": 9645,
+            "scope": 9654,
             "src": "121:50:39",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 9646,
+        "scope": 9655,
         "src": "85:89:39"
       }
     ],
@@ -11438,12 +11438,12 @@
         }
       },
       "links": {},
-      "address": "0x544DeDcBF90b865F3FACbe27f831De0f93eb1874",
-      "transactionHash": "0x70b58a78a870e3644dac2b3b3aed9156e103439acc1c77b341edeee03509abd7"
+      "address": "0xACa7718c38db21437ed03a182c9104d58d0e85e0",
+      "transactionHash": "0x882870f5b35b32509303dbd0fc5dd20730e582ffc90bc953400246352ebe4f86"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-19T10:45:24.076Z",
+  "updatedAt": "2021-12-19T17:45:30.766Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
